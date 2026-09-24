@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Sales Management | Sulaiha Smart Management System">
+
+    <title>Sales Management | Sulaiha</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+         ===================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         COMMON ADMIN CSS
+         ===================================================== -->
+
+    <link rel="stylesheet"
+          href="/css/admin-dashboard.css">
+
+
+    <!-- =====================================================
+         SALES MANAGEMENT CSS
+         ===================================================== -->
+
+    <link rel="stylesheet"
+          href="/css/sales-management.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ADMIN LAYOUT
+     ========================================================= -->
+
+<div class="admin-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="admin-sidebar"
+           id="adminSidebar">
+
+
+        <!-- =================================================
+             BRAND
+             ================================================= -->
+
+        <div class="admin-brand">
+
+            <a href="/admin/dashboard"
+               class="admin-brand-link">
+
+                <img src="/images/sulaiha-logo.jpeg"
+                     alt="Sulaiha Logo"
+                     class="admin-logo">
+
+                <div class="admin-brand-text">
+
+                    <h1>
+                        SULAIHA
+                    </h1>
+
+                    <span>
+                        ADMIN PANEL
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             NAVIGATION
+             ================================================= -->
+
+        <nav class="admin-navigation">
+
+
+            <!-- DASHBOARD -->
+
+            <a href="/admin/dashboard"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    🏠
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- CUSTOMERS -->
+
+            <a href="/admin/customers"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    👥
+                </span>
+
+                <span>
+                    Customers
+                </span>
+
+            </a>
+
+
+            <!-- PRODUCTS -->
+
+            <a href="/admin/products"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    📦
+                </span>
+
+                <span>
+                    Products
+                </span>
+
+            </a>
+
+
+            <!-- ORDERS -->
+
+            <a href="/admin/orders"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    🛒
+                </span>
+
+                <span>
+                    Orders
+                </span>
+
+            </a>
+
+
+            <!-- INVENTORY -->
+
+            <a href="/admin/inventory"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    📊
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <!-- SALES - ACTIVE -->
+
+            <a href="/admin/sales"
+               class="admin-nav-item active">
+
+                <span class="admin-nav-icon">
+                    💰
+                </span>
+
+                <span>
+                    Sales
+                </span>
+
+            </a>
+
+
+            <!-- PAYMENTS -->
+
+            <a href="/admin/payments"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    💳
+                </span>
+
+                <span>
+                    Payments
+                </span>
+
+            </a>
+
+
+            <!-- EXPENSES -->
+
+            <a href="/admin/expenses"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    💸
+                </span>
+
+                <span>
+                    Expenses
+                </span>
+
+            </a>
+
+
+            <!-- INVOICE -->
+
+            <a href="/admin/invoice"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    🧾
+                </span>
+
+                <span>
+                    Invoice
+                </span>
+
+            </a>
+
+
+            <!-- BILLING -->
+
+            <a href="/admin/billing"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    💵
+                </span>
+
+                <span>
+                    Billing
+                </span>
+
+            </a>
+
+
+            <!-- REPORT & ANALYSIS -->
+
+            <a href="/admin/reports"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    📈
+                </span>
+
+                <span>
+                    Report &amp; Analysis
+                </span>
+
+            </a>
+
+
+            <!-- SETTINGS -->
+
+            <a href="/admin/settings"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    ⚙️
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <a href="/admin/notifications"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    🔔
+                </span>
+
+                <span>
+                    Notifications
+                </span>
+
+            </a>
+
+
+            <!-- PROFILE -->
+
+            <a href="/admin/profile"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    👤
+                </span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- =================================================
+             LOGOUT
+             ================================================= -->
+
+        <div class="admin-sidebar-bottom">
+
+            <button type="button"
+                    class="admin-logout-button"
+                    id="adminLogoutButton">
+
+                <span class="admin-nav-icon">
+                    🚪
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+         ===================================================== -->
+
+    <div class="admin-main">
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header class="admin-header">
+
+
+            <!-- MOBILE SIDEBAR TOGGLE -->
+
+            <button type="button"
+                    class="sidebar-toggle"
+                    id="sidebarToggle">
+
+                ☰
+
+            </button>
+
+
+            <!-- HEADER TITLE -->
+
+            <div class="admin-header-title">
+
+                <span>
+                    ADMIN PANEL
+                </span>
+
+                <h2>
+                    Sales Management
+                </h2>
+
+            </div>
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="admin-header-actions">
+
+
+                <!-- NOTIFICATIONS -->
+
+                <a href="/admin/notifications"
+                   class="admin-header-icon"
+                   title="Notifications">
+
+                    🔔
+
+                </a>
+
+
+                <!-- PROFILE -->
+
+                <a href="/admin/profile"
+                   class="admin-profile-button">
+
+                    <span class="admin-profile-avatar">
+                        👤
+                    </span>
+
+                    <span class="admin-profile-text">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <small>
+                            Administrator
+                        </small>
+
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+        </header>
+
+
+        <!-- =================================================
+             SALES CONTENT
+             ================================================= -->
+
+        <main class="admin-content">
+
+
+            <!-- =================================================
+                 PAGE HEADING
+                 ================================================= -->
+
+            <section class="sales-welcome">
+
+
+                <span class="sales-small-title">
+                    SULAIHA SMART MANAGEMENT SYSTEM
+                </span>
+
+
+                <h1>
+                    Sales Management
+                </h1>
+
+
+                <p>
+                    Track successful sales generated from customer orders.
+                </p>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 SUMMARY CARDS
+                 ================================================= -->
+
+            <section class="sales-summary">
+
+
+                <!-- TOTAL SALES -->
+
+                <div class="sales-summary-card">
+
+                    <div class="sales-summary-icon">
+                        💰
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Sales
+                        </span>
+
+                        <strong id="totalSales">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TODAY'S SALES -->
+
+                <div class="sales-summary-card">
+
+                    <div class="sales-summary-icon">
+                        📅
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Today's Sales
+                        </span>
+
+                        <strong id="todaySales">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MONTHLY SALES -->
+
+                <div class="sales-summary-card">
+
+                    <div class="sales-summary-icon">
+                        📈
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Monthly Sales
+                        </span>
+
+                        <strong id="monthlySales">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOTAL SALES ORDERS -->
+
+                <div class="sales-summary-card">
+
+                    <div class="sales-summary-icon">
+                        🛒
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Sales Orders
+                        </span>
+
+                        <strong id="totalSalesOrders">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+            <!-- =================================================
+                 SALES CARD
+                 ================================================= -->
+
+            <section class="sales-card">
+
+
+                <!-- =================================================
+                     CARD HEADER
+                     ================================================= -->
+
+                <div class="sales-card-header">
+
+
+                    <div>
+
+                        <h2>
+                            Sales
+                        </h2>
+
+                        <p>
+                            View and manage successful sales.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =================================================
+                     SEARCH + FILTER SECTION
+                     ================================================= -->
+
+                <div class="sales-filter-section">
+
+
+                    <!-- SEARCH -->
+
+                    <div class="sales-search-box">
+
+                        <label for="salesSearch">
+                            Search Sales
+                        </label>
+
+                        <input
+                            type="search"
+                            id="salesSearch"
+                            placeholder="Search by Order ID or Customer Name..."
+                            autocomplete="off">
+
+                    </div>
+
+
+                    <!-- PAYMENT STATUS -->
+
+                    <div class="sales-filter-box">
+
+                        <label for="paymentStatusFilter">
+                            Payment Status
+                        </label>
+
+                        <select id="paymentStatusFilter">
+
+                            <option value="ALL">
+                                All Payments
+                            </option>
+
+                            <option value="PAID">
+                                Paid
+                            </option>
+
+                            <option value="PENDING">
+                                Pending
+                            </option>
+
+                            <option value="FAILED">
+                                Failed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- SALES DATE -->
+
+                    <div class="sales-filter-box">
+
+                        <label for="salesDateFilter">
+                            Sales Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="salesDateFilter">
+
+                    </div>
+
+
+                    <!-- CLEAR FILTERS -->
+
+                    <button
+                        type="button"
+                        class="clear-filter-button"
+                        id="clearSalesFilters">
+
+                        Clear
+
+                    </button>
+
+
+                </div>
+
+
+                <!-- =================================================
+                     SALES TABLE WRAPPER
+                     ================================================= -->
+
+                <div class="sales-table-wrapper">
+
+
+                    <table class="sales-table">
+
+
+                        <!-- =================================================
+                             TABLE HEADER
+                             ================================================= -->
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Sales ID
+                                </th>
+
+                                <th>
+                                    Order ID
+                                </th>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Total Amount
+                                </th>
+
+                                <th>
+                                    Payment Status
+                                </th>
+
+                                <th>
+                                    Sales Date
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <!-- =================================================
+                             TABLE BODY
+                             ================================================= -->
+
+                        <tbody id="salesTableBody">
+
+                            <!--
+                                Sales data will be loaded
+                                dynamically from backend.
+                            -->
+
+                        </tbody>
+
+
+                    </table>
+
+
+                    <!-- =================================================
+                         EMPTY STATE
+                         ================================================= -->
+
+                    <div id="salesEmptyState"
+                         class="sales-empty-state">
+
+
+                        <div class="sales-empty-icon">
+                            💰
+                        </div>
+
+
+                        <h3>
+                            No Sales Available
+                        </h3>
+
+
+                        <p>
+                            Successful sales will appear here
+                            when completed customer orders are available.
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+            <!-- =================================================
+                 VIEW SALE MODAL
+                 ================================================= -->
+
+            <div id="viewSaleModal"
+                 class="sales-modal"
+                 aria-hidden="true">
+
+
+                <div class="sales-modal-content">
+
+
+                    <!-- CLOSE -->
+
+                    <button
+                        type="button"
+                        class="sales-modal-close"
+                        onclick="closeSalesModal('viewSaleModal')"
+                        aria-label="Close">
+
+                        ×
+
+                    </button>
+
+
+                    <!-- TITLE -->
+
+                    <h2>
+                        Sale Details
+                    </h2>
+
+
+                    <!-- DETAILS -->
+
+                    <div id="saleDetails"
+                         class="sale-details">
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 UPDATE SALE MODAL
+                 ================================================= -->
+
+            <div id="updateSaleModal"
+                 class="sales-modal"
+                 aria-hidden="true">
+
+
+                <div class="sales-modal-content">
+
+
+                    <!-- CLOSE -->
+
+                    <button
+                        type="button"
+                        class="sales-modal-close"
+                        onclick="closeSalesModal('updateSaleModal')"
+                        aria-label="Close">
+
+                        ×
+
+                    </button>
+
+
+                    <!-- TITLE -->
+
+                    <h2>
+                        Update Sale
+                    </h2>
+
+
+                    <!-- UPDATE FORM -->
+
+                    <form id="updateSaleForm"
+                          class="sale-form">
+
+
+                        <!-- SALE ID -->
+
+                        <input
+                            type="hidden"
+                            id="updateSaleId">
+
+
+                        <!-- PAYMENT STATUS -->
+
+                        <div class="sale-form-group">
+
+                            <label for="updatePaymentStatus">
+                                Payment Status
+                            </label>
+
+
+                            <select
+                                id="updatePaymentStatus"
+                                required>
+
+
+                                <option value="PENDING">
+                                    Pending
+                                </option>
+
+
+                                <option value="PAID">
+                                    Paid
+                                </option>
+
+
+                                <option value="FAILED">
+                                    Failed
+                                </option>
+
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- SAVE -->
+
+                        <button
+                            type="submit"
+                            class="save-sale-button">
+
+                            Update Sale
+
+                        </button>
+
+
+                    </form>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 DELETE / CANCEL SALE MODAL
+                 ================================================= -->
+
+            <div id="deleteSaleModal"
+                 class="sales-modal"
+                 aria-hidden="true">
+
+
+                <div class="sales-modal-content delete-modal-content">
+
+
+                    <!-- CLOSE -->
+
+                    <button
+                        type="button"
+                        class="sales-modal-close"
+                        onclick="closeSalesModal('deleteSaleModal')"
+                        aria-label="Close">
+
+                        ×
+
+                    </button>
+
+
+                    <!-- ICON -->
+
+                    <div class="delete-sale-icon">
+                        ⚠️
+                    </div>
+
+
+                    <!-- MESSAGE -->
+
+                    <p class="delete-sale-message">
+
+                        Are you sure you want to cancel this sale?
+
+                    </p>
+
+
+                    <!-- SALE ID -->
+
+                    <p id="deleteSaleId"
+                       class="delete-sale-id">
+
+                    </p>
+
+
+                    <!-- ACTIONS -->
+
+                    <div class="delete-sale-actions">
+
+
+                        <!-- CANCEL -->
+
+                        <button
+                            type="button"
+                            class="cancel-delete-button"
+                            onclick="closeSalesModal('deleteSaleModal')">
+
+                            No, Keep
+
+                        </button>
+
+
+                        <!-- CONFIRM -->
+
+                        <button
+                            type="button"
+                            class="confirm-delete-button"
+                            id="confirmDeleteSale">
+
+                            Yes, Cancel
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+        </main>
+
+
+        <!-- =====================================================
+             FOOTER
+             ===================================================== -->
+
+        <footer class="admin-footer">
+
+            <p>
+
+                © 2026 Sulaiha Smart Management System.
+                All Rights Reserved.
+
+            </p>
+
+        </footer>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script src="/js/sales-management.js"></script>
+
+
+</body>
+
+</html>

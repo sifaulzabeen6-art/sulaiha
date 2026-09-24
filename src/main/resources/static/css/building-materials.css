@@ -1,0 +1,665 @@
+/* =====================================================
+   SULAIHA SMART MANAGEMENT SYSTEM
+   BUILDING MATERIALS PRODUCTS PAGE
+   ===================================================== */
+
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.building-materials-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff8f2;
+}
+
+
+/* =====================================================
+   PAGE HEADER
+   ===================================================== */
+
+.building-materials-header {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 55px 0 35px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 30px;
+}
+
+
+.building-materials-heading p {
+    margin: 0 0 8px;
+
+    color: #c8a96b;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+.building-materials-heading h2 {
+    margin: 0 0 12px;
+
+    color: #3f5e4b;
+
+    font-size: 38px;
+    font-weight: 700;
+}
+
+
+.building-materials-heading span {
+    display: block;
+
+    max-width: 650px;
+
+    color: #666;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   BREADCRUMB
+   ===================================================== */
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    white-space: nowrap;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+.breadcrumb a {
+    color: #3f5e4b;
+
+    text-decoration: none;
+
+    font-weight: 500;
+}
+
+
+.breadcrumb a:hover {
+    color: #c8a96b;
+}
+
+
+/* =====================================================
+   SEARCH AND FILTER SECTION
+   ===================================================== */
+
+.building-materials-product-tools {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto 25px;
+    padding: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #eadfd5;
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =====================================================
+   SEARCH BOX
+   ===================================================== */
+
+.building-materials-search-box {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.building-materials-search-icon {
+    padding-left: 16px;
+
+    font-size: 18px;
+}
+
+
+.building-materials-search-box input {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #333;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+}
+
+
+.building-materials-search-box input::placeholder {
+    color: #999;
+}
+
+
+/* =====================================================
+   FILTER AREA
+   ===================================================== */
+
+.building-materials-filter-area {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =====================================================
+   FILTER GROUP
+   ===================================================== */
+
+.building-materials-filter-group {
+    flex: 1;
+
+    min-width: 180px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.building-materials-filter-group label {
+    color: #3f5e4b;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.building-materials-filter-group select {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #555;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+
+.building-materials-filter-group select:focus {
+    border-color: #3f5e4b;
+}
+
+
+/* =====================================================
+   CLEAR FILTER BUTTON
+   ===================================================== */
+
+.building-materials-clear-filter-button {
+    min-height: 42px;
+
+    padding: 10px 18px;
+
+    border: 1px solid #3f5e4b;
+    border-radius: 8px;
+
+    background: #3f5e4b;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.building-materials-clear-filter-button:hover {
+    background: #c8a96b;
+
+    border-color: #c8a96b;
+}
+
+
+/* =====================================================
+   RESULT INFORMATION
+   ===================================================== */
+
+.building-materials-result-info {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto 20px;
+}
+
+
+.building-materials-result-info p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+.building-materials-result-info strong {
+    color: #3f5e4b;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   PRODUCT GRID
+   ===================================================== */
+
+.building-materials-product-grid {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto 50px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* =====================================================
+   PRODUCT CARD
+   ===================================================== */
+
+.building-materials-product-card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #eadfd5;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.building-materials-product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =====================================================
+   PRODUCT IMAGE
+   ===================================================== */
+
+.building-materials-product-image {
+    position: relative;
+
+    width: 100%;
+    height: 240px;
+
+    overflow: hidden;
+
+    background: #f5f0eb;
+}
+
+
+.building-materials-product-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+
+.building-materials-product-card:hover
+.building-materials-product-image img {
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   STOCK BADGE
+   ===================================================== */
+
+.building-materials-stock-badge {
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #3f5e4b;
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   PRODUCT INFORMATION
+   ===================================================== */
+
+.building-materials-product-info {
+    padding: 20px;
+}
+
+
+.building-materials-product-category {
+    color: #c8a96b;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.building-materials-product-info h3 {
+    margin: 8px 0 8px;
+
+    color: #333;
+
+    font-size: 19px;
+    font-weight: 600;
+}
+
+
+.building-materials-product-info p {
+    min-height: 48px;
+
+    margin: 0 0 18px;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   PRODUCT BOTTOM
+   ===================================================== */
+
+.building-materials-product-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+
+.building-materials-product-bottom strong {
+    color: #3f5e4b;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   VIEW DETAILS BUTTON
+   ===================================================== */
+
+.building-materials-view-button {
+    padding: 9px 14px;
+
+    border: 1px solid #3f5e4b;
+    border-radius: 7px;
+
+    background: #3f5e4b;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.building-materials-view-button:hover {
+    background: #c8a96b;
+
+    border-color: #c8a96b;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   NO PRODUCTS MESSAGE
+   ===================================================== */
+
+.building-materials-no-products {
+    display: none;
+
+    width: 90%;
+    max-width: 600px;
+
+    margin: 30px auto 60px;
+
+    padding: 45px 25px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #eadfd5;
+
+    border-radius: 14px;
+}
+
+
+.building-materials-no-products-icon {
+    margin-bottom: 12px;
+
+    font-size: 35px;
+}
+
+
+.building-materials-no-products h3 {
+    margin: 0 0 8px;
+
+    color: #3f5e4b;
+
+    font-size: 20px;
+}
+
+
+.building-materials-no-products p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   TABLET RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .building-materials-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .building-materials-product-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .building-materials-header {
+        width: 92%;
+
+        padding: 35px 0 25px;
+    }
+
+
+    .building-materials-heading h2 {
+        font-size: 30px;
+    }
+
+
+    .building-materials-heading span {
+        font-size: 13px;
+    }
+
+
+    .breadcrumb {
+        font-size: 12px;
+    }
+
+
+    .building-materials-product-tools {
+        width: 92%;
+
+        padding: 16px;
+    }
+
+
+    .building-materials-filter-area {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .building-materials-filter-group {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    .building-materials-clear-filter-button {
+        width: 100%;
+    }
+
+
+    .building-materials-result-info {
+        width: 92%;
+    }
+
+
+    .building-materials-product-grid {
+        width: 92%;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .building-materials-product-image {
+        height: 220px;
+    }
+
+
+    .building-materials-product-bottom {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+
+    .building-materials-view-button {
+        width: 100%;
+    }
+
+}

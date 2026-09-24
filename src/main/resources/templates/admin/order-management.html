@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Order Management | Sulaiha Smart Management System">
+
+    <title>Order Management | Sulaiha</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+         ===================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         COMMON ADMIN CSS
+         ===================================================== -->
+
+    <link rel="stylesheet"
+          href="/css/admin-dashboard.css">
+
+
+    <!-- =====================================================
+         ORDER MANAGEMENT CSS
+         ===================================================== -->
+
+    <link rel="stylesheet"
+          href="/css/order-management.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ADMIN LAYOUT
+     ========================================================= -->
+
+<div class="admin-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="admin-sidebar"
+           id="adminSidebar">
+
+
+        <!-- =================================================
+             BRAND
+             ================================================= -->
+
+        <div class="admin-brand">
+
+            <a href="/admin/dashboard"
+               class="admin-brand-link">
+
+                <img src="/images/sulaiha-logo.jpeg"
+                     alt="Sulaiha Logo"
+                     class="admin-logo">
+
+                <div class="admin-brand-text">
+
+                    <h1>
+                        SULAIHA
+                    </h1>
+
+                    <span>
+                        ADMIN PANEL
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             NAVIGATION
+             ================================================= -->
+
+        <nav class="admin-navigation">
+
+
+            <!-- DASHBOARD -->
+
+            <a href="/admin/dashboard"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    🏠
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- CUSTOMERS -->
+
+            <a href="/admin/customers"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    👥
+                </span>
+
+                <span>
+                    Customers
+                </span>
+
+            </a>
+
+
+            <!-- PRODUCTS -->
+
+            <a href="/admin/products"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    📦
+                </span>
+
+                <span>
+                    Products
+                </span>
+
+            </a>
+
+
+            <!-- ORDERS - ACTIVE -->
+
+            <a href="/admin/orders"
+               class="admin-nav-item active">
+
+                <span class="admin-nav-icon">
+                    🛒
+                </span>
+
+                <span>
+                    Orders
+                </span>
+
+            </a>
+
+
+            <!-- INVENTORY -->
+
+            <a href="/admin/inventory"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    📊
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <!-- SALES -->
+
+            <a href="/admin/sales"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    💰
+                </span>
+
+                <span>
+                    Sales
+                </span>
+
+            </a>
+
+
+            <!-- PAYMENTS -->
+
+            <a href="/admin/payments"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    💳
+                </span>
+
+                <span>
+                    Payments
+                </span>
+
+            </a>
+
+
+            <!-- EXPENSES -->
+
+            <a href="/admin/expenses"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    💸
+                </span>
+
+                <span>
+                    Expenses
+                </span>
+
+            </a>
+
+
+            <!-- INVOICE -->
+
+            <a href="/admin/invoice"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    🧾
+                </span>
+
+                <span>
+                    Invoice
+                </span>
+
+            </a>
+
+
+            <!-- BILLING -->
+
+            <a href="/admin/billing"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    💵
+                </span>
+
+                <span>
+                    Billing
+                </span>
+
+            </a>
+
+
+            <!-- REPORT & ANALYSIS -->
+
+            <a href="/admin/reports"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    📈
+                </span>
+
+                <span>
+                    Report &amp; Analysis
+                </span>
+
+            </a>
+
+
+            <!-- SETTINGS -->
+
+            <a href="/admin/settings"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    ⚙️
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <a href="/admin/notifications"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    🔔
+                </span>
+
+                <span>
+                    Notifications
+                </span>
+
+            </a>
+
+
+            <!-- PROFILE -->
+
+            <a href="/admin/profile"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    👤
+                </span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- =================================================
+             LOGOUT
+             ================================================= -->
+
+        <div class="admin-sidebar-bottom">
+
+            <button type="button"
+                    class="admin-logout-button"
+                    id="adminLogoutButton">
+
+                <span class="admin-nav-icon">
+                    🚪
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+         ===================================================== -->
+
+    <div class="admin-main">
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header class="admin-header">
+
+
+            <button type="button"
+                    class="sidebar-toggle"
+                    id="sidebarToggle">
+
+                ☰
+
+            </button>
+
+
+            <div class="admin-header-title">
+
+                <span>
+                    ADMIN PANEL
+                </span>
+
+                <h2>
+                    Order Management
+                </h2>
+
+            </div>
+
+
+            <div class="admin-header-actions">
+
+
+                <a href="/admin/notifications"
+                   class="admin-header-icon"
+                   title="Notifications">
+
+                    🔔
+
+                </a>
+
+
+                <a href="/admin/profile"
+                   class="admin-profile-button">
+
+                    <span class="admin-profile-avatar">
+                        👤
+                    </span>
+
+                    <span class="admin-profile-text">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <small>
+                            Administrator
+                        </small>
+
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+        </header>
+
+
+        <!-- =================================================
+             ORDER CONTENT
+             ================================================= -->
+
+        <main class="order-content">
+
+
+            <!-- =================================================
+                 PAGE HEADING
+                 ================================================= -->
+
+            <section class="order-page-heading">
+
+
+                <span class="order-small-title">
+                    SULAIHA SMART MANAGEMENT SYSTEM
+                </span>
+
+
+                <h1>
+                    Order Management
+                </h1>
+
+
+                <p>
+                    Manage customer orders and track their order status.
+                </p>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 SUMMARY CARDS
+                 ================================================= -->
+
+            <section class="order-summary">
+
+
+                <!-- TOTAL ORDERS -->
+
+                <div class="order-summary-card">
+
+                    <div class="order-summary-icon">
+                        🛒
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Orders
+                        </span>
+
+                        <strong id="totalOrders">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PENDING ORDERS -->
+
+                <div class="order-summary-card">
+
+                    <div class="order-summary-icon">
+                        ⏳
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Pending Orders
+                        </span>
+
+                        <strong id="pendingOrders">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COMPLETED ORDERS -->
+
+                <div class="order-summary-card">
+
+                    <div class="order-summary-icon">
+                        ✅
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Completed Orders
+                        </span>
+
+                        <strong id="completedOrders">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CANCELLED ORDERS -->
+
+                <div class="order-summary-card">
+
+                    <div class="order-summary-icon">
+                        ❌
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Cancelled Orders
+                        </span>
+
+                        <strong id="cancelledOrders">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 ORDERS CARD
+                 ================================================= -->
+
+            <section class="order-card">
+
+
+                <!-- CARD HEADER -->
+
+                <div class="order-card-header">
+
+
+                    <div>
+
+                        <h2>
+                            Orders
+                        </h2>
+
+                        <p>
+                            Customer order information.
+                        </p>
+
+                    </div>
+
+
+                    <!-- SEARCH + FILTER -->
+
+                    <div class="order-tools">
+
+
+                        <label for="orderSearch"
+                               class="visually-hidden">
+
+                            Search Orders
+
+                        </label>
+
+
+                        <input type="search"
+                               id="orderSearch"
+                               class="order-search"
+                               placeholder="Search orders..."
+                               autocomplete="off">
+
+
+                        <label for="orderStatusFilter"
+                               class="visually-hidden">
+
+                            Filter Orders
+
+                        </label>
+
+
+                        <select id="orderStatusFilter"
+                                class="order-filter">
+
+
+                            <option value="ALL">
+                                All Orders
+                            </option>
+
+
+                            <option value="PENDING">
+                                Pending
+                            </option>
+
+
+                            <option value="CONFIRMED">
+                                Confirmed
+                            </option>
+
+
+                            <option value="SHIPPED">
+                                Shipped
+                            </option>
+
+
+                            <option value="DELIVERED">
+                                Delivered
+                            </option>
+
+
+                            <option value="CANCELLED">
+                                Cancelled
+                            </option>
+
+
+                        </select>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =================================================
+                     TABLE
+                     ================================================= -->
+
+                <div class="order-table-wrapper">
+
+
+                    <table class="order-table">
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    S.No.
+                                </th>
+
+                                <th>
+                                    Order ID
+                                </th>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th>
+                                    Total Amount
+                                </th>
+
+                                <th>
+                                    Payment
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="orderTableBody">
+
+                        </tbody>
+
+
+                    </table>
+
+
+                    <!-- =================================================
+                         EMPTY STATE
+                         ================================================= -->
+
+                    <div id="orderEmptyState"
+                         class="order-empty-state">
+
+
+                        <div class="order-empty-icon">
+                            🛒
+                        </div>
+
+
+                        <h3>
+                            No Orders Available
+                        </h3>
+
+
+                        <p>
+                            Order information will appear here
+                            when orders are available.
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="admin-footer">
+
+            <p>
+                © 2026 Sulaiha Smart Management System.
+                All Rights Reserved.
+            </p>
+
+        </footer>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     VIEW ORDER MODAL
+     ========================================================= -->
+
+<div id="viewOrderModal"
+     class="order-modal"
+     aria-hidden="true">
+
+
+    <div class="order-modal-content">
+
+
+        <button type="button"
+                class="order-modal-close"
+                onclick="closeOrderModal('viewOrderModal')"
+                aria-label="Close">
+
+            ×
+
+        </button>
+
+
+        <h2>
+            Order Details
+        </h2>
+
+
+        <div id="orderDetails"
+             class="order-details">
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     UPDATE ORDER MODAL
+     ========================================================= -->
+
+<div id="updateOrderModal"
+     class="order-modal"
+     aria-hidden="true">
+
+
+    <div class="order-modal-content">
+
+
+        <button type="button"
+                class="order-modal-close"
+                onclick="closeOrderModal('updateOrderModal')"
+                aria-label="Close">
+
+            ×
+
+        </button>
+
+
+        <h2>
+            Update Order
+        </h2>
+
+
+        <form id="updateOrderForm"
+              class="order-update-form">
+
+
+            <!-- ORDER ID -->
+
+            <input type="hidden"
+                   id="updateOrderId">
+
+
+            <!-- ORDER STATUS -->
+
+            <div class="order-form-group">
+
+                <label for="updateOrderStatus">
+                    Order Status
+                </label>
+
+
+                <select id="updateOrderStatus"
+                        required>
+
+
+                    <option value="PENDING">
+                        Pending
+                    </option>
+
+
+                    <option value="CONFIRMED">
+                        Confirmed
+                    </option>
+
+
+                    <option value="SHIPPED">
+                        Shipped
+                    </option>
+
+
+                    <option value="DELIVERED">
+                        Delivered
+                    </option>
+
+
+                    <option value="CANCELLED">
+                        Cancelled
+                    </option>
+
+
+                </select>
+
+            </div>
+
+
+            <!-- PAYMENT STATUS -->
+
+            <div class="order-form-group">
+
+                <label for="updatePaymentStatus">
+                    Payment Status
+                </label>
+
+
+                <select id="updatePaymentStatus"
+                        required>
+
+
+                    <option value="PENDING">
+                        Pending
+                    </option>
+
+
+                    <option value="PAID">
+                        Paid
+                    </option>
+
+
+                    <option value="FAILED">
+                        Failed
+                    </option>
+
+
+                </select>
+
+            </div>
+
+
+            <!-- UPDATE -->
+
+            <button type="submit"
+                    class="save-order-button">
+
+                Update Order
+
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     CANCEL ORDER CONFIRMATION MODAL
+     ========================================================= -->
+
+<div id="deleteOrderModal"
+     class="order-modal"
+     aria-hidden="true">
+
+
+    <div class="order-modal-content order-confirm-modal">
+
+
+        <!-- CLOSE BUTTON -->
+
+        <button type="button"
+                class="order-modal-close"
+                onclick="closeOrderModal('deleteOrderModal')"
+                aria-label="Close">
+
+            ×
+
+        </button>
+
+
+        <!-- WARNING ICON -->
+
+        <div class="confirm-icon">
+            ⚠️
+        </div>
+
+
+        <!-- TITLE -->
+
+        <h2>
+            Cancel Order
+        </h2>
+
+
+        <!-- MESSAGE -->
+
+        <p id="deleteOrderMessage">
+
+            Are you sure you want to cancel this order?
+
+        </p>
+
+
+        <!-- CONFIRMATION BUTTONS -->
+
+        <div class="confirm-actions">
+
+
+            <!-- KEEP ORDER -->
+
+            <button type="button"
+                    class="cancel-confirm-button"
+                    onclick="closeOrderModal('deleteOrderModal')">
+
+                No, Keep
+
+            </button>
+
+
+            <!-- CANCEL ORDER -->
+
+            <button type="button"
+                    class="delete-confirm-button"
+                    id="confirmDeleteOrder">
+
+                Yes, Cancel
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     ORDER MANAGEMENT JAVASCRIPT
+     ========================================================= -->
+
+<script src="/js/order-management.js"></script>
+
+
+</body>
+
+</html>

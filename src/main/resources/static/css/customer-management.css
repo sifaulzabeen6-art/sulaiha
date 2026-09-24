@@ -1,0 +1,592 @@
+ /* =====================================================
+   SULAIHA - CUSTOMER MANAGEMENT
+   SIMPLE UI
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.customer-management-page {
+    width: 100%;
+    padding: 25px;
+}
+
+
+/* =====================================================
+   PAGE HEADER
+   ===================================================== */
+
+.customer-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.customer-small-title {
+    display: block;
+    margin-bottom: 5px;
+    color: #3f5e4b;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.customer-page-title h1 {
+    margin: 0;
+    color: #333;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.customer-page-title p {
+    margin: 6px 0 0;
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   SUMMARY CARDS
+   ===================================================== */
+
+.customer-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.customer-summary-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 18px;
+
+    background: #fff;
+    border: 1px solid #eadfd3;
+    border-radius: 10px;
+}
+
+
+/* ICON */
+
+.customer-summary-card .admin-stat-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f5e6d3;
+    border-radius: 8px;
+
+    font-size: 20px;
+}
+
+
+/* CONTENT */
+
+.customer-summary-card .admin-stat-content {
+    min-width: 0;
+}
+
+.customer-summary-card .admin-stat-content span {
+    display: block;
+    margin-bottom: 3px;
+    color: #777;
+    font-size: 11px;
+}
+
+.customer-summary-card .admin-stat-content strong {
+    display: block;
+    color: #3f5e4b;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.customer-summary-card .admin-stat-content small {
+    color: #999;
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   CUSTOMER CARD
+   ===================================================== */
+
+.customer-card {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #eadfd3;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   CARD HEADER
+   ===================================================== */
+
+.customer-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    padding: 18px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.customer-card-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.customer-card-header p {
+    margin: 5px 0 0;
+    color: #888;
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   SEARCH
+   ===================================================== */
+
+.customer-tools {
+    width: 250px;
+}
+
+.customer-search {
+    width: 100%;
+    height: 40px;
+
+    padding: 0 12px;
+
+    border: 1px solid #ddd2c5;
+    border-radius: 7px;
+
+    outline: none;
+    background: #fff;
+
+    font-family: inherit;
+    font-size: 12px;
+}
+
+.customer-search:focus {
+    border-color: #3f5e4b;
+}
+
+.customer-search::placeholder {
+    color: #aaa;
+}
+
+
+/* =====================================================
+   TABLE
+   ===================================================== */
+
+.customer-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.customer-table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+}
+
+.customer-table thead {
+    background: #f5e6d3;
+}
+
+.customer-table th {
+    padding: 12px 15px;
+    text-align: left;
+
+    color: #3f5e4b;
+    font-size: 11px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.customer-table td {
+    padding: 13px 15px;
+
+    border-top: 1px solid #eee;
+
+    color: #555;
+    font-size: 12px;
+}
+
+.customer-table tbody tr:hover {
+    background: #fffaf5;
+}
+
+.customer-name {
+    color: #333;
+    font-weight: 600;
+}
+
+.customer-email {
+    color: #777;
+}
+
+
+/* =====================================================
+   STATUS
+   ===================================================== */
+
+.customer-status {
+    display: inline-block;
+
+    padding: 4px 9px;
+
+    border-radius: 12px;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.customer-status.active {
+    background: #e5f2e8;
+    color: #3f5e4b;
+}
+
+.customer-status.inactive {
+    background: #f8e5e5;
+    color: #a64d4d;
+}
+
+
+/* =====================================================
+   ACTIONS
+   ===================================================== */
+
+.customer-actions {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.customer-action-button {
+    padding: 6px 9px;
+
+    border: none;
+    border-radius: 5px;
+
+    font-family: inherit;
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+
+/* VIEW */
+
+.view-button {
+    background: #edf3ef;
+    color: #3f5e4b;
+}
+
+
+/* EDIT */
+
+.edit-button {
+    background: #f5e6d3;
+    color: #80663e;
+}
+
+
+/* REMOVE */
+
+.remove-button {
+    background: #f8e5e5;
+    color: #a64d4d;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+   ===================================================== */
+
+.customer-empty-state {
+    display: none;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.customer-empty-icon {
+    margin-bottom: 10px;
+    font-size: 35px;
+}
+
+.customer-empty-state h3 {
+    margin: 0 0 6px;
+    color: #444;
+    font-size: 16px;
+}
+
+.customer-empty-state p {
+    margin: 0;
+    color: #999;
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   MODAL
+   ===================================================== */
+
+.customer-modal {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 9999;
+}
+
+.customer-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.customer-modal-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 25px;
+
+    background: #fff;
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   MODAL HEADER
+   ===================================================== */
+
+.customer-modal-content h2 {
+    margin: 0;
+    color: #333;
+    font-size: 19px;
+}
+
+.modal-subtitle {
+    margin: 5px 0 20px;
+    color: #888;
+    font-size: 12px;
+}
+
+
+/* CLOSE */
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f5e6d3;
+    color: #555;
+
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   CUSTOMER DETAILS
+   ===================================================== */
+
+.customer-details {
+    margin-top: 15px;
+}
+
+.customer-detail-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.customer-detail-row span {
+    color: #888;
+    font-size: 11px;
+}
+
+.customer-detail-row strong {
+    color: #333;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: right;
+    word-break: break-word;
+}
+
+
+/* =====================================================
+   EDIT FORM
+   ===================================================== */
+
+.customer-edit-form {
+    margin-top: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+
+    color: #555;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 40px;
+
+    padding: 0 10px;
+
+    border: 1px solid #ddd2c5;
+    border-radius: 6px;
+
+    outline: none;
+
+    background: #fff;
+    color: #333;
+
+    font-family: inherit;
+    font-size: 12px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #3f5e4b;
+}
+
+
+/* =====================================================
+   SAVE BUTTON
+   ===================================================== */
+
+.save-customer-button {
+    width: 100%;
+    height: 42px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #3f5e4b;
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .customer-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .customer-card-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .customer-tools {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .customer-management-page {
+        padding: 18px 12px;
+    }
+
+    .customer-page-title h1 {
+        font-size: 22px;
+    }
+
+    .customer-summary {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .customer-summary-card {
+        padding: 15px;
+    }
+
+    .customer-card-header {
+        padding: 15px;
+    }
+
+    .customer-table {
+        min-width: 700px;
+    }
+
+    .customer-modal-content {
+        padding: 20px 15px;
+    }
+
+    .customer-detail-row {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .customer-detail-row strong {
+        text-align: left;
+    }
+}

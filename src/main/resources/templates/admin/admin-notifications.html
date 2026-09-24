@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Admin Notifications | Sulaiha Smart Management System">
+
+    <title>Admin Notifications | Sulaiha</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Common Admin CSS -->
+    <link rel="stylesheet"
+          href="/css/admin-dashboard.css">
+
+    <!-- Admin Notifications CSS -->
+    <link rel="stylesheet"
+          href="/css/admin-notifications.css">
+
+</head>
+
+
+<body>
+
+
+<div class="admin-layout">
+
+
+
+        <!-- =================================================
+     SIDEBAR
+     NEW ADMIN SIDEBAR
+     SETTINGS PAGE
+     ================================================= -->
+
+<aside class="admin-sidebar"
+       id="adminSidebar">
+
+
+    <!-- BRAND -->
+
+    <div class="admin-brand">
+
+        <a href="/admin/dashboard"
+           class="admin-brand-link">
+
+            <img src="/images/sulaiha-logo.jpeg"
+                 alt="Sulaiha Logo"
+                 class="admin-logo">
+
+            <div class="admin-brand-text">
+
+                <h1>SULAIHA</h1>
+
+                <span>
+                    ADMIN PANEL
+                </span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="admin-navigation">
+
+
+        <!-- DASHBOARD -->
+
+        <a href="/admin/dashboard"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">🏠</span>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <!-- CUSTOMERS -->
+
+        <a href="/admin/customers"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">👥</span>
+
+            <span>Customers</span>
+
+        </a>
+
+
+        <!-- PRODUCTS -->
+
+        <a href="/admin/products"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">📦</span>
+
+            <span>Products</span>
+
+        </a>
+
+
+        <!-- ORDERS -->
+
+        <a href="/admin/orders"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">🛒</span>
+
+            <span>Orders</span>
+
+        </a>
+
+
+        <!-- INVENTORY -->
+
+        <a href="/admin/inventory"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">📊</span>
+
+            <span>Inventory</span>
+
+        </a>
+
+
+        <!-- SALES -->
+
+        <a href="/admin/sales"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">💰</span>
+
+            <span>Sales</span>
+
+        </a>
+
+
+        <!-- PAYMENTS -->
+
+        <a href="/admin/payments"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">💳</span>
+
+            <span>Payments</span>
+
+        </a>
+
+
+        <!-- EXPENSES -->
+
+        <a href="/admin/expenses"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">💸</span>
+
+            <span>Expenses</span>
+
+        </a>
+
+
+        <!-- INVOICE -->
+
+        <a href="/admin/invoice"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">📄</span>
+
+            <span>Invoice</span>
+
+        </a>
+
+
+        <!-- BILLING -->
+
+        <a href="/admin/billing"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">🧾</span>
+
+            <span>Billing</span>
+
+        </a>
+
+
+        <!-- REPORTS -->
+
+        <a href="/admin/reports"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">📈</span>
+
+            <span>Reports</span>
+
+        </a>
+
+
+        <!-- SETTINGS -->
+
+        <a href="/admin/settings"
+           class="admin-nav-item ">
+
+            <span class="admin-nav-icon">⚙️</span>
+
+            <span>Settings</span>
+
+        </a>
+
+
+        <!-- NOTIFICATIONS -->
+
+        <a href="/admin/notifications"
+           class="admin-nav-item active">
+
+            <span class="admin-nav-icon">🔔</span>
+
+            <span>Notifications</span>
+
+        </a>
+
+
+        <!-- PROFILE -->
+
+        <a href="/admin/profile"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">👤</span>
+
+            <span>Profile</span>
+
+        </a>
+
+
+    </nav>
+
+
+    <!-- LOGOUT -->
+
+    <div class="admin-sidebar-bottom">
+
+        <button type="button"
+                class="admin-logout-button"
+                id="adminLogoutButton">
+
+            <span class="admin-nav-icon">🚪</span>
+
+            <span>Logout</span>
+
+        </button>
+
+    </div>
+
+
+</aside>
+    <!-- =================================================
+         MAIN
+         ================================================= -->
+
+    <div class="admin-main">
+
+
+        <!-- HEADER -->
+
+        <header class="admin-header">
+
+            <button type="button"
+                    class="sidebar-toggle"
+                    id="sidebarToggle"
+                    aria-label="Open navigation">
+
+                ☰
+
+            </button>
+
+
+            <div class="admin-header-title">
+
+                <span>ADMIN PANEL</span>
+
+                <h2>Notifications</h2>
+
+            </div>
+
+
+            <div class="admin-header-actions">
+
+                <a href="/admin/notifications"
+                   class="admin-header-icon"
+                   title="Notifications"
+                   aria-label="Notifications">
+
+                    🔔
+
+                </a>
+
+
+                <a href="/admin/profile"
+                   class="admin-profile-button">
+
+                    <span class="admin-profile-avatar">
+                        👤
+                    </span>
+
+                    <span class="admin-profile-text">
+
+                        <strong>Admin</strong>
+
+                        <small>Administrator</small>
+
+                    </span>
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             NOTIFICATION CONTENT
+             ================================================= -->
+
+        <main class="admin-notifications-content">
+
+
+            <!-- PAGE INTRO -->
+
+            <section class="notification-intro">
+
+                <span class="notification-small-title">
+                    SULAIHA SMART MANAGEMENT SYSTEM
+                </span>
+
+                <h1>Notifications</h1>
+
+                <p>
+                    Stay updated with important orders,
+                    payments, inventory and customer activities.
+                </p>
+
+            </section>
+
+
+            <!-- =================================================
+                 SUMMARY CARDS
+                 ================================================= -->
+
+            <section class="notification-summary-grid">
+
+
+                <div class="notification-summary-card">
+
+                    <div class="notification-summary-icon">
+                        🔔
+                    </div>
+
+                    <div>
+
+                        <span>Total Notifications</span>
+
+                        <strong id="totalNotifications">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-summary-card">
+
+                    <div class="notification-summary-icon">
+                        📬
+                    </div>
+
+                    <div>
+
+                        <span>Unread</span>
+
+                        <strong id="unreadNotifications">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-summary-card">
+
+                    <div class="notification-summary-icon">
+                        🛒
+                    </div>
+
+                    <div>
+
+                        <span>Orders</span>
+
+                        <strong id="orderNotificationsCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-summary-card">
+
+                    <div class="notification-summary-icon">
+                        📦
+                    </div>
+
+                    <div>
+
+                        <span>Inventory Alerts</span>
+
+                        <strong id="inventoryNotificationsCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 TOOLBAR
+                 ================================================= -->
+
+            <section class="notification-toolbar">
+
+
+                <div class="notification-search-box">
+
+                    <span>🔍</span>
+
+                    <input type="search"
+                           id="notificationSearch"
+                           placeholder="Search notifications..."
+                           aria-label="Search notifications">
+
+                </div>
+
+
+                <div class="notification-filter-box">
+
+                    <label for="notificationFilter">
+                        Filter
+                    </label>
+
+                    <select id="notificationFilter">
+
+                        <option value="all">
+                            All Notifications
+                        </option>
+
+                        <option value="unread">
+                            Unread
+                        </option>
+
+                        <option value="order">
+                            Orders
+                        </option>
+
+                        <option value="payment">
+                            Payments
+                        </option>
+
+                        <option value="inventory">
+                            Inventory
+                        </option>
+
+                        <option value="customer">
+                            Customers
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button type="button"
+                        class="mark-all-read-button"
+                        id="markAllReadButton">
+
+                    ✓ Mark All as Read
+
+                </button>
+
+            </section>
+
+
+            <!-- =================================================
+                 NOTIFICATION LIST
+                 ================================================= -->
+
+            <section class="notification-card">
+
+
+                <div class="notification-card-header">
+
+                    <div>
+
+                        <h2>
+                            Recent Notifications
+                        </h2>
+
+                        <p>
+                            Latest system and business activities.
+                        </p>
+
+                    </div>
+
+                    <span id="notificationCountLabel">
+                        0 notifications
+                    </span>
+
+                </div>
+
+
+                <div id="notificationList"
+                     class="notification-list">
+
+                    <!-- JS will render notifications here -->
+
+                </div>
+
+
+                <!-- EMPTY STATE -->
+
+                <div id="notificationEmptyState"
+                     class="notification-empty-state">
+
+                    <div class="notification-empty-icon">
+                        🔔
+                    </div>
+
+                    <h3>
+                        No Notifications Found
+                    </h3>
+
+                    <p>
+                        Notifications will appear here
+                        when new activities are available.
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- MESSAGE -->
+
+            <div id="notificationMessage"
+                 class="notification-message"
+                 role="status"
+                 aria-live="polite">
+
+            </div>
+
+
+        </main>
+
+
+        <!-- FOOTER -->
+
+        <footer class="admin-footer">
+
+            <p>
+                © 2026 Sulaiha Smart Management System.
+                All Rights Reserved.
+            </p>
+
+        </footer>
+
+
+    </div>
+
+</div>
+
+
+<!-- ADMIN NOTIFICATIONS JS -->
+
+<script src="/js/admin-notifications.js"></script>
+
+</body>
+
+</html>

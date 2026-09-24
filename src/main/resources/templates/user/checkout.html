@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Checkout | Sulaiha Smart Management System">
+
+    <title>Checkout | Sulaiha</title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- COMMON CSS -->
+
+    <link rel="stylesheet"
+          href="/css/home.css">
+
+
+    <!-- CHECKOUT CSS -->
+
+    <link rel="stylesheet"
+          href="/css/checkout.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION BAR
+     ===================================================== -->
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <a href="/home">
+
+            <img src="/images/sulaiha-logo.jpeg"
+                 alt="Sulaiha Logo"
+                 class="logo-image">
+
+        </a>
+
+        <div class="brand-name">
+
+            <h1>SULAIHA</h1>
+
+            <span>
+                SMART MANAGEMENT SYSTEM
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="/home">Home</a>
+
+        <a href="/products">Products</a>
+
+        <a href="/orders">My Orders</a>
+
+        <a href="/cart">Cart</a>
+
+        <a href="/settings">Settings</a>
+
+    </nav>
+
+
+    <div class="nav-icons">
+
+        <a href="/notifications"
+           class="icon-button notification-link"
+           title="Notifications">
+
+            <span class="notification-icon">
+                🔔
+            </span>
+
+        </a>
+
+
+        <button type="button"
+                class="icon-button"
+                title="My Profile"
+                onclick="openProfile()">
+
+            <span class="profile-icon">
+                👤
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     CHECKOUT MAIN
+     ===================================================== -->
+
+<main class="checkout-page">
+
+
+    <section class="checkout-header">
+
+        <div>
+
+            <h2>Checkout</h2>
+
+            <p>
+                Review your order and complete your
+                delivery details.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="checkout-container">
+
+
+        <!-- =================================================
+             LEFT SIDE
+             ================================================= -->
+
+        <div class="checkout-left">
+
+
+            <!-- DELIVERY INFORMATION -->
+
+            <div class="checkout-card">
+
+                <div class="checkout-card-header">
+
+                    <h3>
+                        Delivery Information
+                    </h3>
+
+                    <span>
+                        Your details
+                    </span>
+
+                </div>
+
+
+                <form id="checkoutForm">
+
+
+                    <!-- FULL NAME -->
+
+                    <div class="checkout-form-group">
+
+                        <label for="fullName">
+                            Full Name
+                        </label>
+
+                        <input type="text"
+                               id="fullName"
+                               name="fullName"
+                               placeholder="Your full name"
+                               autocomplete="name"
+                               required>
+
+                    </div>
+
+
+                    <!-- MOBILE + EMAIL -->
+
+                    <div class="checkout-form-row">
+
+                        <div class="checkout-form-group">
+
+                            <label for="mobileNumber">
+                                Mobile Number
+                            </label>
+
+                            <input type="tel"
+                                   id="mobileNumber"
+                                   name="mobileNumber"
+                                   placeholder="10-digit mobile number"
+                                   maxlength="10"
+                                   inputmode="numeric"
+                                   autocomplete="tel"
+                                   required>
+
+                        </div>
+
+
+                        <div class="checkout-form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input type="email"
+                                   id="email"
+                                   name="email"
+                                   placeholder="Your email address"
+                                   autocomplete="email"
+                                   required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="checkout-form-group">
+
+                        <label for="deliveryAddress">
+                            Delivery Address
+                        </label>
+
+                        <textarea id="deliveryAddress"
+                                  name="deliveryAddress"
+                                  rows="4"
+                                  placeholder="Enter your complete delivery address"
+                                  autocomplete="street-address"
+                                  required></textarea>
+
+                    </div>
+
+
+                    <!-- CITY + PINCODE -->
+
+                    <div class="checkout-form-row">
+
+                        <div class="checkout-form-group">
+
+                            <label for="city">
+                                City
+                            </label>
+
+                            <input type="text"
+                                   id="city"
+                                   name="city"
+                                   placeholder="City will appear automatically"
+                                   autocomplete="address-level2"
+                                   readonly
+                                   required>
+
+                        </div>
+
+
+                        <div class="checkout-form-group">
+
+                            <label for="pincode">
+                                Pincode
+                            </label>
+
+                            <input type="text"
+                                   id="pincode"
+                                   name="pincode"
+                                   placeholder="6-digit pincode"
+                                   maxlength="6"
+                                   inputmode="numeric"
+                                   autocomplete="postal-code"
+                                   required>
+
+                            <small id="pincodeMessage"></small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         PAYMENT METHOD
+                         ================================================= -->
+
+                    <div class="checkout-card payment-method-card">
+
+                        <div class="checkout-card-header">
+
+                            <div>
+
+                                <h3>
+                                    Payment Method
+                                </h3>
+
+                                <span>
+                                    Choose your preferred payment option
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PAYMENT OPTIONS -->
+
+                        <div class="payment-options">
+
+
+                            <!-- QR CODE -->
+
+                            <label class="payment-option">
+
+                                <input type="radio"
+                                       name="paymentMethod"
+                                       value="QR">
+
+                                <div class="payment-option-content">
+
+                                    <div class="payment-option-title">
+
+                                        <span class="payment-option-icon">
+                                            📱
+                                        </span>
+
+                                        <strong>
+                                            QR Code Scanner
+                                        </strong>
+
+                                    </div>
+
+                                    <span>
+                                        Scan the QR code and complete your payment.
+                                    </span>
+
+                                </div>
+
+                            </label>
+
+
+                            <!-- CARD -->
+
+                            <label class="payment-option">
+
+                                <input type="radio"
+                                       name="paymentMethod"
+                                       value="CARD">
+
+                                <div class="payment-option-content">
+
+                                    <div class="payment-option-title">
+
+                                        <span class="payment-option-icon">
+                                            💳
+                                        </span>
+
+                                        <strong>
+                                            Debit / Credit Card
+                                        </strong>
+
+                                    </div>
+
+                                    <span>
+                                        Pay securely using your debit or credit card.
+                                    </span>
+
+                                </div>
+
+                            </label>
+
+
+                            <!-- ONLINE PAYMENT -->
+
+                            <label class="payment-option">
+
+                                <input type="radio"
+                                       name="paymentMethod"
+                                       value="ONLINE">
+
+                                <div class="payment-option-content">
+
+                                    <div class="payment-option-title">
+
+                                        <span class="payment-option-icon">
+                                            💰
+                                        </span>
+
+                                        <strong>
+                                            Online Payment
+                                        </strong>
+
+                                    </div>
+
+                                    <span>
+                                        Complete your payment through online payment.
+                                    </span>
+
+                                </div>
+
+                            </label>
+
+
+                            <!-- =================================================
+                                 NET BANKING
+                                 IMPORTANT: VALUE = NET_BANKING
+                                 ================================================= -->
+
+                            <label class="payment-option">
+
+                                <input type="radio"
+                                       name="paymentMethod"
+                                       value="NETBANKING">
+
+                                <div class="payment-option-content">
+
+                                    <div class="payment-option-title">
+
+                                        <span class="payment-option-icon">
+                                            🏦
+                                        </span>
+
+                                        <strong>
+                                            Net Banking
+                                        </strong>
+
+                                    </div>
+
+                                    <span>
+                                        Pay directly through your bank account.
+                                    </span>
+
+                                </div>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- SELECTED PAYMENT STATUS -->
+
+                        <div id="selectedPaymentDisplay"
+                             class="selected-payment-display">
+
+                            <span>
+                                No payment method selected
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         PLACE ORDER
+                         ================================================= -->
+
+                    <div class="checkout-place-order">
+
+                        <button type="submit"
+                                id="placeOrderButton"
+                                class="place-order-button">
+
+                            Place Order
+
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             RIGHT SIDE - ORDER SUMMARY
+             ================================================= -->
+
+        <aside class="checkout-right">
+
+            <div class="checkout-card order-summary-card">
+
+                <div class="checkout-card-header">
+
+                    <h3>
+                        Order Summary
+                    </h3>
+
+                    <span id="checkoutItemCount">
+                        0 items
+                    </span>
+
+                </div>
+
+
+                <div id="checkoutItems"
+                     class="checkout-items">
+
+                </div>
+
+
+<div class="checkout-summary">
+
+    <div class="summary-row">
+
+        <span>
+            Total Area
+        </span>
+
+        <strong id="checkoutTotalArea">
+            0 sq.ft
+        </strong>
+
+    </div>
+
+    <div class="summary-row">
+
+        <span>
+            Subtotal
+        </span>
+
+        <strong id="checkoutSubtotal">
+            ₹0
+        </strong>
+
+    </div>
+
+    <div class="summary-row">
+
+        <span>
+            Delivery
+        </span>
+
+        <strong id="checkoutDelivery">
+            FREE
+        </strong>
+
+    </div>
+
+    <div class="summary-divider">
+    </div>
+
+    <div class="summary-total">
+
+        <span>
+            Total Amount
+        </span>
+
+        <strong id="checkoutTotal">
+            ₹0
+        </strong>
+
+    </div>
+
+</div>
+
+
+                <a href="/cart"
+                   class="back-to-cart">
+
+                    ← Back to Cart
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+    </section>
+
+</main>
+<!-- =====================================================
+     PAYMENT PROCESS MODAL
+     ===================================================== -->
+
+<div id="paymentModal"
+     class="payment-modal"
+     aria-hidden="true">
+
+
+    <!-- MODAL OVERLAY -->
+
+    <div class="payment-modal-overlay"
+         id="paymentModalOverlay">
+    </div>
+
+
+    <!-- MODAL CONTENT -->
+
+    <div class="payment-modal-content"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="paymentModalTitle">
+
+
+        <!-- =================================================
+             MODAL HEADER
+             ================================================= -->
+
+        <div class="payment-modal-header">
+
+            <div>
+
+                <span class="payment-modal-small-title">
+                    SECURE PAYMENT
+                </span>
+
+                <h2 id="paymentModalTitle">
+                    Complete Payment
+                </h2>
+
+            </div>
+
+
+            <button type="button"
+                    id="closePaymentModal"
+                    class="payment-modal-close"
+                    aria-label="Close payment window">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             PAYMENT STEP CONTAINER
+             ================================================= -->
+
+        <div id="paymentStepContainer"
+             class="payment-step-container">
+
+
+            <!-- =================================================
+                 DEFAULT STATE
+                 ================================================= -->
+
+            <div id="paymentInitialState"
+                 class="payment-initial-state">
+
+                <div class="payment-processing-icon">
+                    💳
+                </div>
+
+                <h3>
+                    Select a payment method
+                </h3>
+
+                <p>
+                    Choose one of the payment methods
+                    to continue.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 QR CODE PAYMENT
+                 ================================================= -->
+
+            <div id="qrPaymentForm"
+                 class="payment-form-panel"
+                 hidden>
+
+                <div class="payment-method-large-icon">
+                    📱
+                </div>
+
+                <h3>
+                    QR Code Payment
+                </h3>
+
+                <p>
+                    Scan the QR code using your
+                    preferred payment app.
+                </p>
+
+
+                <!-- QR CODE -->
+
+                <div class="qr-code-box">
+
+                    <img src="/images/qr-code.png"
+                         alt="Sulaiha Payment QR Code"
+                         class="payment-qr-image">
+
+                </div>
+
+
+                <p class="payment-instruction">
+
+                    Open Google Pay, PhonePe,
+                    Paytm or another UPI app
+                    and scan this QR code.
+
+                </p>
+
+
+                <!-- UPI ID -->
+
+                <div class="payment-form-group">
+
+                    <label for="qrUpiId">
+                        UPI ID
+                    </label>
+
+                    <input type="text"
+                           id="qrUpiId"
+                           placeholder="example@upi"
+                           autocomplete="off">
+
+                </div>
+
+
+                <button type="button"
+                        class="payment-continue-button"
+                        id="qrPaymentButton">
+
+                    I Have Completed Payment
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 CARD PAYMENT
+                 ================================================= -->
+
+            <div id="cardPaymentForm"
+                 class="payment-form-panel"
+                 hidden>
+
+                <div class="payment-method-large-icon">
+                    💳
+                </div>
+
+                <h3>
+                    Debit / Credit Card
+                </h3>
+
+                <p>
+                    Enter your card details to continue.
+                </p>
+
+
+                <!-- CARD NUMBER -->
+
+                <div class="payment-form-group">
+
+                    <label for="cardNumber">
+                        Card Number
+                    </label>
+
+                    <input type="text"
+                           id="cardNumber"
+                           placeholder="1234 5678 9012 3456"
+                           maxlength="19"
+                           inputmode="numeric"
+                           autocomplete="cc-number">
+
+                </div>
+
+
+                <!-- CARD HOLDER -->
+
+                <div class="payment-form-group">
+
+                    <label for="cardHolderName">
+                        Card Holder Name
+                    </label>
+
+                    <input type="text"
+                           id="cardHolderName"
+                           placeholder="Name on card"
+                           autocomplete="cc-name">
+
+                </div>
+
+
+                <!-- EXPIRY + CVV -->
+
+                <div class="payment-form-row">
+
+                    <div class="payment-form-group">
+
+                        <label for="cardExpiry">
+                            Expiry Date
+                        </label>
+
+                        <input type="text"
+                               id="cardExpiry"
+                               placeholder="MM/YY"
+                               maxlength="5"
+                               inputmode="numeric"
+                               autocomplete="cc-exp">
+
+                    </div>
+
+
+                    <div class="payment-form-group">
+
+                        <label for="cardCvv">
+                            CVV
+                        </label>
+
+                        <input type="password"
+                               id="cardCvv"
+                               placeholder="•••"
+                               maxlength="3"
+                               inputmode="numeric"
+                               autocomplete="cc-csc">
+
+                    </div>
+
+                </div>
+
+
+                <button type="button"
+                        class="payment-continue-button"
+                        id="cardPaymentButton">
+
+                    Pay Securely
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 ONLINE PAYMENT
+                 ================================================= -->
+
+            <div id="onlinePaymentForm"
+                 class="payment-form-panel"
+                 hidden>
+
+                <div class="payment-method-large-icon">
+                    💰
+                </div>
+
+                <h3>
+                    Online Payment
+                </h3>
+
+                <p>
+                    Enter your payment details to continue.
+                </p>
+
+
+                <!-- PAYMENT ID -->
+
+                <div class="payment-form-group">
+
+                    <label for="onlinePaymentId">
+                        Payment ID / UPI ID
+                    </label>
+
+                    <input type="text"
+                           id="onlinePaymentId"
+                           placeholder="Enter payment ID"
+                           autocomplete="off">
+
+                </div>
+
+
+                <!-- MOBILE NUMBER -->
+
+                <div class="payment-form-group">
+
+                    <label for="onlinePaymentMobile">
+                        Mobile Number
+                    </label>
+
+                    <input type="tel"
+                           id="onlinePaymentMobile"
+                           placeholder="10-digit mobile number"
+                           maxlength="10"
+                           inputmode="numeric"
+                           autocomplete="tel">
+
+                </div>
+
+
+                <button type="button"
+                        class="payment-continue-button"
+                        id="onlinePaymentButton">
+
+                    Continue Payment
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 NET BANKING
+                 ================================================= -->
+
+            <div id="netBankingPaymentForm"
+                 class="payment-form-panel"
+                 hidden>
+
+                <div class="payment-method-large-icon">
+                    🏦
+                </div>
+
+                <h3>
+                    Net Banking
+                </h3>
+
+                <p>
+                    Select your bank and continue securely.
+                </p>
+
+
+                <!-- BANK -->
+
+                <div class="payment-form-group">
+
+                    <label for="bankName">
+                        Select Bank
+                    </label>
+
+                    <select id="bankName">
+
+                        <option value="">
+                            Select your bank
+                        </option>
+
+                        <option value="SBI">
+                            State Bank of India
+                        </option>
+
+                        <option value="HDFC">
+                            HDFC Bank
+                        </option>
+
+                        <option value="ICICI">
+                            ICICI Bank
+                        </option>
+
+                        <option value="AXIS">
+                            Axis Bank
+                        </option>
+
+                        <option value="KVB">
+                            Karur Vysya Bank
+                        </option>
+
+                        <option value="OTHER">
+                            Other Bank
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ACCOUNT HOLDER NAME -->
+
+                <div class="payment-form-group">
+
+                    <label for="bankAccountName">
+                        Account Holder Name
+                    </label>
+
+                    <input type="text"
+                           id="bankAccountName"
+                           placeholder="Account holder name"
+                           autocomplete="name">
+
+                </div>
+
+
+                <button type="button"
+                        class="payment-continue-button"
+                        id="netBankingPaymentButton">
+
+                    Continue to Bank
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 PAYMENT SUCCESS
+                 ================================================= -->
+
+            <div id="paymentSuccessState"
+                 class="payment-success-state"
+                 hidden>
+
+                <div class="payment-success-icon">
+                    ✓
+                </div>
+
+                <h2>
+                    Payment Successful
+                </h2>
+
+                <p>
+                    Your payment has been successfully completed.
+                </p>
+
+
+                <!-- ONLY PAYMENT METHOD IS DISPLAYED -->
+
+                <div class="payment-success-details">
+
+                    <span>
+                        Payment Method
+                    </span>
+
+                    <strong id="successfulPaymentMethod">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <button type="button"
+                        id="paymentSuccessDone"
+                        class="payment-success-button">
+
+                    Done
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+
+        <!-- ABOUT -->
+
+        <div class="footer-column footer-about">
+
+            <div class="footer-logo">
+
+                <img src="/images/sulaiha-logo.jpeg"
+                     alt="Sulaiha Logo">
+
+                <div>
+
+                    <h2>
+                        SULAIHA
+                    </h2>
+
+                    <span>
+                        SMART MANAGEMENT SYSTEM
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p>
+                Your trusted platform for premium
+                marbles, granite, tiles and building
+                materials.
+            </p>
+
+        </div>
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="/home">
+                Home
+            </a>
+
+            <a href="/products">
+                Products
+            </a>
+
+            <a href="/orders">
+                My Orders
+            </a>
+
+            <a href="/cart">
+                Cart
+            </a>
+
+            <a href="/settings">
+                Settings
+            </a>
+
+        </div>
+
+
+        <!-- INFORMATION -->
+
+        <div class="footer-column">
+
+            <h3>
+                Information
+            </h3>
+
+            <a href="/about">
+                About Us
+            </a>
+
+            <a href="/contact">
+                Contact Us
+            </a>
+
+            <a href="/privacy">
+                Privacy Policy
+            </a>
+
+            <a href="/terms">
+                Terms &amp; Conditions
+            </a>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column contact-column">
+
+            <h3>
+                Contact Us
+            </h3>
+
+            <p>
+                📍 Ramanathapuram, Tamil Nadu
+            </p>
+
+            <p>
+                📞 +91 XXXXX XXXXX
+            </p>
+
+            <p>
+                ✉️ support@sulaiha.com
+            </p>
+
+
+            <div class="social-icons">
+
+                <a href="#"
+                   title="Instagram">
+                    ◎
+                </a>
+
+                <a href="#"
+                   title="Facebook">
+                    f
+                </a>
+
+                <a href="#"
+                   title="WhatsApp">
+                    ◉
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Sulaiha Smart Management System.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Designed for smarter building material management.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script src="/js/script.js"></script>
+
+<script src="/js/checkout.js"></script>
+
+
+</body>
+
+</html>

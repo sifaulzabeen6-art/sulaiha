@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Explore premium granite products from Sulaiha Smart Management System">
+
+    <title>Granite | Sulaiha Smart Management System</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- Common Home CSS -->
+
+    <link rel="stylesheet"
+          href="/css/home.css">
+
+
+    <!-- Granite CSS -->
+
+    <link rel="stylesheet"
+          href="/css/granite.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION BAR
+     ===================================================== -->
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <a href="/home">
+
+            <img src="/images/sulaiha-logo.jpeg"
+                 alt="Sulaiha Logo"
+                 class="logo-image">
+
+        </a>
+
+        <div class="brand-name">
+
+            <h1>SULAIHA</h1>
+
+            <span>
+                SMART MANAGEMENT SYSTEM
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="/home">
+            Home
+        </a>
+
+        <a href="/products"
+           class="active">
+            Products
+        </a>
+
+        <a href="/orders">
+            My Orders
+        </a>
+
+        <a href="/cart">
+            Cart
+        </a>
+
+        <a href="/settings">
+            Settings
+        </a>
+
+    </nav>
+
+
+    <div class="nav-icons">
+
+        <a href="/notifications"
+   class="icon-button notification-link"
+   title="Notifications">
+
+    <span class="notification-icon">
+        🔔
+    </span>
+
+</a>
+
+
+        <button type="button"
+                class="icon-button"
+                title="My Profile"
+                onclick="openProfile()">
+
+            <span class="profile-icon">
+                👤
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+     ===================================================== -->
+
+<main class="granite-page">
+
+
+    <!-- =================================================
+         PAGE HEADER
+         ================================================= -->
+
+    <section class="granite-header">
+
+        <div class="granite-heading">
+
+            <p>
+                PREMIUM GRANITE COLLECTION
+            </p>
+
+            <h2>
+                Granite
+            </h2>
+
+            <span>
+                Explore our complete collection of
+                premium granite for elegant and
+                durable building projects.
+            </span>
+
+        </div>
+
+
+        <div class="breadcrumb">
+
+            <a href="/home">
+                Home
+            </a>
+
+            <span>/</span>
+
+            <span>
+                Granite
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SEARCH AND FILTER
+         ================================================= -->
+
+    <section class="granite-product-tools">
+
+
+        <!-- SEARCH -->
+
+        <div class="granite-search-box">
+
+            <span class="granite-search-icon">
+                🔍
+            </span>
+
+            <input
+                type="text"
+                id="graniteSearch"
+                placeholder="Search granite products..."
+                autocomplete="off">
+
+        </div>
+
+
+        <!-- FILTERS -->
+
+        <div class="granite-filter-area">
+
+
+            <!-- CATEGORY -->
+
+            <div class="granite-filter-group">
+
+                <label for="graniteCategoryFilter">
+                    Category
+                </label>
+
+                <select id="graniteCategoryFilter">
+
+                    <option value="all">
+                        Granite
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- PRICE -->
+
+            <div class="granite-filter-group">
+
+                <label for="granitePriceFilter">
+                    Price
+                </label>
+
+                <select id="granitePriceFilter">
+
+                    <option value="all">
+                        All Prices
+                    </option>
+
+                    <option value="low">
+                        Below ₹1,000
+                    </option>
+
+                    <option value="medium">
+                        ₹1,000 - ₹2,500
+                    </option>
+
+                    <option value="high">
+                        Above ₹2,500
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- AVAILABILITY -->
+
+            <div class="granite-filter-group">
+
+                <label for="graniteAvailabilityFilter">
+                    Availability
+                </label>
+
+                <select id="graniteAvailabilityFilter">
+
+                    <option value="all">
+                        All
+                    </option>
+
+                    <option value="available">
+                        In Stock
+                    </option>
+
+                    <option value="unavailable">
+                        Out of Stock
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- CLEAR FILTER -->
+
+            <button type="button"
+                    class="granite-clear-filter-button"
+                    id="clearGraniteFilters">
+
+                Clear Filters
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PRODUCT COUNT
+         ================================================= -->
+
+    <div class="granite-result-info">
+
+        <p>
+
+            Showing
+
+            <strong id="graniteProductCount">
+                0
+            </strong>
+
+            products
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         GRANITE PRODUCT GRID
+         ================================================= -->
+
+    <section class="granite-product-grid"
+             id="graniteProductGrid">
+
+
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         NO PRODUCTS MESSAGE
+         ================================================= -->
+
+    <div class="granite-no-products"
+         id="graniteNoProducts">
+
+        <div class="granite-no-products-icon">
+            🔍
+        </div>
+
+        <h3>
+            No Granite Products Found
+        </h3>
+
+        <p>
+            Sorry, no granite products match your
+            search or selected filters.
+        </p>
+
+    </div>
+
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="/home">
+                Home
+            </a>
+
+            <a href="/products">
+                Products
+            </a>
+
+            <a href="/orders">
+                My Orders
+            </a>
+
+            <a href="/cart">
+                Cart
+            </a>
+
+            <a href="/settings">
+                Settings
+            </a>
+
+        </div>
+
+
+
+        <!-- INFORMATION -->
+
+        <div class="footer-column">
+
+            <h3>
+                Information
+            </h3>
+
+            <a href="/about">
+                About Us
+            </a>
+
+            <a href="/contact">
+                Contact Us
+            </a>
+
+            <a href="/privacy">
+                Privacy Policy
+            </a>
+
+            <a href="/terms">
+                Terms &amp; Conditions
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column contact-column">
+
+            <h3>
+                Contact Us
+            </h3>
+
+            <p>
+                📍 Ramanathapuram, Tamil Nadu
+            </p>
+
+            <p>
+                📞 +91 XXXXX XXXXX
+            </p>
+
+            <p>
+                ✉️ support@sulaiha.com
+            </p>
+
+
+            <div class="social-icons">
+
+                <a href="#" title="Instagram">
+                    ◎
+                </a>
+
+                <a href="#" title="Facebook">
+                    f
+                </a>
+
+                <a href="#" title="WhatsApp">
+                    ◉
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Sulaiha Smart Management System.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Designed for smarter building material
+            management.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script src="/js/script.js"></script>
+
+<script src="/js/granite.js"></script>
+<script src="/js/product-details.js"></script>
+
+
+</body>
+
+</html>

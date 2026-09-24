@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Invoice Management | Sulaiha Smart Management System">
+
+    <title>Invoice | Sulaiha</title>
+
+
+    <!-- =================================================
+         GOOGLE FONT
+         ================================================= -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =================================================
+         COMMON ADMIN CSS
+         ================================================= -->
+
+    <link rel="stylesheet"
+          href="/css/admin-dashboard.css">
+
+
+    <!-- =================================================
+         INVOICE CSS
+         ================================================= -->
+
+    <link rel="stylesheet"
+          href="/css/invoice.css">
+
+</head>
+
+
+<body>
+
+
+<div class="admin-layout">
+
+
+    <!-- =================================================
+         ADMIN SIDEBAR
+         ================================================= -->
+
+    <aside class="admin-sidebar"
+           id="adminSidebar">
+
+
+        <!-- BRAND -->
+
+        <div class="admin-brand">
+
+            <a href="/admin/dashboard"
+               class="admin-brand-link">
+
+                <img src="/images/sulaiha-logo.jpeg"
+                     alt="Sulaiha Logo"
+                     class="admin-logo">
+
+                <div class="admin-brand-text">
+
+                    <h1>SULAIHA</h1>
+
+                    <span>
+                        ADMIN PANEL
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             NAVIGATION
+             ================================================= -->
+
+        <nav class="admin-navigation">
+
+
+            <!-- DASHBOARD -->
+
+            <a href="/admin/dashboard"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">🏠</span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- CUSTOMERS -->
+
+            <a href="/admin/customers"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">👥</span>
+
+                <span>
+                    Customers
+                </span>
+
+            </a>
+
+
+            <!-- PRODUCTS -->
+
+            <a href="/admin/products"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">📦</span>
+
+                <span>
+                    Products
+                </span>
+
+            </a>
+
+
+            <!-- ORDERS -->
+
+            <a href="/admin/orders"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">🛒</span>
+
+                <span>
+                    Orders
+                </span>
+
+            </a>
+
+
+            <!-- INVENTORY -->
+
+            <a href="/admin/inventory"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">📊</span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <!-- SALES -->
+
+            <a href="/admin/sales"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">💰</span>
+
+                <span>
+                    Sales
+                </span>
+
+            </a>
+
+
+            <!-- PAYMENTS -->
+
+            <a href="/admin/payments"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">💳</span>
+
+                <span>
+                    Payments
+                </span>
+
+            </a>
+
+
+            <!-- =================================================
+                 INVOICE - ACTIVE
+                 ================================================= -->
+
+            <a href="/admin/invoice"
+               class="admin-nav-item active">
+
+                <span class="admin-nav-icon">🧾</span>
+
+                <span>
+                    Invoice
+                </span>
+
+            </a>
+
+
+            <!-- BILLING -->
+
+            <a href="/admin/billing"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">💵</span>
+
+                <span>
+                    Billing
+                </span>
+
+            </a>
+
+
+            <!-- EXPENSES -->
+
+            <a href="/admin/expenses"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">💸</span>
+
+                <span>
+                    Expenses
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS & ANALYTICS -->
+
+            <a href="/admin/reports"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">📈</span>
+
+                <span>
+                    Reports & Analytics
+                </span>
+
+            </a>
+
+
+            <!-- SETTINGS -->
+
+            <a href="/admin/settings"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">⚙️</span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <a href="/admin/notifications"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">🔔</span>
+
+                <span>
+                    Notifications
+                </span>
+
+            </a>
+
+
+            <!-- PROFILE -->
+
+            <a href="/admin/profile"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">👤</span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- =================================================
+             LOGOUT
+             ================================================= -->
+
+        <div class="admin-sidebar-bottom">
+
+            <button type="button"
+                    class="admin-logout-button"
+                    id="adminLogoutButton">
+
+                <span class="admin-nav-icon">
+                    🚪
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =================================================
+         MAIN AREA
+         ================================================= -->
+
+    <div class="admin-main">
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header class="admin-header">
+
+
+            <!-- SIDEBAR TOGGLE -->
+
+            <button type="button"
+                    class="sidebar-toggle"
+                    id="sidebarToggle"
+                    aria-label="Toggle Sidebar">
+
+                ☰
+
+            </button>
+
+
+            <!-- HEADER TITLE -->
+
+            <div class="admin-header-title">
+
+                <span>
+                    ADMIN PANEL
+                </span>
+
+                <h2>
+                    Invoice
+                </h2>
+
+            </div>
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="admin-header-actions">
+
+
+                <!-- NOTIFICATIONS -->
+
+                <a href="/admin/notifications"
+                   class="admin-header-icon"
+                   title="Notifications"
+                   aria-label="Notifications">
+
+                    🔔
+
+                </a>
+
+
+                <!-- ADMIN PROFILE -->
+
+                <a href="/admin/profile"
+                   class="admin-profile-button">
+
+                    <span class="admin-profile-avatar">
+                        👤
+                    </span>
+
+                    <span class="admin-profile-text">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <small>
+                            Administrator
+                        </small>
+
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+        </header>
+
+
+        <!-- =================================================
+             INVOICE CONTENT START
+             ================================================= -->
+
+        <main class="invoice-content">
+
+
+            <!--
+                PART 2 CONTINUES HERE
+            -->
+                <!-- =================================================
+                 INVOICE SUMMARY CARDS
+                 ================================================= -->
+
+            <section class="invoice-summary-grid">
+
+
+                <!-- TOTAL INVOICES -->
+
+                <div class="invoice-summary-card">
+
+                    <div class="invoice-summary-icon">
+                        🧾
+                    </div>
+
+                    <div class="invoice-summary-content">
+
+                        <span>
+                            Total Invoices
+                        </span>
+
+                        <strong id="totalInvoices">
+                            0
+                        </strong>
+
+                        <small>
+                            Total invoice records
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOTAL INVOICE AMOUNT -->
+
+                <div class="invoice-summary-card">
+
+                    <div class="invoice-summary-icon">
+                        💰
+                    </div>
+
+                    <div class="invoice-summary-content">
+
+                        <span>
+                            Total Invoice Amount
+                        </span>
+
+                        <strong id="totalInvoiceAmount">
+                            ₹0.00
+                        </strong>
+
+                        <small>
+                            Overall invoice amount
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PAID INVOICES -->
+
+                <div class="invoice-summary-card">
+
+                    <div class="invoice-summary-icon">
+                        ✅
+                    </div>
+
+                    <div class="invoice-summary-content">
+
+                        <span>
+                            Paid Invoices
+                        </span>
+
+                        <strong id="totalPaidInvoices">
+                            0
+                        </strong>
+
+                        <small>
+                            Successfully paid invoices
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PENDING INVOICES -->
+
+                <div class="invoice-summary-card">
+
+                    <div class="invoice-summary-icon">
+                        ⏳
+                    </div>
+
+                    <div class="invoice-summary-content">
+
+                        <span>
+                            Pending Invoices
+                        </span>
+
+                        <strong id="totalPendingInvoices">
+                            0
+                        </strong>
+
+                        <small>
+                            Payment pending invoices
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 INVOICE MANAGEMENT SECTION
+                 ================================================= -->
+
+            <section class="invoice-section">
+
+
+                <div class="invoice-card">
+
+
+                    <!-- =================================================
+                         CARD HEADER
+                         ================================================= -->
+
+                    <div class="invoice-card-header">
+
+
+                        <div>
+
+                            <span class="invoice-small-title">
+                                INVOICE MANAGEMENT
+                            </span>
+
+                            <h2>
+                                Invoice Records
+                            </h2>
+
+                            <p>
+                                Search, filter and manage customer invoices.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- =================================================
+                         SEARCH & FILTERS
+                         ================================================= -->
+
+                    <div class="invoice-filter-section">
+
+
+                        <!-- SEARCH -->
+
+                        <div class="invoice-filter-group invoice-search-group">
+
+                            <label for="invoiceSearch">
+                                Search Invoice
+                            </label>
+
+                            <input
+                                type="search"
+                                id="invoiceSearch"
+                                class="invoice-search-input"
+                                placeholder="Search by invoice ID, order ID or customer..."
+                                autocomplete="off">
+
+                        </div>
+
+
+                        <!-- FROM DATE -->
+
+                        <div class="invoice-filter-group">
+
+                            <label for="invoiceDateFrom">
+                                From Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="invoiceDateFrom"
+                                class="invoice-date-filter">
+
+                        </div>
+
+
+                        <!-- TO DATE -->
+
+                        <div class="invoice-filter-group">
+
+                            <label for="invoiceDateTo">
+                                To Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="invoiceDateTo"
+                                class="invoice-date-filter">
+
+                        </div>
+
+
+                        <!-- STATUS -->
+
+                        <div class="invoice-filter-group">
+
+                            <label for="invoiceStatusFilter">
+                                Payment Status
+                            </label>
+
+                            <select
+                                id="invoiceStatusFilter"
+                                class="invoice-status-filter">
+
+                                <option value="ALL">
+                                    All Status
+                                </option>
+
+                                <option value="PAID">
+                                    Paid
+                                </option>
+
+                                <option value="PENDING">
+                                    Pending
+                                </option>
+
+                                <option value="CANCELLED">
+                                    Cancelled
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- APPLY FILTER -->
+
+                        <button
+                            type="button"
+                            id="applyInvoiceFilter"
+                            class="invoice-filter-button">
+
+                            Apply Filter
+
+                        </button>
+
+
+                        <!-- RESET FILTER -->
+
+                        <button
+                            type="button"
+                            id="resetInvoiceFilter"
+                            class="invoice-reset-button">
+
+                            Reset
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 INVOICE TABLE SECTION
+                 ================================================= -->
+
+            <section class="invoice-section">
+
+
+                <div class="invoice-card">
+
+
+                    <!-- TABLE HEADER -->
+
+                    <div class="invoice-card-header">
+
+                        <div>
+
+                            <span class="invoice-small-title">
+                                INVOICE RECORDS
+                            </span>
+
+                            <h2>
+                                Invoice Table
+                            </h2>
+
+                            <p>
+                                View, edit, delete and print invoice information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!--
+                        PART 3 CONTINUES HERE
+                    -->
+                        <!-- =================================================
+                         INVOICE TABLE WRAPPER
+                         ================================================= -->
+
+                    <div class="invoice-table-wrapper">
+
+                        <table class="invoice-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Invoice ID
+                                    </th>
+
+                                    <th>
+                                        Order ID
+                                    </th>
+
+                                    <th>
+                                        Customer Name
+                                    </th>
+
+                                    <th>
+                                        Amount
+                                    </th>
+
+                                    <th>
+                                        Payment Status
+                                    </th>
+
+                                    <th>
+                                        Invoice Date
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="invoiceTableBody">
+
+                                <!--
+                                    Invoice records will be loaded
+                                    dynamically from the database
+                                    through the backend API.
+                                -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         INVOICE EMPTY STATE
+                         ================================================= -->
+
+                    <div id="invoiceEmptyState"
+                         class="invoice-empty-state">
+
+                        <div class="invoice-empty-icon">
+                            🧾
+                        </div>
+
+                        <h3>
+                            No Invoices Available
+                        </h3>
+
+                        <p>
+                            Invoice information will appear here
+                            when invoice records are available.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 VIEW INVOICE MODAL
+                 ================================================= -->
+
+            <div id="viewInvoiceModal"
+                 class="invoice-modal"
+                 aria-hidden="true">
+
+                <div class="invoice-modal-content">
+
+
+                    <!-- CLOSE -->
+
+                    <button type="button"
+                            class="invoice-modal-close"
+                            onclick="closeInvoiceModal('viewInvoiceModal')"
+                            aria-label="Close">
+
+                        ×
+
+                    </button>
+
+
+                    <!-- TITLE -->
+
+                    <h2>
+                        Invoice Details
+                    </h2>
+
+
+                    <!-- DETAILS -->
+
+                    <div id="invoiceDetails"
+                         class="invoice-details">
+
+                        <!--
+                            Invoice details will be inserted
+                            dynamically using JavaScript.
+                        -->
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 EDIT INVOICE MODAL
+                 ================================================= -->
+
+            <div id="editInvoiceModal"
+                 class="invoice-modal"
+                 aria-hidden="true">
+
+                <div class="invoice-modal-content">
+
+
+                    <!-- CLOSE -->
+
+                    <button type="button"
+                            class="invoice-modal-close"
+                            onclick="closeInvoiceModal('editInvoiceModal')"
+                            aria-label="Close">
+
+                        ×
+
+                    </button>
+
+
+                    <!-- TITLE -->
+
+                    <h2>
+                        Edit Invoice
+                    </h2>
+
+
+                    <!-- FORM -->
+
+                    <form id="editInvoiceForm"
+                          class="invoice-edit-form">
+
+
+                        <!-- INVOICE ID -->
+
+                        <input type="hidden"
+                               id="editInvoiceId">
+
+
+                        <!-- CUSTOMER NAME -->
+
+                        <div class="invoice-form-group">
+
+                            <label for="editInvoiceCustomer">
+                                Customer Name
+                            </label>
+
+                            <input type="text"
+                                   id="editInvoiceCustomer"
+                                   name="customerName"
+                                   required>
+
+                        </div>
+
+
+                        <!-- ORDER ID -->
+
+                        <div class="invoice-form-group">
+
+                            <label for="editInvoiceOrderId">
+                                Order ID
+                            </label>
+
+                            <input type="text"
+                                   id="editInvoiceOrderId"
+                                   name="orderId"
+                                   required>
+
+                        </div>
+
+
+                        <!-- AMOUNT -->
+
+                        <div class="invoice-form-group">
+
+                            <label for="editInvoiceAmount">
+                                Amount
+                            </label>
+
+                            <input type="number"
+                                   id="editInvoiceAmount"
+                                   name="amount"
+                                   min="0"
+                                   step="0.01"
+                                   required>
+
+                        </div>
+
+
+                        <!-- PAYMENT STATUS -->
+
+                        <div class="invoice-form-group">
+
+                            <label for="editInvoiceStatus">
+                                Payment Status
+                            </label>
+
+                            <select id="editInvoiceStatus"
+                                    name="paymentStatus"
+                                    required>
+
+                                <option value="PAID">
+                                    Paid
+                                </option>
+
+                                <option value="PENDING">
+                                    Pending
+                                </option>
+
+                                <option value="CANCELLED">
+                                    Cancelled
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- INVOICE DATE -->
+
+                        <div class="invoice-form-group">
+
+                            <label for="editInvoiceDate">
+                                Invoice Date
+                            </label>
+
+                            <input type="date"
+                                   id="editInvoiceDate"
+                                   name="invoiceDate"
+                                   required>
+
+                        </div>
+
+
+                        <!-- UPDATE BUTTON -->
+
+                        <button type="submit"
+                                class="invoice-update-button">
+
+                            Update Invoice
+
+                        </button>
+
+
+                    </form>
+
+
+                </div>
+
+            </div>
+            <!-- =================================================
+                 DELETE INVOICE MODAL
+                 ================================================= -->
+
+            <div id="deleteInvoiceModal"
+                 class="invoice-modal"
+                 aria-hidden="true">
+
+                <div class="invoice-modal-content invoice-delete-modal">
+
+
+                    <!-- CLOSE -->
+
+                    <button type="button"
+                            class="invoice-modal-close"
+                            onclick="closeInvoiceModal('deleteInvoiceModal')"
+                            aria-label="Close">
+
+                        ×
+
+                    </button>
+
+
+                    <!-- DELETE ICON -->
+
+                    <div class="invoice-delete-icon">
+                        🗑️
+                    </div>
+
+
+                    <!-- TITLE -->
+
+                    <h2>
+                        Delete Invoice
+                    </h2>
+
+
+                    <!-- MESSAGE -->
+
+                    <p>
+                        Are you sure you want to delete this invoice?
+                        This action cannot be undone.
+                    </p>
+
+
+                    <!-- INVOICE ID -->
+
+                    <input type="hidden"
+                           id="deleteInvoiceId">
+
+
+                    <!-- ACTIONS -->
+
+                    <div class="invoice-delete-actions">
+
+
+                        <!-- CANCEL -->
+
+                        <button type="button"
+                                class="invoice-cancel-button"
+                                onclick="closeInvoiceModal('deleteInvoiceModal')">
+
+                            Cancel
+
+                        </button>
+
+
+                        <!-- DELETE -->
+
+                        <button type="button"
+                                id="confirmDeleteInvoiceButton"
+                                class="invoice-delete-button">
+
+                            Delete Invoice
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PRINT INVOICE MODAL
+                 ================================================= -->
+
+            <div id="printInvoiceModal"
+                 class="invoice-modal"
+                 aria-hidden="true">
+
+                <div class="invoice-modal-content invoice-print-modal">
+
+
+                    <!-- CLOSE -->
+
+                    <button type="button"
+                            class="invoice-modal-close"
+                            onclick="closeInvoiceModal('printInvoiceModal')"
+                            aria-label="Close">
+
+                        ×
+
+                    </button>
+
+
+                    <!-- PRINT PREVIEW -->
+
+                    <div id="printInvoiceContent"
+                         class="print-invoice-content">
+
+                        <!--
+                            Printable invoice content will be
+                            generated dynamically from database data.
+                        -->
+
+                    </div>
+
+
+                    <!-- PRINT BUTTON -->
+
+                    <div class="invoice-print-actions">
+
+                        <button type="button"
+                                id="printInvoiceButton"
+                                class="invoice-print-button">
+
+                            🖨️ Print Invoice
+
+                        </button>
+
+
+                        <button type="button"
+                                class="invoice-cancel-button"
+                                onclick="closeInvoiceModal('printInvoiceModal')">
+
+                            Close
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+        </main>
+
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="admin-footer">
+
+            <p>
+                © 2026 Sulaiha Smart Management System.
+                All Rights Reserved.
+            </p>
+
+        </footer>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     INVOICE JAVASCRIPT
+     ===================================================== -->
+
+<script src="/js/invoice.js"></script>
+
+
+</body>
+
+</html>

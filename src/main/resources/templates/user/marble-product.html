@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Marble Products | Sulaiha Smart Management System</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Home CSS -->
+    <link rel="stylesheet"
+          href="/css/home.css">
+
+    <!-- Marble Products CSS -->
+    <link rel="stylesheet"
+          href="/css/marble-products.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION BAR
+     ===================================================== -->
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <a href="/home">
+
+            <img src="/images/sulaiha-logo.jpeg"
+                 alt="Sulaiha Logo"
+                 class="logo-image">
+
+        </a>
+
+        <div class="brand-name">
+
+            <h1>SULAIHA</h1>
+
+            <span>SMART MANAGEMENT SYSTEM</span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="/home">
+            Home
+        </a>
+
+        <a href="/products"
+           class="active">
+            Products
+        </a>
+
+        <a href="/orders">
+            My Orders
+        </a>
+
+        <a href="/cart">
+            Cart
+        </a>
+
+        <a href="/settings">
+            Settings
+        </a>
+
+    </nav>
+
+
+    <div class="nav-icons">
+
+      <a href="/notifications"
+   class="icon-button notification-link"
+   title="Notifications">
+
+    <span class="notification-icon">
+        🔔
+    </span>
+
+</a>
+
+
+        <button type="button"
+                class="icon-button"
+                title="My Profile"
+                onclick="openProfile()">
+
+            <span class="profile-icon">
+                👤
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+     ===================================================== -->
+
+<main class="marble-products-page">
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="products-header">
+
+        <div class="products-heading">
+
+            <p>
+                PREMIUM MARBLE COLLECTION
+            </p>
+
+            <h2>
+                Marble Products
+            </h2>
+
+            <span>
+                Explore our premium marble collection
+                for elegant interiors and lasting spaces.
+            </span>
+
+        </div>
+
+
+        <div class="breadcrumb">
+
+            <a href="/home">
+                Home
+            </a>
+
+            <span> / </span>
+
+            <span>
+                Marble Products
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SEARCH AND FILTER
+         ================================================= -->
+
+    <section class="product-tools">
+
+
+        <!-- Search -->
+
+        <div class="search-box">
+
+            <span class="search-icon">
+                🔍
+            </span>
+
+            <input
+                type="text"
+                id="marbleSearch"
+                placeholder="Search marble products..."
+                autocomplete="off">
+
+        </div>
+
+
+        <!-- Filters -->
+
+        <div class="filter-area">
+
+
+            <!-- Type -->
+
+            <div class="filter-group">
+
+                <label for="marbleType">
+                    Type
+                </label>
+
+                <select id="marbleType">
+
+                    <option value="all">
+                        All Types
+                    </option>
+
+                    <option value="green">
+                        Green Marble
+                    </option>
+
+                    <option value="white">
+                        White Marble
+                    </option>
+
+                    <option value="black">
+                        Black Marble
+                    </option>
+
+                    <option value="pink">
+                        Pink Marble
+                    </option>
+
+                    <option value="brown">
+                        Brown Marble
+                    </option>
+
+                    <option value="onyx">
+                        Onyx Marble
+                    </option>
+
+                    <option value="italian">
+                        Italian Marble
+                    </option>
+
+                    <option value="makrana">
+                        Makrana Marble
+                    </option>
+
+                    <option value="rainforest">
+                        Rainforest Green Marble
+                    </option>
+
+                    <option value="dharmitara">
+                        Dharmitara Marble
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Price -->
+
+            <div class="filter-group">
+
+                <label for="marblePrice">
+                    Price
+                </label>
+
+                <select id="marblePrice">
+
+                    <option value="all">
+                        All Prices
+                    </option>
+
+                    <option value="low">
+                        Below ₹1,000
+                    </option>
+
+                    <option value="medium">
+                        ₹1,000 - ₹2,500
+                    </option>
+
+                    <option value="high">
+                        Above ₹2,500
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Availability -->
+
+            <div class="filter-group">
+
+                <label for="marbleAvailability">
+                    Availability
+                </label>
+
+                <select id="marbleAvailability">
+
+                    <option value="all">
+                        All
+                    </option>
+
+                    <option value="available">
+                        In Stock
+                    </option>
+
+                    <option value="unavailable">
+                        Out of Stock
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Clear -->
+
+            <button
+                type="button"
+                class="clear-filter-button"
+                id="clearMarbleFilters">
+
+                Clear Filters
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PRODUCT COUNT -->
+
+    <div class="product-result-info">
+
+        <p>
+
+            Showing
+
+            <strong id="marbleProductCount">
+                0
+            </strong>
+
+            marble products
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PRODUCT GRID
+         ================================================= -->
+
+    <section class="marble-product-grid"
+             id="marbleProductGrid">
+
+
+        
+
+
+    </section>
+
+
+    <!-- =================================================
+         NO PRODUCTS MESSAGE
+         ================================================= -->
+
+    <div class="no-products"
+         id="noMarbleProducts">
+
+        <div class="no-products-icon">
+            🔍
+        </div>
+
+        <h3>
+            No Marble Products Found
+        </h3>
+
+        <p>
+            Try changing your search or filter options.
+        </p>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     SAME AS HOME PAGE
+     ===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+
+        <!-- ABOUT -->
+
+        <div class="footer-column footer-about">
+
+            <div class="footer-logo">
+
+                <img src="/images/sulaiha-logo.jpeg"
+                     alt="Sulaiha Logo">
+
+                <div>
+
+                    <h2>SULAIHA</h2>
+
+                    <span>
+                        SMART MANAGEMENT SYSTEM
+                    </span>
+
+                </div>
+
+            </div>
+
+            <p>
+                Your trusted platform for premium
+                marbles, granite, tiles and building
+                materials.
+            </p>
+
+        </div>
+
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="/home">
+                Home
+            </a>
+
+            <a href="/products">
+                Products
+            </a>
+
+            <a href="/orders">
+                My Orders
+            </a>
+
+            <a href="/cart">
+                Cart
+            </a>
+
+            <a href="/settings">
+                Settings
+            </a>
+
+        </div>
+
+
+
+        <!-- INFORMATION -->
+
+        <div class="footer-column">
+
+            <h3>
+                Information
+            </h3>
+
+            <a href="/about">
+                About Us
+            </a>
+
+            <a href="/contact">
+                Contact Us
+            </a>
+
+            <a href="/privacy">
+                Privacy Policy
+            </a>
+
+            <a href="/terms">
+                Terms & Conditions
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column contact-column">
+
+            <h3>
+                Contact Us
+            </h3>
+
+            <p>
+                📍 Ramanathapuram, Tamil Nadu
+            </p>
+
+            <p>
+                📞 +91 XXXXX XXXXX
+            </p>
+
+            <p>
+                ✉️ support@sulaiha.com
+            </p>
+
+
+            <div class="social-icons">
+
+                <a href="#"
+                   title="Instagram">
+                    ◎
+                </a>
+
+                <a href="#"
+                   title="Facebook">
+                    f
+                </a>
+
+                <a href="#"
+                   title="WhatsApp">
+                    ◉
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Sulaiha Smart Management System.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Designed for smarter building material management.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script src="/js/script.js"></script>
+
+<script src="/js/marble-products.js"></script>
+
+
+
+</body>
+
+</html>

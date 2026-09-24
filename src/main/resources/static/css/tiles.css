@@ -1,0 +1,584 @@
+/* =====================================================
+   SULAIHA SMART MANAGEMENT SYSTEM
+   TILES PRODUCTS PAGE
+   ===================================================== */
+
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.tiles-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff8f2;
+}
+
+
+/* =====================================================
+   TILES HEADER
+   ===================================================== */
+
+.tiles-header {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 55px 0 35px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+}
+
+.tiles-heading p {
+    margin: 0 0 8px;
+
+    color: #c8a96b;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.tiles-heading h2 {
+    margin: 0 0 12px;
+
+    color: #3f5e4b;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.tiles-heading span {
+    display: block;
+
+    max-width: 650px;
+
+    color: #666;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   BREADCRUMB
+   ===================================================== */
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    white-space: nowrap;
+
+    color: #777;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: #3f5e4b;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.breadcrumb a:hover {
+    color: #c8a96b;
+}
+
+
+/* =====================================================
+   SEARCH AND FILTER SECTION
+   ===================================================== */
+
+.tiles-product-tools {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto 25px;
+    padding: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #eadfd5;
+    border-radius: 14px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =====================================================
+   SEARCH BOX
+   ===================================================== */
+
+.tiles-search-box {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    background: #fff;
+
+    overflow: hidden;
+}
+
+.tiles-search-icon {
+    padding-left: 16px;
+    font-size: 18px;
+}
+
+.tiles-search-box input {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: none;
+    outline: none;
+
+    color: #333;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+
+    background: transparent;
+}
+
+.tiles-search-box input::placeholder {
+    color: #999;
+}
+
+
+/* =====================================================
+   FILTER AREA
+   ===================================================== */
+
+.tiles-filter-area {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =====================================================
+   FILTER GROUP
+   ===================================================== */
+
+.tiles-filter-group {
+    flex: 1;
+    min-width: 180px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.tiles-filter-group label {
+    color: #3f5e4b;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.tiles-filter-group select {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    outline: none;
+
+    color: #555;
+    background: #fff;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.tiles-filter-group select:focus {
+    border-color: #3f5e4b;
+}
+
+
+/* =====================================================
+   CLEAR FILTER BUTTON
+   ===================================================== */
+
+.tiles-clear-filter-button {
+    min-height: 42px;
+
+    padding: 10px 18px;
+
+    border: 1px solid #3f5e4b;
+    border-radius: 8px;
+
+    background: #3f5e4b;
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.tiles-clear-filter-button:hover {
+    background: #c8a96b;
+    border-color: #c8a96b;
+}
+
+
+/* =====================================================
+   RESULT INFO
+   ===================================================== */
+
+.tiles-result-info {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto 20px;
+}
+
+.tiles-result-info p {
+    margin: 0;
+
+    color: #777;
+    font-size: 14px;
+}
+
+.tiles-result-info strong {
+    color: #3f5e4b;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   TILES PRODUCT GRID
+   ===================================================== */
+
+.tiles-product-grid {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto 50px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* =====================================================
+   PRODUCT CARD
+   ===================================================== */
+
+.tiles-product-card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #eadfd5;
+    border-radius: 14px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.tiles-product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =====================================================
+   PRODUCT IMAGE
+   ===================================================== */
+
+.tiles-product-image {
+    position: relative;
+
+    width: 100%;
+    height: 240px;
+
+    overflow: hidden;
+
+    background: #f5f0eb;
+}
+
+.tiles-product-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+.tiles-product-card:hover
+.tiles-product-image img {
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   STOCK BADGE
+   ===================================================== */
+
+.tiles-stock-badge {
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #3f5e4b;
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   PRODUCT INFORMATION
+   ===================================================== */
+
+.tiles-product-info {
+    padding: 20px;
+}
+
+.tiles-product-category {
+    color: #c8a96b;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.tiles-product-info h3 {
+    margin: 8px 0 8px;
+
+    color: #333;
+
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.tiles-product-info p {
+    min-height: 48px;
+
+    margin: 0 0 18px;
+
+    color: #777;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   PRODUCT BOTTOM
+   ===================================================== */
+
+.tiles-product-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+.tiles-product-bottom strong {
+    color: #3f5e4b;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   VIEW DETAILS BUTTON
+   ===================================================== */
+
+.tiles-view-button {
+    padding: 9px 14px;
+
+    border: 1px solid #3f5e4b;
+    border-radius: 7px;
+
+    background: #3f5e4b;
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.tiles-view-button:hover {
+    background: #c8a96b;
+    border-color: #c8a96b;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   NO PRODUCTS MESSAGE
+   ===================================================== */
+
+.tiles-no-products {
+    display: none;
+
+    width: 90%;
+    max-width: 600px;
+
+    margin: 30px auto 60px;
+
+    padding: 45px 25px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #eadfd5;
+    border-radius: 14px;
+}
+
+.tiles-no-products-icon {
+    margin-bottom: 12px;
+
+    font-size: 35px;
+}
+
+.tiles-no-products h3 {
+    margin: 0 0 8px;
+
+    color: #3f5e4b;
+
+    font-size: 20px;
+}
+
+.tiles-no-products p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   RESPONSIVE - TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .tiles-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tiles-product-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .tiles-header {
+        width: 92%;
+        padding: 35px 0 25px;
+    }
+
+    .tiles-heading h2 {
+        font-size: 30px;
+    }
+
+    .tiles-heading span {
+        font-size: 13px;
+    }
+
+    .breadcrumb {
+        font-size: 12px;
+    }
+
+    .tiles-product-tools {
+        width: 92%;
+        padding: 16px;
+    }
+
+    .tiles-filter-area {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tiles-filter-group {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .tiles-clear-filter-button {
+        width: 100%;
+    }
+
+    .tiles-result-info {
+        width: 92%;
+    }
+
+    .tiles-product-grid {
+        width: 92%;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .tiles-product-image {
+        height: 220px;
+    }
+
+    .tiles-product-bottom {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .tiles-view-button {
+        width: 100%;
+    }
+
+}

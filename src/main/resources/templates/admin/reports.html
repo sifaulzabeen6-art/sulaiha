@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Reports & Analytics | Sulaiha Smart Management System">
+
+    <title>Reports & Analytics | Sulaiha</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Common Admin CSS -->
+    <link rel="stylesheet"
+          href="/css/admin-dashboard.css">
+
+    <!-- Reports CSS -->
+    <link rel="stylesheet"
+          href="/css/reports.css">
+
+</head>
+
+
+<body>
+
+
+<div class="admin-layout">
+
+
+    <!-- =================================================
+         ADMIN SIDEBAR
+         ================================================= -->
+
+    <aside class="admin-sidebar"
+           id="adminSidebar">
+
+
+        <!-- BRAND -->
+
+        <div class="admin-brand">
+
+            <a href="/admin/dashboard"
+               class="admin-brand-link">
+
+                <img src="/images/sulaiha-logo.jpeg"
+                     alt="Sulaiha Logo"
+                     class="admin-logo">
+
+                <div class="admin-brand-text">
+
+                    <h1>SULAIHA</h1>
+
+                    <span>
+                        ADMIN PANEL
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             NAVIGATION
+             ================================================= -->
+
+        <nav class="admin-navigation">
+
+
+            <!-- DASHBOARD -->
+
+            <a href="/admin/dashboard"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    🏠
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- CUSTOMERS -->
+
+            <a href="/admin/customers"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    👥
+                </span>
+
+                <span>
+                    Customers
+                </span>
+
+            </a>
+
+
+            <!-- PRODUCTS -->
+
+            <a href="/admin/products"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    📦
+                </span>
+
+                <span>
+                    Products
+                </span>
+
+            </a>
+
+
+            <!-- ORDERS -->
+
+            <a href="/admin/orders"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    🛒
+                </span>
+
+                <span>
+                    Orders
+                </span>
+
+            </a>
+
+
+            <!-- INVENTORY -->
+
+            <a href="/admin/inventory"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    📊
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <!-- SALES -->
+
+            <a href="/admin/sales"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    💰
+                </span>
+
+                <span>
+                    Sales
+                </span>
+
+            </a>
+
+
+            <!-- PAYMENTS -->
+
+            <a href="/admin/payments"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    💳
+                </span>
+
+                <span>
+                    Payments
+                </span>
+
+            </a>
+
+
+            <!-- INVOICE -->
+
+            <a href="/admin/invoice"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    📄
+                </span>
+
+                <span>
+                    Invoice
+                </span>
+
+            </a>
+
+
+            <!-- BILLING -->
+
+            <a href="/admin/billing"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    🧾
+                </span>
+
+                <span>
+                    Billing
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+
+            <a href="/admin/reports"
+               class="admin-nav-item active">
+
+                <span class="admin-nav-icon">
+                    📈
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <!-- SETTINGS -->
+
+            <a href="/admin/settings"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    ⚙️
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <a href="/admin/notifications"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    🔔
+                </span>
+
+                <span>
+                    Notifications
+                </span>
+
+            </a>
+
+
+            <!-- PROFILE -->
+
+            <a href="/admin/profile"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    👤
+                </span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- LOGOUT -->
+
+        <div class="admin-sidebar-bottom">
+
+            <button type="button"
+                    class="admin-logout-button"
+                    id="adminLogoutButton">
+
+                <span class="admin-nav-icon">
+                    🚪
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =================================================
+         MAIN AREA
+         ================================================= -->
+
+    <div class="admin-main">
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header class="admin-header">
+
+
+            <button type="button"
+                    class="sidebar-toggle"
+                    id="sidebarToggle"
+                    aria-label="Open navigation">
+
+                ☰
+
+            </button>
+
+
+            <div class="admin-header-title">
+
+                <span>
+                    ADMIN PANEL
+                </span>
+
+                <h2>
+                    Reports &amp; Analytics
+                </h2>
+
+            </div>
+
+
+            <div class="admin-header-actions">
+
+
+                <a href="/admin/notifications"
+                   class="admin-header-icon"
+                   title="Notifications"
+                   aria-label="Notifications">
+
+                    🔔
+
+                </a>
+
+
+                <a href="/admin/profile"
+                   class="admin-profile-button">
+
+                    <span class="admin-profile-avatar">
+                        👤
+                    </span>
+
+                    <span class="admin-profile-text">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <small>
+                            Administrator
+                        </small>
+
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+        </header>
+
+
+        <!-- =================================================
+             REPORTS CONTENT
+             ================================================= -->
+
+        <main class="reports-content">
+            <!-- =================================================
+                 REPORT SUMMARY CARDS
+                 ================================================= -->
+
+            <section class="reports-summary-grid">
+
+
+                <!-- TOTAL SALES -->
+
+                <div class="reports-summary-card">
+
+                    <div class="reports-summary-icon">
+                        💰
+                    </div>
+
+                    <div class="reports-summary-content">
+
+                        <span>
+                            Total Sales
+                        </span>
+
+                        <strong id="totalSales">
+                            ₹0.00
+                        </strong>
+
+                        <small>
+                            Total sales amount
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOTAL ORDERS -->
+
+                <div class="reports-summary-card">
+
+                    <div class="reports-summary-icon">
+                        🛒
+                    </div>
+
+                    <div class="reports-summary-content">
+
+                        <span>
+                            Total Orders
+                        </span>
+
+                        <strong id="totalOrders">
+                            0
+                        </strong>
+
+                        <small>
+                            Total orders
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOTAL CUSTOMERS -->
+
+                <div class="reports-summary-card">
+
+                    <div class="reports-summary-icon">
+                        👥
+                    </div>
+
+                    <div class="reports-summary-content">
+
+                        <span>
+                            Total Customers
+                        </span>
+
+                        <strong id="totalCustomers">
+                            0
+                        </strong>
+
+                        <small>
+                            Registered customers
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOTAL PRODUCTS -->
+
+                <div class="reports-summary-card">
+
+                    <div class="reports-summary-icon">
+                        📦
+                    </div>
+
+                    <div class="reports-summary-content">
+
+                        <span>
+                            Total Products
+                        </span>
+
+                        <strong id="totalProducts">
+                            0
+                        </strong>
+
+                        <small>
+                            Available products
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PAID AMOUNT -->
+
+                <div class="reports-summary-card">
+
+                    <div class="reports-summary-icon">
+                        ✅
+                    </div>
+
+                    <div class="reports-summary-content">
+
+                        <span>
+                            Paid Amount
+                        </span>
+
+                        <strong id="totalPaidAmount">
+                            ₹0.00
+                        </strong>
+
+                        <small>
+                            Successfully paid
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PENDING AMOUNT -->
+
+                <div class="reports-summary-card">
+
+                    <div class="reports-summary-icon">
+                        ⏳
+                    </div>
+
+                    <div class="reports-summary-content">
+
+                        <span>
+                            Pending Amount
+                        </span>
+
+                        <strong id="totalPendingAmount">
+                            ₹0.00
+                        </strong>
+
+                        <small>
+                            Payment pending
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 REPORT FILTER SECTION
+                 ================================================= -->
+
+            <section class="reports-section">
+
+                <div class="reports-card">
+
+
+                    <div class="reports-card-header">
+
+                        <div>
+
+                            <span class="reports-small-title">
+                                REPORT FILTERS
+                            </span>
+
+                            <h2>
+                                Analyze Business Performance
+                            </h2>
+
+                            <p>
+                                Select a date range to view
+                                real-time business analytics.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reports-filter-section">
+
+
+                        <!-- FROM DATE -->
+
+                        <div class="reports-filter-group">
+
+                            <label for="reportDateFrom">
+                                From Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="reportDateFrom"
+                                class="reports-date-filter">
+
+                        </div>
+
+
+                        <!-- TO DATE -->
+
+                        <div class="reports-filter-group">
+
+                            <label for="reportDateTo">
+                                To Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="reportDateTo"
+                                class="reports-date-filter">
+
+                        </div>
+
+
+                        <!-- REPORT PERIOD -->
+
+                        <div class="reports-filter-group">
+
+                            <label for="reportPeriodFilter">
+                                Report Period
+                            </label>
+
+                            <select
+                                id="reportPeriodFilter"
+                                class="reports-period-filter">
+
+                                <option value="ALL">
+                                    All Time
+                                </option>
+
+                                <option value="TODAY">
+                                    Today
+                                </option>
+
+                                <option value="WEEK">
+                                    This Week
+                                </option>
+
+                                <option value="MONTH">
+                                    This Month
+                                </option>
+
+                                <option value="YEAR">
+                                    This Year
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- APPLY FILTER -->
+
+                        <button
+                            type="button"
+                            id="applyReportFilter"
+                            class="reports-filter-button">
+
+                            Apply Filter
+
+                        </button>
+
+
+                        <!-- RESET FILTER -->
+
+                        <button
+                            type="button"
+                            id="resetReportFilter"
+                            class="reports-reset-button">
+
+                            Reset
+
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SALES ANALYTICS
+                 ================================================= -->
+
+            <section class="reports-charts-grid">
+
+
+                <!-- SALES PERFORMANCE - BAR CHART -->
+
+                <div class="reports-section">
+
+                    <div class="reports-card reports-chart-card">
+
+
+                        <div class="reports-card-header">
+
+                            <div>
+
+                                <span class="reports-small-title">
+                                    SALES ANALYTICS
+                                </span>
+
+                                <h2>
+                                    Sales Performance
+                                </h2>
+
+                                <p>
+                                    Sales performance based on
+                                    actual database records.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="reports-chart-container">
+
+                            <canvas
+                                id="salesBarChart"
+                                aria-label="Sales Performance Bar Chart">
+                            </canvas>
+
+                        </div>
+
+
+                        <div
+                            id="salesBarChartEmpty"
+                            class="reports-chart-empty">
+
+                            <div class="reports-empty-icon">
+                                📊
+                            </div>
+
+                            <h3>
+                                No Sales Data Available
+                            </h3>
+
+                            <p>
+                                Sales data will appear here
+                                when records are available.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- SALES TREND - LINE GRAPH -->
+
+                <div class="reports-section">
+
+                    <div class="reports-card reports-chart-card">
+
+
+                        <div class="reports-card-header">
+
+                            <div>
+
+                                <span class="reports-small-title">
+                                    SALES TREND
+                                </span>
+
+                                <h2>
+                                    Sales Growth
+                                </h2>
+
+                                <p>
+                                    Track sales movement over time
+                                    using real database data.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="reports-chart-container">
+
+                            <canvas
+                                id="salesLineChart"
+                                aria-label="Sales Growth Line Chart">
+                            </canvas>
+
+                        </div>
+
+
+                        <div
+                            id="salesLineChartEmpty"
+                            class="reports-chart-empty">
+
+                            <div class="reports-empty-icon">
+                                📈
+                            </div>
+
+                            <h3>
+                                No Sales Trend Available
+                            </h3>
+
+                            <p>
+                                Sales trend will appear here
+                                when date-based records are available.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </section>
+            <!-- =================================================
+                 PROFIT & LOSS GRAPH
+                 ================================================= -->
+
+            <section class="reports-section">
+
+                <div class="reports-card reports-chart-card">
+
+
+                    <div class="reports-card-header">
+
+                        <div>
+
+                            <span class="reports-small-title">
+                                PROFIT &amp; LOSS ANALYTICS
+                            </span>
+
+                            <h2>
+                                Profit &amp; Loss
+                            </h2>
+
+                            <p>
+                                Compare actual sales and expenses
+                                to understand business profit or loss.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROFIT & LOSS GRAPH -->
+
+                    <div class="reports-chart-container">
+
+                        <canvas
+                            id="profitLossChart"
+                            aria-label="Profit and Loss Graph">
+                        </canvas>
+
+                    </div>
+
+
+                    <!-- EMPTY STATE -->
+
+                    <div
+                        id="profitLossChartEmpty"
+                        class="reports-chart-empty">
+
+                        <div class="reports-empty-icon">
+                            📈
+                        </div>
+
+                        <h3>
+                            No Profit &amp; Loss Data Available
+                        </h3>
+
+                        <p>
+                            Profit and loss data will appear here
+                            when sales and expense records are available.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 BUSINESS INSIGHTS
+                 ================================================= -->
+
+            <section class="reports-section">
+
+                <div class="reports-card">
+
+
+                    <div class="reports-card-header">
+
+                        <div>
+
+                            <span class="reports-small-title">
+                                BUSINESS INSIGHTS
+                            </span>
+
+                            <h2>
+                                Performance Overview
+                            </h2>
+
+                            <p>
+                                Key insights based on the selected
+                                report period.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reports-insights-grid">
+
+
+                        <!-- SALES INSIGHT -->
+
+                        <div class="reports-insight-card">
+
+                            <span>
+                                Sales Performance
+                            </span>
+
+                            <strong id="salesPerformanceInsight">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <!-- ORDER INSIGHT -->
+
+                        <div class="reports-insight-card">
+
+                            <span>
+                                Order Performance
+                            </span>
+
+                            <strong id="orderPerformanceInsight">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <!-- PAYMENT INSIGHT -->
+
+                        <div class="reports-insight-card">
+
+                            <span>
+                                Payment Performance
+                            </span>
+
+                            <strong id="paymentPerformanceInsight">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <!-- PENDING INSIGHT -->
+
+                        <div class="reports-insight-card">
+
+                            <span>
+                                Pending Amount
+                            </span>
+
+                            <strong id="pendingAmountInsight">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 LOADING STATE
+                 ================================================= -->
+
+            <div
+                id="reportsLoading"
+                class="reports-loading"
+                style="display: none;">
+
+                <div class="reports-loading-spinner">
+                </div>
+
+                <p>
+                    Loading report data...
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 ERROR STATE
+                 ================================================= -->
+
+            <div
+                id="reportsError"
+                class="reports-error"
+                hidden>
+
+                <div class="reports-error-icon">
+                    ⚠️
+                </div>
+
+                <h3>
+                    Unable to Load Reports
+                </h3>
+
+                <p id="reportsErrorMessage">
+                    Unable to load report data.
+                </p>
+
+                <button
+                    type="button"
+                    id="retryReportsButton"
+                    class="reports-retry-button">
+
+                    Try Again
+
+                </button>
+
+            </div>
+
+
+        </main>
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="admin-footer">
+
+            <p>
+                © 2026 Sulaiha Smart Management System.
+                All Rights Reserved.
+            </p>
+
+        </footer>
+
+
+    </div>
+
+</div>
+
+
+<!-- =================================================
+     REPORTS JAVASCRIPT
+     ================================================= -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/js/reports.js"></script>
+
+
+</body>
+
+</html>

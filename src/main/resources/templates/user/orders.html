@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="My Orders | Sulaiha Smart Management System">
+
+    <title>My Orders | Sulaiha</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- Common CSS -->
+
+    <link rel="stylesheet"
+          href="/css/home.css">
+
+
+    <!-- Orders CSS -->
+
+    <link rel="stylesheet"
+          href="/css/orders.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION BAR
+     ===================================================== -->
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <a href="/home">
+
+            <img src="/images/sulaiha-logo.jpeg"
+                 alt="Sulaiha Logo"
+                 class="logo-image">
+
+        </a>
+
+
+        <div class="brand-name">
+
+            <h1>SULAIHA</h1>
+
+            <span>
+                SMART MANAGEMENT SYSTEM
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION LINKS -->
+
+    <nav class="nav-links">
+
+        <a href="/home">
+            Home
+        </a>
+
+        <a href="/products">
+            Products
+        </a>
+
+        <a href="/orders"
+           class="active">
+            My Orders
+        </a>
+
+        <a href="/cart">
+            Cart
+        </a>
+
+        <a href="/settings">
+            Settings
+        </a>
+
+    </nav>
+
+
+    <!-- NAVIGATION ICONS -->
+
+    <div class="nav-icons">
+
+      <a href="/notifications"
+   class="icon-button notification-link"
+   title="Notifications">
+
+    <span class="notification-icon">
+        🔔
+    </span>
+
+</a>
+
+
+        <button type="button"
+                class="icon-button"
+                title="My Profile"
+                onclick="openProfile()">
+
+            <span class="profile-icon">
+                👤
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+     ===================================================== -->
+
+<main class="orders-page">
+
+
+    <!-- =================================================
+         BREADCRUMB
+         ================================================= -->
+
+    <div class="orders-breadcrumb">
+
+        <a href="/home">
+            Home
+        </a>
+
+        <span>/</span>
+
+        <span>
+            My Orders
+        </span>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PAGE HEADER
+         ================================================= -->
+
+    <section class="orders-header">
+
+        <div>
+
+            <span class="orders-small-title">
+                YOUR ORDERS
+            </span>
+
+            <h2>
+                My Orders
+            </h2>
+
+            <p>
+                Track and manage your orders from Sulaiha.
+            </p>
+
+        </div>
+
+
+        <a href="/products"
+           class="shop-products-button">
+
+            Continue Shopping
+
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ORDER FILTERS
+         ================================================= -->
+
+    <section class="orders-filter-section">
+
+        <div class="order-filter-buttons">
+
+            <button type="button"
+                    class="order-filter-button active"
+                    data-filter="all">
+
+                All Orders
+
+            </button>
+
+
+            <button type="button"
+                    class="order-filter-button"
+                    data-filter="confirmed">
+
+                Confirmed
+
+            </button>
+
+
+            <button type="button"
+                    class="order-filter-button"
+                    data-filter="pending">
+
+                Pending
+
+            </button>
+
+
+            <button type="button"
+                    class="order-filter-button"
+                    data-filter="delivered">
+
+                Delivered
+
+            </button>
+
+
+            <button type="button"
+                    class="order-filter-button"
+                    data-filter="cancelled">
+
+                Cancelled
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ORDERS CONTAINER
+         ================================================= -->
+
+    <section class="orders-container">
+
+
+        <!-- =================================================
+             ORDER LIST
+             ================================================= -->
+
+        <div class="orders-list-section">
+
+            <div class="orders-list-header">
+
+                <h3>
+                    Order History
+                </h3>
+
+                <span id="orderCount">
+                    0 Orders
+                </span>
+
+            </div>
+
+
+            <!--
+
+                Orders will be loaded dynamically
+                using orders.js.
+
+                Later Spring Boot will provide
+                actual orders from PostgreSQL.
+
+            -->
+
+            <div id="ordersList"
+                 class="orders-list">
+
+                <!-- Orders will appear here -->
+
+            </div>
+
+
+            <!-- =================================================
+                 EMPTY ORDERS MESSAGE
+                 ================================================= -->
+
+            <div id="emptyOrdersMessage"
+                 class="empty-orders-message"
+                 style="display: none;">
+
+                <div class="empty-orders-icon">
+                    📦
+                </div>
+
+
+                <h3>
+                    No Orders Yet
+                </h3>
+
+
+                <p>
+                    You haven't placed any orders yet.
+                    Start shopping and your orders will appear here.
+                </p>
+
+
+                <a href="/products"
+                   class="start-shopping-button">
+
+                    Start Shopping
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ORDER INFORMATION PANEL
+             ================================================= -->
+
+        <aside class="orders-info-panel">
+
+
+            <div class="orders-info-card">
+
+                <div class="info-icon">
+                    🚚
+                </div>
+
+
+                <h3>
+                    Track Your Orders
+                </h3>
+
+
+                <p>
+                    Easily check your order status and
+                    delivery information from one place.
+                </p>
+
+            </div>
+
+
+
+            <div class="orders-info-card">
+
+                <div class="info-icon">
+                    🔄
+                </div>
+
+
+                <h3>
+                    Easy Reordering
+                </h3>
+
+
+                <p>
+                    Quickly find your previous products
+                    when you need them again.
+                </p>
+
+            </div>
+
+
+
+            <div class="orders-info-card">
+
+                <div class="info-icon">
+                    🛡️
+                </div>
+
+
+                <h3>
+                    Secure Orders
+                </h3>
+
+
+                <p>
+                    Your order information is securely
+                    managed by the Sulaiha system.
+                </p>
+
+            </div>
+
+        </aside>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+
+        <!-- ABOUT -->
+
+        <div class="footer-column footer-about">
+
+            <div class="footer-logo">
+
+                <img src="/images/sulaiha-logo.jpeg"
+                     alt="Sulaiha Logo">
+
+
+                <div>
+
+                    <h2>
+                        SULAIHA
+                    </h2>
+
+                    <span>
+                        SMART MANAGEMENT SYSTEM
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p>
+                Your trusted platform for premium
+                marbles, granite, tiles and building
+                materials.
+            </p>
+
+        </div>
+
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="/home">
+                Home
+            </a>
+
+            <a href="/products">
+                Products
+            </a>
+
+            <a href="/orders">
+                My Orders
+            </a>
+
+            <a href="/cart">
+                Cart
+            </a>
+
+            <a href="/settings">
+                Settings
+            </a>
+
+        </div>
+
+
+
+        <!-- INFORMATION -->
+
+        <div class="footer-column">
+
+            <h3>
+                Information
+            </h3>
+
+            <a href="/about">
+                About Us
+            </a>
+
+            <a href="/contact">
+                Contact Us
+            </a>
+
+            <a href="/privacy">
+                Privacy Policy
+            </a>
+
+            <a href="/terms">
+                Terms &amp; Conditions
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column contact-column">
+
+            <h3>
+                Contact Us
+            </h3>
+
+            <p>
+                📍 Ramanathapuram, Tamil Nadu
+            </p>
+
+            <p>
+                📞 +91 XXXXX XXXXX
+            </p>
+
+            <p>
+                ✉️ support@sulaiha.com
+            </p>
+
+
+            <div class="social-icons">
+
+                <a href="#"
+                   title="Instagram">
+                    ◎
+                </a>
+
+                <a href="#"
+                   title="Facebook">
+                    f
+                </a>
+
+                <a href="#"
+                   title="WhatsApp">
+                    ◉
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Sulaiha Smart Management System.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Designed for smarter building material management.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     COMMON JAVASCRIPT
+     ===================================================== -->
+
+<script src="/js/script.js"></script>
+
+
+<!-- =====================================================
+     ORDERS JAVASCRIPT
+     ===================================================== -->
+
+<script src="/js/orders.js"></script>
+
+
+</body>
+
+</html>

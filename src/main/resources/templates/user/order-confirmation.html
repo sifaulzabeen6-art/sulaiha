@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Order Confirmation | Sulaiha Smart Management System">
+
+    <title>Order Confirmation | Sulaiha</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- Common CSS -->
+
+    <link rel="stylesheet"
+          href="/css/home.css">
+
+
+    <!-- Order Confirmation CSS -->
+
+    <link rel="stylesheet"
+          href="/css/order-confirmation.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION BAR
+     ===================================================== -->
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <a href="/home">
+
+            <img src="/images/sulaiha-logo.jpeg"
+                 alt="Sulaiha Logo"
+                 class="logo-image">
+
+        </a>
+
+
+        <div class="brand-name">
+
+            <h1>SULAIHA</h1>
+
+            <span>
+                SMART MANAGEMENT SYSTEM
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION LINKS -->
+
+    <nav class="nav-links">
+
+        <a href="/home">
+            Home
+        </a>
+
+        <a href="/products">
+            Products
+        </a>
+
+        <a href="/orders">
+            My Orders
+        </a>
+
+        <a href="/cart">
+            Cart
+        </a>
+
+        <a href="/settings">
+            Settings
+        </a>
+
+    </nav>
+
+
+    <!-- NAVIGATION ICONS -->
+
+    <div class="nav-icons">
+
+<a href="/notifications"
+   class="icon-button notification-link"
+   title="Notifications">
+
+    <span class="notification-icon">
+        🔔
+    </span>
+
+</a>
+
+
+        <button type="button"
+                class="icon-button"
+                title="My Profile"
+                onclick="openProfile()">
+
+            <span class="profile-icon">
+                👤
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+     ===================================================== -->
+
+<main class="order-confirmation-page">
+
+
+    <!-- =================================================
+         BREADCRUMB
+         ================================================= -->
+
+    <div class="confirmation-breadcrumb">
+
+        <a href="/home">
+            Home
+        </a>
+
+        <span>/</span>
+
+        <span>
+            Order Confirmation
+        </span>
+
+    </div>
+
+
+
+    <!-- =================================================
+         SUCCESS SECTION
+         ================================================= -->
+
+    <section class="confirmation-success">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+
+        <span class="success-label">
+            ORDER PLACED
+        </span>
+
+
+        <h2>
+            Your Order Has Been Confirmed!
+        </h2>
+
+
+        <p>
+            Thank you for shopping with
+            <strong>SULAIHA</strong>.
+        </p>
+
+
+        <p class="confirmation-message">
+            Your order details are shown below.
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ORDER INFORMATION
+         ================================================= -->
+
+    <section class="confirmation-container">
+
+
+        <!-- =================================================
+             ORDER DETAILS
+             ================================================= -->
+
+        <div class="confirmation-card">
+
+            <div class="card-header">
+
+                <h3>
+                    Order Details
+                </h3>
+
+            </div>
+
+
+            <div class="order-info-grid">
+
+
+                <div class="order-info-item">
+
+                    <span>
+                        Order ID
+                    </span>
+
+                    <strong id="orderId">
+                        Generating...
+                    </strong>
+
+                </div>
+
+
+                <div class="order-info-item">
+
+                    <span>
+                        Order Date
+                    </span>
+
+                    <strong id="orderDate">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="order-info-item">
+
+                    <span>
+                        Payment Status
+                    </span>
+
+                    <strong id="paymentStatus">
+                        Pending
+                    </strong>
+
+                </div>
+
+
+                <div class="order-info-item">
+
+                    <span>
+                        Order Status
+                    </span>
+
+                    <strong id="orderStatus">
+                        Confirmed
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             DELIVERY INFORMATION
+             ================================================= -->
+
+        <div class="confirmation-card">
+
+            <div class="card-header">
+
+                <h3>
+                    Delivery Information
+                </h3>
+
+            </div>
+
+
+            <div class="delivery-information">
+
+
+                <div class="delivery-item">
+
+                    <span>
+                        Full Name
+                    </span>
+
+                    <strong id="customerName">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="delivery-item">
+
+                    <span>
+                        Mobile Number
+                    </span>
+
+                    <strong id="customerMobile">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="delivery-item">
+
+                    <span>
+                        Email
+                    </span>
+
+                    <strong id="customerEmail">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="delivery-item">
+
+                    <span>
+                        Delivery Address
+                    </span>
+
+                    <strong id="customerAddress">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="delivery-item">
+
+                    <span>
+                        City
+                    </span>
+
+                    <strong id="customerCity">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="delivery-item">
+
+                    <span>
+                        Pincode
+                    </span>
+
+                    <strong id="customerPincode">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ORDERED PRODUCTS
+             ================================================= -->
+
+        <div class="confirmation-card">
+
+            <div class="card-header">
+
+                <h3>
+                    Ordered Products
+                </h3>
+
+            </div>
+
+
+            <div id="confirmedOrderItems"
+                 class="confirmed-order-items">
+
+                <!-- Products will be loaded by JavaScript -->
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ORDER SUMMARY
+             ================================================= -->
+
+        <div class="confirmation-card order-summary-card">
+
+            <div class="card-header">
+
+                <h3>
+                    Order Summary
+                </h3>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Items
+                </span>
+
+                <strong id="confirmedItemCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="confirmedSubtotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Delivery
+                </span>
+
+                <strong id="confirmedDelivery">
+                    FREE
+                </strong>
+
+            </div>
+
+
+            <div class="summary-divider"></div>
+
+
+            <div class="summary-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="confirmedTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ACTION BUTTONS
+             ================================================= -->
+
+        <div class="confirmation-actions">
+
+            <a href="/orders"
+               class="view-orders-button">
+
+                View My Orders
+
+            </a>
+
+
+            <a href="/products"
+               class="continue-shopping-button">
+
+                Continue Shopping
+
+            </a>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+
+        <!-- ABOUT -->
+
+        <div class="footer-column footer-about">
+
+            <div class="footer-logo">
+
+                <img src="/images/sulaiha-logo.jpeg"
+                     alt="Sulaiha Logo">
+
+
+                <div>
+
+                    <h2>
+                        SULAIHA
+                    </h2>
+
+                    <span>
+                        SMART MANAGEMENT SYSTEM
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p>
+                Your trusted platform for premium
+                marbles, granite, tiles and building
+                materials.
+            </p>
+
+        </div>
+
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="/home">
+                Home
+            </a>
+
+            <a href="/products">
+                Products
+            </a>
+
+            <a href="/orders">
+                My Orders
+            </a>
+
+            <a href="/cart">
+                Cart
+            </a>
+
+            <a href="/settings">
+                Settings
+            </a>
+
+        </div>
+
+
+
+        <!-- INFORMATION -->
+
+        <div class="footer-column">
+
+            <h3>
+                Information
+            </h3>
+
+            <a href="/about">
+                About Us
+            </a>
+
+            <a href="/contact">
+                Contact Us
+            </a>
+
+            <a href="/privacy">
+                Privacy Policy
+            </a>
+
+            <a href="/terms">
+                Terms &amp; Conditions
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column contact-column">
+
+            <h3>
+                Contact Us
+            </h3>
+
+            <p>
+                📍 Ramanathapuram, Tamil Nadu
+            </p>
+
+            <p>
+                📞 +91 XXXXX XXXXX
+            </p>
+
+            <p>
+                ✉️ support@sulaiha.com
+            </p>
+
+
+            <div class="social-icons">
+
+                <a href="#"
+                   title="Instagram">
+                    ◎
+                </a>
+
+                <a href="#"
+                   title="Facebook">
+                    f
+                </a>
+
+                <a href="#"
+                   title="WhatsApp">
+                    ◉
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Sulaiha Smart Management System.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Designed for smarter building material management.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     COMMON JAVASCRIPT
+     ===================================================== -->
+
+<script src="/js/script.js"></script>
+
+
+<!-- =====================================================
+     ORDER CONFIRMATION JAVASCRIPT
+     ===================================================== -->
+
+<script src="/js/order-confirmation.js"></script>
+
+
+</body>
+
+</html>

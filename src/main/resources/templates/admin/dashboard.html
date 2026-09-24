@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Admin Dashboard | Sulaiha Smart Management System">
+
+    <title>Admin Dashboard | Sulaiha</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+         ===================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         ADMIN DASHBOARD CSS
+         ===================================================== -->
+
+    <link rel="stylesheet"
+          href="/css/admin-dashboard.css">
+
+
+    <!-- =====================================================
+         CHART.JS
+         ===================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ADMIN LAYOUT
+     ========================================================= -->
+
+<div class="admin-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         COMMON SIDEBAR FOR ALL ADMIN PAGES
+         ===================================================== -->
+
+    <aside class="admin-sidebar"
+           id="adminSidebar">
+
+
+        <!-- =================================================
+             BRAND
+             ================================================= -->
+
+        <div class="admin-brand">
+
+            <a href="/admin/dashboard"
+               class="admin-brand-link">
+
+                <img src="/images/sulaiha-logo.jpeg"
+                     alt="Sulaiha Logo"
+                     class="admin-logo">
+
+                <div class="admin-brand-text">
+
+                    <h1>
+                        SULAIHA
+                    </h1>
+
+                    <span>
+                        ADMIN PANEL
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             SIDEBAR NAVIGATION
+             ================================================= -->
+
+        <nav class="admin-navigation">
+
+
+            <!-- DASHBOARD -->
+
+            <a href="/admin/dashboard"
+               class="admin-nav-item active">
+
+                <span class="admin-nav-icon">
+                    🏠
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- CUSTOMERS -->
+
+            <a href="/admin/customers"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    👥
+                </span>
+
+                <span>
+                    Customers
+                </span>
+
+            </a>
+
+
+            <!-- PRODUCTS -->
+
+            <a href="/admin/products"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    📦
+                </span>
+
+                <span>
+                    Products
+                </span>
+
+            </a>
+
+
+            <!-- ORDERS -->
+
+            <a href="/admin/orders"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    🛒
+                </span>
+
+                <span>
+                    Orders
+                </span>
+
+            </a>
+
+
+            <!-- INVENTORY -->
+
+            <a href="/admin/inventory"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    📊
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <!-- SALES -->
+
+            <a href="/admin/sales"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    💰
+                </span>
+
+                <span>
+                    Sales
+                </span>
+
+            </a>
+
+
+            <!-- PAYMENTS -->
+
+            <a href="/admin/payments"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    💳
+                </span>
+
+                <span>
+                    Payments
+                </span>
+
+            </a>
+
+
+            <!-- EXPENSES -->
+
+            <a href="/admin/expenses"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    💸
+                </span>
+
+                <span>
+                    Expenses
+                </span>
+
+            </a>
+
+
+            <!-- INVOICE -->
+
+            <a href="/admin/invoice"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    🧾
+                </span>
+
+                <span>
+                    Invoice
+                </span>
+
+            </a>
+
+
+            <!-- BILLING -->
+
+            <a href="/admin/billing"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    💼
+                </span>
+
+                <span>
+                    Billing
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+
+            <a href="/admin/reports"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    📈
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <!-- SETTINGS -->
+
+            <a href="/admin/settings"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    ⚙️
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <a href="/admin/notifications"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    🔔
+                </span>
+
+                <span>
+                    Notifications
+                </span>
+
+            </a>
+
+
+            <!-- PROFILE -->
+
+            <a href="/admin/profile"
+               class="admin-nav-item">
+
+                <span class="admin-nav-icon">
+                    👤
+                </span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- =================================================
+             LOGOUT
+             ================================================= -->
+
+        <div class="admin-sidebar-bottom">
+
+            <button type="button"
+                    class="admin-logout-button"
+                    id="adminLogoutButton">
+
+                <span class="admin-nav-icon">
+                    🚪
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+         ===================================================== -->
+
+    <div class="admin-main">
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header class="admin-header">
+
+
+            <!-- MOBILE SIDEBAR BUTTON -->
+
+            <button type="button"
+                    class="sidebar-toggle"
+                    id="sidebarToggle">
+
+                ☰
+
+            </button>
+
+
+            <!-- HEADER TITLE -->
+
+            <div class="admin-header-title">
+
+                <span>
+                    SULAIHA SMART MANAGEMENT SYSTEM
+                </span>
+
+                <h2>
+                    Dashboard
+                </h2>
+
+            </div>
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="admin-header-actions">
+
+
+                <!-- NOTIFICATIONS -->
+
+                <a href="/admin/notifications"
+                   class="admin-header-icon"
+                   title="Notifications">
+
+                    🔔
+
+                </a>
+
+
+                <!-- PROFILE -->
+
+                <a href="/admin/profile"
+                   class="admin-profile-button">
+
+                    <span class="admin-profile-avatar">
+                        👤
+                    </span>
+
+                    <span class="admin-profile-text">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <small>
+                            Administrator
+                        </small>
+
+                    </span>
+
+                </a>
+
+            </div>
+
+
+        </header>
+
+
+        <!-- =================================================
+             DASHBOARD CONTENT
+             ================================================= -->
+
+        <main class="admin-content">
+
+
+            <!-- =================================================
+                 WELCOME SECTION
+                 ================================================= -->
+
+            <section class="admin-welcome">
+
+                <div>
+
+                    <span class="admin-small-title">
+                        SULAIHA SMART MANAGEMENT SYSTEM
+                    </span>
+
+                    <h1>
+                        Welcome, Admin 👋
+                    </h1>
+
+                    <p>
+                        Manage your customers, products,
+                        orders, sales and business activities
+                        from one place.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 KPI SUMMARY CARDS
+                 ================================================= -->
+
+            <section class="admin-stat-grid">
+
+
+                <!-- TOTAL CUSTOMERS -->
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        👥
+                    </div>
+
+                    <div class="admin-stat-content">
+
+                        <span>
+                            Total Customers
+                        </span>
+
+                        <strong id="totalCustomers">
+                            0
+                        </strong>
+
+                        <small>
+                            Registered customers
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOTAL PRODUCTS -->
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        📦
+                    </div>
+
+                    <div class="admin-stat-content">
+
+                        <span>
+                            Total Products
+                        </span>
+
+                        <strong id="totalProducts">
+                            0
+                        </strong>
+
+                        <small>
+                            Available products
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOTAL ORDERS -->
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        🛒
+                    </div>
+
+                    <div class="admin-stat-content">
+
+                        <span>
+                            Total Orders
+                        </span>
+
+                        <strong id="totalOrders">
+                            0
+                        </strong>
+
+                        <small>
+                            Customer orders
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOTAL SALES -->
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        💰
+                    </div>
+
+                    <div class="admin-stat-content">
+
+                        <span>
+                            Total Sales
+                        </span>
+
+                        <strong id="totalSales">
+                            ₹0
+                        </strong>
+
+                        <small>
+                            Overall sales
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 ANALYTICS / CHART SECTION
+                 ================================================= -->
+
+            <section class="admin-chart-grid">
+
+
+                <!-- =================================================
+                     SALES OVERVIEW
+                     ================================================= -->
+
+                <div class="admin-dashboard-card">
+
+
+                    <div class="admin-card-header">
+
+                        <div>
+
+                            <h3>
+                                Sales Overview
+                            </h3>
+
+                            <p>
+                                Sales performance over time
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-chart-container">
+
+                        <canvas id="salesOverviewChart"></canvas>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =================================================
+                     ORDER STATUS
+                     ================================================= -->
+
+                <div class="admin-dashboard-card">
+
+
+                    <div class="admin-card-header">
+
+                        <div>
+
+                            <h3>
+                                Order Status
+                            </h3>
+
+                            <p>
+                                Current order distribution
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-chart-container order-chart-container">
+
+                        <canvas id="orderStatusChart"></canvas>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 RECENT ORDERS + LOW STOCK
+                 ================================================= -->
+
+            <section class="admin-dashboard-grid">
+
+
+                <!-- =================================================
+                     RECENT ORDERS
+                     ================================================= -->
+
+                <div class="admin-dashboard-card">
+
+
+                    <div class="admin-card-header">
+
+                        <div>
+
+                            <h3>
+                                Recent Orders
+                            </h3>
+
+                            <p>
+                                Latest customer orders
+                            </p>
+
+                        </div>
+
+
+                        <a href="/admin/orders">
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div class="admin-table-container">
+
+                        <table class="admin-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Order ID
+                                    </th>
+
+                                    <th>
+                                        Customer
+                                    </th>
+
+                                    <th>
+                                        Amount
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="recentOrdersBody">
+
+                                <tr>
+
+                                    <td colspan="4"
+                                        class="empty-table">
+
+                                        No orders available
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     LOW STOCK PRODUCTS
+                     ================================================= -->
+
+                <div class="admin-dashboard-card">
+
+
+                    <div class="admin-card-header">
+
+                        <div>
+
+                            <h3>
+                                Low Stock Products
+                            </h3>
+
+                            <p>
+                                Products that need attention
+                            </p>
+
+                        </div>
+
+
+                        <a href="/admin/inventory">
+                            View Inventory
+                        </a>
+
+                    </div>
+
+
+                    <div id="lowStockList"
+                         class="admin-stock-list">
+
+
+                        <div class="admin-empty-box">
+
+                            <span>
+                                📦
+                            </span>
+
+                            <p>
+                                No low stock products
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+     QUICK ACTIONS
+     ================================================= -->
+
+<section class="admin-dashboard-card quick-actions-card">
+
+    <div class="admin-card-header">
+
+        <div>
+
+            <h3>
+                Quick Actions
+            </h3>
+
+            <p>
+                Frequently used admin functions
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="quick-actions">
+
+
+        <!-- PRODUCTS -->
+
+        <a href="/admin/products"
+           class="quick-action">
+
+            <span>
+                📦
+            </span>
+
+            <strong>
+                Manage Products
+            </strong>
+
+            <small>
+                Add or update products
+            </small>
+
+        </a>
+
+
+        <!-- ORDERS -->
+
+        <a href="/admin/orders"
+           class="quick-action">
+
+            <span>
+                🛒
+            </span>
+
+            <strong>
+                Manage Orders
+            </strong>
+
+            <small>
+                View and manage orders
+            </small>
+
+        </a>
+
+
+        <!-- CUSTOMERS -->
+
+        <a href="/admin/customers"
+           class="quick-action">
+
+            <span>
+                👥
+            </span>
+
+            <strong>
+                Customers
+            </strong>
+
+            <small>
+                Manage customer details
+            </small>
+
+        </a>
+
+
+        <!-- INVENTORY -->
+
+        <a href="/admin/inventory"
+           class="quick-action">
+
+            <span>
+                📊
+            </span>
+
+            <strong>
+                Inventory
+            </strong>
+
+            <small>
+                Check stock levels
+            </small>
+
+        </a>
+
+
+        <!-- EXPENSES -->
+
+        <a href="/admin/expenses"
+           class="quick-action">
+
+            <span>
+                💸
+            </span>
+
+            <strong>
+                Expenses
+            </strong>
+
+            <small>
+                Manage business expenses
+            </small>
+
+        </a>
+
+
+        <!-- INVOICE -->
+
+        <a href="/admin/invoice"
+           class="quick-action">
+
+            <span>
+                🧾
+            </span>
+
+            <strong>
+                Invoice
+            </strong>
+
+            <small>
+                Create and manage invoices
+            </small>
+
+        </a>
+
+
+        <!-- BILLING -->
+
+        <a href="/admin/billing"
+           class="quick-action">
+
+            <span>
+                💼
+            </span>
+
+            <strong>
+                Billing
+            </strong>
+
+            <small>
+                Manage customer billing
+            </small>
+
+        </a>
+
+
+        <!-- REPORTS -->
+
+        <a href="/admin/reports"
+           class="quick-action">
+
+            <span>
+                📈
+            </span>
+
+            <strong>
+                Reports
+            </strong>
+
+            <small>
+                View business reports
+            </small>
+
+        </a>
+
+
+    </div>
+
+</section>
+<!-- =================================================
+     MAIN CONTENT END
+     ================================================= -->
+
+</main>
+
+
+<!-- =================================================
+     FOOTER
+     ================================================= -->
+
+<footer class="admin-footer">
+
+    <p>
+        © 2026 Sulaiha Smart Management System.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</div>
+<!-- END admin-main -->
+
+
+</div>
+<!-- END admin-layout -->
+
+
+<!-- =================================================
+     ADMIN DASHBOARD JAVASCRIPT
+     ================================================= -->
+
+<script src="/js/admin-dashboard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</body>
+
+</html>

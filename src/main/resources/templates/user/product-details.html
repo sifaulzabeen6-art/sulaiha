@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Product Details | Sulaiha Smart Management System">
+
+    <title>Product Details | Sulaiha</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Common CSS -->
+    <link rel="stylesheet"
+          href="/css/home.css">
+
+    <!-- Product Details CSS -->
+    <link rel="stylesheet"
+          href="/css/product-details.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION BAR
+     ===================================================== -->
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <a href="/home">
+
+            <img src="/images/sulaiha-logo.jpeg"
+                 alt="Sulaiha Logo"
+                 class="logo-image">
+
+        </a>
+
+        <div class="brand-name">
+
+            <h1>SULAIHA</h1>
+
+            <span>
+                SMART MANAGEMENT SYSTEM
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="/home">
+            Home
+        </a>
+
+        <a href="/products">
+            Products
+        </a>
+
+        <a href="/orders">
+            My Orders
+        </a>
+
+        <a href="/cart">
+            Cart
+        </a>
+
+        <a href="/settings">
+            Settings
+        </a>
+
+    </nav>
+
+
+    <div class="nav-icons">
+
+        <a href="/notifications"
+           class="icon-button notification-link"
+           title="Notifications">
+
+            <span class="notification-icon">
+                🔔
+            </span>
+
+        </a>
+
+
+        <button type="button"
+                class="icon-button"
+                title="My Profile"
+                onclick="openProfile()">
+
+            <span class="profile-icon">
+                👤
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+     ===================================================== -->
+
+<main class="product-details-page">
+
+
+    <!-- =================================================
+         BREADCRUMB
+         ================================================= -->
+
+    <div class="product-details-breadcrumb">
+
+        <a href="/home">
+            Home
+        </a>
+
+        <span>/</span>
+
+        <a href="/products">
+            Products
+        </a>
+
+        <span>/</span>
+
+        <span id="productBreadcrumb">
+            Product Details
+        </span>
+
+    </div>
+
+
+    <!-- =================================================
+         PRODUCT DETAILS SECTION
+         ================================================= -->
+
+    <section class="product-details-container">
+
+
+        <!-- PRODUCT IMAGE -->
+
+        <div class="product-details-image">
+
+            <img id="productImage"
+                 src="/images/product-placeholder.jpg"
+                 alt="Product">
+
+        </div>
+
+
+        <!-- PRODUCT INFORMATION -->
+
+        <div class="product-details-content">
+
+            <span class="product-details-category"
+                  id="productCategory">
+
+                PRODUCT
+
+            </span>
+
+
+            <h2 id="productName">
+                Product Name
+            </h2>
+
+
+            <p class="product-details-description"
+               id="productDescription">
+
+                Product description will appear here.
+
+            </p>
+
+
+            <!-- PRICE -->
+
+            <div class="product-details-price">
+
+                <span>
+                    Price
+                </span>
+
+                <strong id="productPrice">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <!-- SIZE -->
+
+            <div class="product-details-availability">
+
+                <span>
+                    Size
+                </span>
+
+                <strong id="productSize">
+                    -
+                </strong>
+
+            </div>
+
+
+            <!-- AREA PER UNIT -->
+
+            <div class="product-details-availability">
+
+                <span>
+                    Area per Unit
+                </span>
+
+                <strong id="productAreaPerUnit">
+                    -
+                </strong>
+
+            </div>
+
+
+            <!-- AVAILABILITY -->
+
+            <div class="product-details-availability">
+
+                <span>
+                    Availability
+                </span>
+
+                <strong id="productAvailability">
+                    Checking...
+                </strong>
+
+            </div>
+
+
+            <!-- QUANTITY -->
+
+            <div class="product-details-quantity">
+
+                <label for="productQuantity">
+                    Quantity
+                </label>
+
+                <input type="number"
+                       id="productQuantity"
+                       value="1"
+                       min="1"
+                       step="1">
+
+            </div>
+
+
+            <!-- CALCULATION -->
+
+            <div class="product-details-calculation">
+
+                <h3>
+                    Price Calculation
+                </h3>
+
+
+                <div class="calculation-row">
+
+                    <span>
+                        Rate
+                    </span>
+
+                    <strong id="calculationRate">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="calculation-row">
+
+                    <span>
+                        Area per Unit
+                    </span>
+
+                    <strong id="calculationAreaPerUnit">
+                        0 sq.ft
+                    </strong>
+
+                </div>
+
+
+                <div class="calculation-row">
+
+                    <span>
+                        Quantity
+                    </span>
+
+                    <strong id="calculationQuantity">
+                        1
+                    </strong>
+
+                </div>
+
+
+                <div class="calculation-row">
+
+                    <span>
+                        Total Area
+                    </span>
+
+                    <strong id="calculationTotalArea">
+                        0 sq.ft
+                    </strong>
+
+                </div>
+
+
+                <div class="calculation-row calculation-total">
+
+                    <span>
+                        Total Amount
+                    </span>
+
+                    <strong id="calculationTotalAmount">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTION BUTTONS -->
+
+            <div class="product-details-actions">
+
+                <button type="button"
+                        id="addToCartButton"
+                        class="product-add-cart-button">
+
+                    Add to Cart
+
+                </button>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         ADDITIONAL INFORMATION
+         ================================================= -->
+
+    <section class="product-details-extra">
+
+        <h3>
+            Product Information
+        </h3>
+
+
+        <div class="product-information-grid">
+
+            <div class="product-information-item">
+
+                <span>
+                    Category
+                </span>
+
+                <strong id="detailCategory">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="product-information-item">
+
+                <span>
+                    Product
+                </span>
+
+                <strong id="detailName">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="product-information-item">
+
+                <span>
+                    Price
+                </span>
+
+                <strong id="detailPrice">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="product-information-item">
+
+                <span>
+                    Size
+                </span>
+
+                <strong id="detailSize">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="product-information-item">
+
+                <span>
+                    Area per Unit
+                </span>
+
+                <strong id="detailAreaPerUnit">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="product-information-item">
+
+                <span>
+                    Availability
+                </span>
+
+                <strong id="detailAvailability">
+                    -
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+
+        <!-- About -->
+
+        <div class="footer-column footer-about">
+
+            <div class="footer-logo">
+
+                <img src="/images/sulaiha-logo.jpeg"
+                     alt="Sulaiha Logo">
+
+                <div>
+
+                    <h2>SULAIHA</h2>
+
+                    <span>
+                        SMART MANAGEMENT SYSTEM
+                    </span>
+
+                </div>
+
+            </div>
+
+            <p>
+                Your trusted platform for premium
+                marbles, granite, tiles and building
+                materials.
+            </p>
+
+        </div>
+
+
+        <!-- Quick Links -->
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="/home">
+                Home
+            </a>
+
+            <a href="/products">
+                Products
+            </a>
+
+            <a href="/orders">
+                My Orders
+            </a>
+
+            <a href="/cart">
+                Cart
+            </a>
+
+            <a href="/settings">
+                Settings
+            </a>
+
+        </div>
+
+
+        <!-- Information -->
+
+        <div class="footer-column">
+
+            <h3>
+                Information
+            </h3>
+
+            <a href="/about">
+                About Us
+            </a>
+
+            <a href="/contact">
+                Contact Us
+            </a>
+
+            <a href="/privacy">
+                Privacy Policy
+            </a>
+
+            <a href="/terms">
+                Terms &amp; Conditions
+            </a>
+
+        </div>
+
+
+        <!-- Contact -->
+
+        <div class="footer-column contact-column">
+
+            <h3>
+                Contact Us
+            </h3>
+
+            <p>
+                📍 Ramanathapuram, Tamil Nadu
+            </p>
+
+            <p>
+                📞 +91 XXXXX XXXXX
+            </p>
+
+            <p>
+                ✉️ support@sulaiha.com
+            </p>
+
+
+            <div class="social-icons">
+
+                <a href="#"
+                   title="Instagram">
+                    ◎
+                </a>
+
+                <a href="#"
+                   title="Facebook">
+                    f
+                </a>
+
+                <a href="#"
+                   title="WhatsApp">
+                    ◉
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer Bottom -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Sulaiha Smart Management System.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Designed for smarter building material management.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     COMMON JAVASCRIPT
+     ===================================================== -->
+
+<script src="/js/script.js"></script>
+
+
+<!-- =====================================================
+     PRODUCT DETAILS JAVASCRIPT
+     ===================================================== -->
+
+<script src="/js/product-details.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Admin Settings | Sulaiha Smart Management System">
+
+    <title>Admin Settings | Sulaiha</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- Common Admin CSS -->
+
+    <link rel="stylesheet"
+          href="/css/admin-dashboard.css">
+
+
+    <!-- Admin Settings CSS -->
+
+    <link rel="stylesheet"
+          href="/css/admin-settings.css">
+
+</head>
+
+
+<body>
+
+
+<div class="admin-layout">
+
+
+    <!-- =================================================
+     SIDEBAR
+     NEW ADMIN SIDEBAR
+     SETTINGS PAGE
+     ================================================= -->
+
+<aside class="admin-sidebar"
+       id="adminSidebar">
+
+
+    <!-- BRAND -->
+
+    <div class="admin-brand">
+
+        <a href="/admin/dashboard"
+           class="admin-brand-link">
+
+            <img src="/images/sulaiha-logo.jpeg"
+                 alt="Sulaiha Logo"
+                 class="admin-logo">
+
+            <div class="admin-brand-text">
+
+                <h1>SULAIHA</h1>
+
+                <span>
+                    ADMIN PANEL
+                </span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="admin-navigation">
+
+
+        <!-- DASHBOARD -->
+
+        <a href="/admin/dashboard"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">🏠</span>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <!-- CUSTOMERS -->
+
+        <a href="/admin/customers"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">👥</span>
+
+            <span>Customers</span>
+
+        </a>
+
+
+        <!-- PRODUCTS -->
+
+        <a href="/admin/products"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">📦</span>
+
+            <span>Products</span>
+
+        </a>
+
+
+        <!-- ORDERS -->
+
+        <a href="/admin/orders"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">🛒</span>
+
+            <span>Orders</span>
+
+        </a>
+
+
+        <!-- INVENTORY -->
+
+        <a href="/admin/inventory"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">📊</span>
+
+            <span>Inventory</span>
+
+        </a>
+
+
+        <!-- SALES -->
+
+        <a href="/admin/sales"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">💰</span>
+
+            <span>Sales</span>
+
+        </a>
+
+
+        <!-- PAYMENTS -->
+
+        <a href="/admin/payments"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">💳</span>
+
+            <span>Payments</span>
+
+        </a>
+
+
+        <!-- EXPENSES -->
+
+        <a href="/admin/expenses"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">💸</span>
+
+            <span>Expenses</span>
+
+        </a>
+
+
+        <!-- INVOICE -->
+
+        <a href="/admin/invoice"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">📄</span>
+
+            <span>Invoice</span>
+
+        </a>
+
+
+        <!-- BILLING -->
+
+        <a href="/admin/billing"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">🧾</span>
+
+            <span>Billing</span>
+
+        </a>
+
+
+        <!-- REPORTS -->
+
+        <a href="/admin/reports"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">📈</span>
+
+            <span>Reports</span>
+
+        </a>
+
+
+        <!-- SETTINGS -->
+
+        <a href="/admin/settings"
+           class="admin-nav-item active">
+
+            <span class="admin-nav-icon">⚙️</span>
+
+            <span>Settings</span>
+
+        </a>
+
+
+        <!-- NOTIFICATIONS -->
+
+        <a href="/admin/notifications"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">🔔</span>
+
+            <span>Notifications</span>
+
+        </a>
+
+
+        <!-- PROFILE -->
+
+        <a href="/admin/profile"
+           class="admin-nav-item">
+
+            <span class="admin-nav-icon">👤</span>
+
+            <span>Profile</span>
+
+        </a>
+
+
+    </nav>
+
+
+    <!-- LOGOUT -->
+
+    <div class="admin-sidebar-bottom">
+
+        <button type="button"
+                class="admin-logout-button"
+                id="adminLogoutButton">
+
+            <span class="admin-nav-icon">🚪</span>
+
+            <span>Logout</span>
+
+        </button>
+
+    </div>
+
+
+</aside>
+
+    <!-- =================================================
+         MAIN AREA
+         ================================================= -->
+
+    <div class="admin-main">
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header class="admin-header">
+
+
+            <button type="button"
+                    class="sidebar-toggle"
+                    id="sidebarToggle"
+                    aria-label="Open navigation">
+
+                ☰
+
+            </button>
+
+
+            <div class="admin-header-title">
+
+                <span>
+                    ADMIN PANEL
+                </span>
+
+                <h2>
+                    Settings
+                </h2>
+
+            </div>
+
+
+            <div class="admin-header-actions">
+
+
+                <a href="/admin/notifications"
+                   class="admin-header-icon"
+                   title="Notifications"
+                   aria-label="Notifications">
+
+                    🔔
+
+                </a>
+
+
+                <a href="/admin/profile"
+                   class="admin-profile-button">
+
+                    <span class="admin-profile-avatar">
+                        👤
+                    </span>
+
+                    <span class="admin-profile-text">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <small>
+                            Administrator
+                        </small>
+
+                    </span>
+
+                </a>
+
+            </div>
+
+
+        </header>
+
+
+        <!-- =================================================
+             SETTINGS CONTENT
+             ================================================= -->
+
+        <main class="admin-settings-content">
+
+
+            <!-- PAGE INTRO -->
+
+            <section class="settings-intro">
+
+                <span class="settings-small-title">
+                    SULAIHA SMART MANAGEMENT SYSTEM
+                </span>
+
+                <h1>
+                    Settings
+                </h1>
+
+                <p>
+                    Manage your administrator account,
+                    notifications and system preferences.
+                </p>
+
+            </section>
+
+
+            <!-- =================================================
+                 ACCOUNT SETTINGS
+                 ================================================= -->
+
+            <section class="settings-card">
+
+
+                <div class="settings-card-header">
+
+                    <div>
+
+                        <h2>
+                            Account Settings
+                        </h2>
+
+                        <p>
+                            Update basic administrator information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-card-body">
+
+
+                    <div class="settings-form-grid">
+
+
+                        <div class="settings-form-group">
+
+                            <label for="adminName">
+                                Admin Name
+                            </label>
+
+                            <input type="text"
+                                   id="adminName"
+                                   value="Admin"
+                                   autocomplete="name">
+
+                        </div>
+
+
+                        <div class="settings-form-group">
+
+                            <label for="adminEmail">
+                                Email Address
+                            </label>
+
+                            <input type="email"
+                                   id="adminEmail"
+                                   value="admin@sulaiha.com"
+                                   autocomplete="email">
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 NOTIFICATION SETTINGS
+                 ================================================= -->
+
+            <section class="settings-card">
+
+
+                <div class="settings-card-header">
+
+                    <div>
+
+                        <h2>
+                            Notification Preferences
+                        </h2>
+
+                        <p>
+                            Choose which admin notifications you want to receive.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-card-body">
+
+
+                    <div class="settings-option">
+
+
+                        <div class="settings-option-text">
+
+                            <strong>
+                                Order Notifications
+                            </strong>
+
+                            <span>
+                                Receive notifications when a new order is placed.
+                            </span>
+
+                        </div>
+
+
+                        <label class="settings-switch">
+
+                            <input type="checkbox"
+                                   id="orderNotifications"
+                                   checked>
+
+                            <span class="settings-slider"></span>
+
+                        </label>
+
+
+                    </div>
+
+
+                    <div class="settings-option">
+
+
+                        <div class="settings-option-text">
+
+                            <strong>
+                                Payment Notifications
+                            </strong>
+
+                            <span>
+                                Receive notifications about payment updates.
+                            </span>
+
+                        </div>
+
+
+                        <label class="settings-switch">
+
+                            <input type="checkbox"
+                                   id="paymentNotifications"
+                                   checked>
+
+                            <span class="settings-slider"></span>
+
+                        </label>
+
+
+                    </div>
+
+
+                    <div class="settings-option">
+
+
+                        <div class="settings-option-text">
+
+                            <strong>
+                                Low Stock Notifications
+                            </strong>
+
+                            <span>
+                                Get alerts when product stock becomes low.
+                            </span>
+
+                        </div>
+
+
+                        <label class="settings-switch">
+
+                            <input type="checkbox"
+                                   id="lowStockNotifications"
+                                   checked>
+
+                            <span class="settings-slider"></span>
+
+                        </label>
+
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SYSTEM PREFERENCES
+                 ================================================= -->
+
+            <section class="settings-card">
+
+
+                <div class="settings-card-header">
+
+                    <div>
+
+                        <h2>
+                            System Preferences
+                        </h2>
+
+                        <p>
+                            Configure basic application preferences.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-card-body">
+
+
+                    <div class="settings-form-grid">
+
+
+                        <div class="settings-form-group">
+
+                            <label for="adminLanguage">
+                                Language
+                            </label>
+
+                            <select id="adminLanguage">
+
+                                <option value="en">
+                                    English
+                                </option>
+
+                                <option value="ta">
+                                    Tamil
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="settings-form-group">
+
+                            <label for="adminTimezone">
+                                Time Zone
+                            </label>
+
+                            <select id="adminTimezone">
+
+                                <option value="IST">
+                                    India Standard Time (IST)
+                                </option>
+
+                                <option value="UTC">
+                                    Coordinated Universal Time (UTC)
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PASSWORD SETTINGS
+                 ================================================= -->
+
+            <section class="settings-card">
+
+
+                <div class="settings-card-header">
+
+                    <div>
+
+                        <h2>
+                            Change Password
+                        </h2>
+
+                        <p>
+                            Update your administrator account password.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-card-body">
+
+
+                    <div class="settings-form-grid">
+
+
+                        <div class="settings-form-group">
+
+                            <label for="currentPassword">
+                                Current Password
+                            </label>
+
+                            <input type="password"
+                                   id="currentPassword"
+                                   autocomplete="current-password">
+
+                        </div>
+
+
+                        <div class="settings-form-group">
+
+                            <label for="newPassword">
+                                New Password
+                            </label>
+
+                            <input type="password"
+                                   id="newPassword"
+                                   autocomplete="new-password">
+
+                        </div>
+
+
+                        <div class="settings-form-group">
+
+                            <label for="confirmPassword">
+                                Confirm New Password
+                            </label>
+
+                            <input type="password"
+                                   id="confirmPassword"
+                                   autocomplete="new-password">
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ACTION BUTTONS
+                 ================================================= -->
+
+            <section class="settings-actions">
+
+
+                <button type="button"
+                        class="settings-reset-button"
+                        id="resetSettingsButton">
+
+                    Reset
+
+                </button>
+
+
+                <button type="button"
+                        class="settings-save-button"
+                        id="saveSettingsButton">
+
+                    Save Changes
+
+                </button>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 SETTINGS MESSAGE
+                 ================================================= -->
+
+            <div id="settingsMessage"
+                 class="settings-message"
+                 role="status"
+                 aria-live="polite">
+
+            </div>
+
+
+        </main>
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="admin-footer">
+
+            <p>
+                © 2026 Sulaiha Smart Management System.
+                All Rights Reserved.
+            </p>
+
+        </footer>
+
+
+    </div>
+
+</div>
+
+
+<!-- ADMIN SETTINGS JS -->
+
+<script src="/js/admin-settings.js"></script>
+
+</body>
+
+</html>

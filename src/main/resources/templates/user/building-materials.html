@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Explore quality building materials from Sulaiha Smart Management System">
+
+    <title>Building Materials | Sulaiha Smart Management System</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- Common Home CSS -->
+
+    <link rel="stylesheet"
+          href="/css/home.css">
+
+
+    <!-- Building Materials CSS -->
+
+    <link rel="stylesheet"
+          href="/css/building-materials.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION BAR
+     ===================================================== -->
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <a href="/home">
+
+            <img src="/images/sulaiha-logo.jpeg"
+                 alt="Sulaiha Logo"
+                 class="logo-image">
+
+        </a>
+
+        <div class="brand-name">
+
+            <h1>SULAIHA</h1>
+
+            <span>
+                SMART MANAGEMENT SYSTEM
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="/home">
+            Home
+        </a>
+
+        <a href="/products"
+           class="active">
+            Products
+        </a>
+
+        <a href="/orders">
+            My Orders
+        </a>
+
+        <a href="/cart">
+            Cart
+        </a>
+
+        <a href="/settings">
+            Settings
+        </a>
+
+    </nav>
+
+
+    <div class="nav-icons">
+
+<a href="/notifications"
+   class="icon-button notification-link"
+   title="Notifications">
+
+    <span class="notification-icon">
+        🔔
+    </span>
+
+</a>
+
+
+        <button type="button"
+                class="icon-button"
+                title="My Profile"
+                onclick="openProfile()">
+
+            <span class="profile-icon">
+                👤
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+     ===================================================== -->
+
+<main class="building-materials-page">
+
+
+    <!-- =================================================
+         PAGE HEADER
+         ================================================= -->
+
+    <section class="building-materials-header">
+
+        <div class="building-materials-heading">
+
+            <p>
+                QUALITY BUILDING MATERIALS
+            </p>
+
+            <h2>
+                Building Materials
+            </h2>
+
+            <span>
+                Explore our collection of quality building
+                materials for reliable and durable
+                construction projects.
+            </span>
+
+        </div>
+
+
+        <div class="breadcrumb">
+
+            <a href="/home">
+                Home
+            </a>
+
+            <span>/</span>
+
+            <span>
+                Building Materials
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SEARCH AND FILTER SECTION
+         ================================================= -->
+
+    <section class="building-materials-product-tools">
+
+
+        <!-- SEARCH -->
+
+        <div class="building-materials-search-box">
+
+            <span class="building-materials-search-icon">
+                🔍
+            </span>
+
+            <input
+                type="text"
+                id="buildingMaterialsSearch"
+                placeholder="Search building materials..."
+                autocomplete="off">
+
+        </div>
+
+
+        <!-- FILTER AREA -->
+
+        <div class="building-materials-filter-area">
+
+
+            <!-- CATEGORY -->
+
+            <div class="building-materials-filter-group">
+
+                <label for="buildingMaterialsCategoryFilter">
+                    Category
+                </label>
+
+                <select id="buildingMaterialsCategoryFilter">
+
+                    <option value="all">
+                        Building Materials
+                    </option>
+               <option value="building materials">Building Materials</option>
+                </select>
+
+            </div>
+
+
+            <!-- PRICE -->
+
+            <div class="building-materials-filter-group">
+
+                <label for="buildingMaterialsPriceFilter">
+                    Price
+                </label>
+
+                <select id="buildingMaterialsPriceFilter">
+
+                    <option value="all">
+                        All Prices
+                    </option>
+
+                    <option value="low">
+                        Below ₹1,000
+                    </option>
+
+                    <option value="medium">
+                        ₹1,000 - ₹2,500
+                    </option>
+
+                    <option value="high">
+                        Above ₹2,500
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- AVAILABILITY -->
+
+            <div class="building-materials-filter-group">
+
+                <label for="buildingMaterialsAvailabilityFilter">
+                    Availability
+                </label>
+
+                <select id="buildingMaterialsAvailabilityFilter">
+
+                    <option value="all">
+                        All
+                    </option>
+
+                    <option value="available">
+                        In Stock
+                    </option>
+
+                    <option value="unavailable">
+                        Out of Stock
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- CLEAR FILTER -->
+
+            <button type="button"
+                    class="building-materials-clear-filter-button"
+                    id="clearBuildingMaterialsFilters">
+
+                Clear Filters
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PRODUCT COUNT
+         ================================================= -->
+
+    <div class="building-materials-result-info">
+
+        <p>
+
+            Showing
+
+            <strong id="buildingMaterialsProductCount">
+                0
+            </strong>
+
+            products
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         BUILDING MATERIALS PRODUCT GRID
+         ================================================= -->
+
+    <section class="building-materials-product-grid"
+             id="buildingMaterialsProductGrid">
+
+
+        
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         NO PRODUCTS MESSAGE
+         ================================================= -->
+
+    <div class="building-materials-no-products"
+         id="buildingMaterialsNoProducts">
+
+        <div class="building-materials-no-products-icon">
+            🔍
+        </div>
+
+        <h3>
+            No Building Materials Found
+        </h3>
+
+        <p>
+            Sorry, no building materials match your
+            search or selected filters.
+        </p>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+
+        <!-- ABOUT -->
+
+        <div class="footer-column footer-about">
+
+            <div class="footer-logo">
+
+                <img src="/images/sulaiha-logo.jpeg"
+                     alt="Sulaiha Logo">
+
+                <div>
+
+                    <h2>
+                        SULAIHA
+                    </h2>
+
+                    <span>
+                        SMART MANAGEMENT SYSTEM
+                    </span>
+
+                </div>
+
+            </div>
+
+            <p>
+                Your trusted platform for premium
+                marbles, granite, tiles and building
+                materials.
+            </p>
+
+        </div>
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="/home">
+                Home
+            </a>
+
+            <a href="/products">
+                Products
+            </a>
+
+            <a href="/orders">
+                My Orders
+            </a>
+
+            <a href="/cart">
+                Cart
+            </a>
+
+            <a href="/settings">
+                Settings
+            </a>
+
+        </div>
+
+
+        <!-- INFORMATION -->
+
+        <div class="footer-column">
+
+            <h3>
+                Information
+            </h3>
+
+            <a href="/about">
+                About Us
+            </a>
+
+            <a href="/contact">
+                Contact Us
+            </a>
+
+            <a href="/privacy">
+                Privacy Policy
+            </a>
+
+            <a href="/terms">
+                Terms &amp; Conditions
+            </a>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column contact-column">
+
+            <h3>
+                Contact Us
+            </h3>
+
+            <p>
+                📍 Ramanathapuram, Tamil Nadu
+            </p>
+
+            <p>
+                📞 +91 XXXXX XXXXX
+            </p>
+
+            <p>
+                ✉️ support@sulaiha.com
+            </p>
+
+
+            <div class="social-icons">
+
+                <a href="#"
+                   title="Instagram">
+                    ◎
+                </a>
+
+                <a href="#"
+                   title="Facebook">
+                    f
+                </a>
+
+                <a href="#"
+                   title="WhatsApp">
+                    ◉
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Sulaiha Smart Management System.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Designed for smarter building material management.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script src="/js/script.js"></script>
+
+<script src="/js/building-materials.js"></script>
+
+<script src="/js/product-details.js"></script>
+
+</body>
+
+</html>

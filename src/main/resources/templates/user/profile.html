@@ -1,0 +1,525 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="My Profile | Sulaiha Smart Management System">
+
+<title>My Profile | Sulaiha</title>
+
+<!-- Google Font -->
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+
+<!-- Common CSS -->
+<link rel="stylesheet"
+      href="/css/home.css">
+
+<!-- Profile CSS -->
+<link rel="stylesheet"
+      href="/css/profile.css">
+
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVIGATION BAR
+     ===================================================== -->
+
+<header class="navbar">
+
+
+<div class="brand">
+
+    <a href="/home">
+
+        <img src="/images/sulaiha-logo.jpeg"
+             alt="Sulaiha Logo"
+             class="logo-image">
+
+    </a>
+
+    <div class="brand-name">
+
+        <h1>SULAIHA</h1>
+
+        <span>
+            SMART MANAGEMENT SYSTEM
+        </span>
+
+    </div>
+
+</div>
+
+
+<nav class="nav-links">
+
+    <a href="/home">
+        Home
+    </a>
+
+    <a href="/products">
+        Products
+    </a>
+
+    <a href="/orders">
+        My Orders
+    </a>
+
+    <a href="/cart">
+        Cart
+    </a>
+
+    <a href="/settings">
+        Settings
+    </a>
+
+</nav>
+
+
+<div class="nav-icons">
+
+    <a href="/notifications"
+   class="icon-button notification-link"
+   title="Notifications">
+
+    <span class="notification-icon">
+        🔔
+    </span>
+
+</a>
+
+    <button type="button"
+            class="icon-button active-profile"
+            title="My Profile">
+
+        <span class="profile-icon">
+            👤
+        </span>
+
+    </button>
+
+</div>
+
+
+</header>
+
+<!-- =====================================================
+     MAIN PROFILE PAGE
+     ===================================================== -->
+
+<main class="profile-page">
+
+
+<!-- BREADCRUMB -->
+
+<div class="profile-breadcrumb">
+
+    <a href="/home">
+        Home
+    </a>
+
+    <span>/</span>
+
+    <span>
+        My Profile
+    </span>
+
+</div>
+
+
+<!-- PAGE HEADER -->
+
+<section class="profile-header">
+
+    <span class="profile-small-title">
+        ACCOUNT
+    </span>
+
+    <h2>
+        My Profile
+    </h2>
+
+    <p>
+        View and manage your personal account information.
+    </p>
+
+</section>
+
+
+<!-- PROFILE CONTENT -->
+
+<section class="profile-container">
+
+
+    <!-- PROFILE CARD -->
+
+    <div class="profile-card profile-main-card">
+
+        <div class="profile-avatar">
+
+            <span id="profileAvatar">
+                👤
+            </span>
+
+        </div>
+
+
+        <h3 id="profileName">
+            User
+        </h3>
+
+        <p id="profileEmail">
+            user@example.com
+        </p>
+
+        <span class="profile-role">
+            CUSTOMER
+        </span>
+
+    </div>
+
+
+    <!-- ACCOUNT INFORMATION -->
+
+    <div class="profile-card">
+
+        <div class="profile-card-header">
+
+            <div>
+
+                <h3>
+                    Account Information
+                </h3>
+
+                <p>
+                    Your basic account details.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-information">
+
+
+            <div class="profile-info-item">
+
+                <span>
+                    Full Name
+                </span>
+
+                <strong id="infoFullName">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="profile-info-item">
+
+                <span>
+                    Email Address
+                </span>
+
+                <strong id="infoEmail">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="profile-info-item">
+
+                <span>
+                    Mobile Number
+                </span>
+
+                <strong id="infoMobile">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="profile-info-item">
+
+                <span>
+                    Account Type
+                </span>
+
+                <strong>
+                    Customer
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- DELIVERY ADDRESS -->
+
+    <div class="profile-card">
+
+        <div class="profile-card-header">
+
+            <div>
+
+                <h3>
+                    Delivery Address
+                </h3>
+
+                <p>
+                    Your saved delivery information.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-information">
+
+
+            <div class="profile-info-item">
+
+                <span>
+                    Address
+                </span>
+
+                <strong id="profileAddress">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="profile-info-item">
+
+                <span>
+                    City
+                </span>
+
+                <strong id="profileCity">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="profile-info-item">
+
+                <span>
+                    Pincode
+                </span>
+
+                <strong id="profilePincode">
+                    -
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROFILE ACTIONS -->
+
+    <div class="profile-actions">
+
+        <a href="/settings"
+           class="profile-action-button">
+
+            Manage Settings
+
+        </a>
+
+
+        <a href="/orders"
+           class="profile-action-button secondary">
+
+            View My Orders
+
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="footer">
+
+
+<div class="footer-container">
+
+
+    <!-- ABOUT -->
+
+    <div class="footer-column footer-about">
+
+        <div class="footer-logo">
+
+            <img src="/images/sulaiha-logo.jpeg"
+                 alt="Sulaiha Logo">
+
+            <div>
+
+                <h2>
+                    SULAIHA
+                </h2>
+
+                <span>
+                    SMART MANAGEMENT SYSTEM
+                </span>
+
+            </div>
+
+        </div>
+
+        <p>
+            Your trusted platform for premium
+            marbles, granite, tiles and building
+            materials.
+        </p>
+
+    </div>
+
+
+    <!-- QUICK LINKS -->
+
+    <div class="footer-column">
+
+        <h3>
+            Quick Links
+        </h3>
+
+        <a href="/home">
+            Home
+        </a>
+
+        <a href="/products">
+            Products
+        </a>
+
+        <a href="/orders">
+            My Orders
+        </a>
+
+        <a href="/cart">
+            Cart
+        </a>
+
+        <a href="/settings">
+            Settings
+        </a>
+
+    </div>
+
+
+    <!-- INFORMATION -->
+
+    <div class="footer-column">
+
+        <h3>
+            Information
+        </h3>
+
+        <a href="/about">
+            About Us
+        </a>
+
+        <a href="/contact">
+            Contact Us
+        </a>
+
+        <a href="/privacy">
+            Privacy Policy
+        </a>
+
+        <a href="/terms">
+            Terms &amp; Conditions
+        </a>
+
+    </div>
+
+
+    <!-- CONTACT -->
+
+    <div class="footer-column contact-column">
+
+        <h3>
+            Contact Us
+        </h3>
+
+        <p>
+            📍 Ramanathapuram, Tamil Nadu
+        </p>
+
+        <p>
+            📞 +91 XXXXX XXXXX
+        </p>
+
+        <p>
+            ✉️ support@sulaiha.com
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+    <p>
+        © 2026 Sulaiha Smart Management System.
+        All Rights Reserved.
+    </p>
+
+    <p>
+        Designed for smarter building material management.
+    </p>
+
+</div>
+
+
+</footer>
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script src="/js/script.js"></script>
+
+<script src="/js/profile.js"></script>
+
+</body>
+
+</html>

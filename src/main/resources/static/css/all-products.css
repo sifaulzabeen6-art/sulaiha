@@ -1,0 +1,828 @@
+/* =====================================================
+   SULAIHA SMART MANAGEMENT SYSTEM
+   ALL PRODUCTS PAGE - CSS
+   ===================================================== */
+
+
+/* =====================================================
+   BASIC RESET
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fff8f2;
+    color: #333;
+    overflow-x: hidden;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   ALL PRODUCTS PAGE
+   ===================================================== */
+
+.all-products-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff8f2;
+}
+
+
+/* =====================================================
+   PAGE HEADER
+   ===================================================== */
+
+.all-products-header {
+    width: 100%;
+    padding: 55px 7% 35px;
+    background: #f5e6d3;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+.all-products-heading p {
+    color: #3f5e4b;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+
+.all-products-heading h2 {
+    color: #3f5e4b;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+
+.all-products-heading span {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+    color: #777;
+    white-space: nowrap;
+}
+
+
+.breadcrumb a {
+    color: #3f5e4b;
+    font-weight: 600;
+}
+
+
+.breadcrumb a:hover {
+    color: #c8a96b;
+}
+
+
+/* =====================================================
+   SEARCH AND FILTER AREA
+   ===================================================== */
+
+.all-product-tools {
+    width: 86%;
+    margin: 35px auto 20px;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(63, 94, 75, 0.08);
+}
+
+
+/* =====================================================
+   SEARCH BOX
+   ===================================================== */
+
+.all-search-box {
+    width: 100%;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 22px;
+}
+
+
+.all-search-box:focus-within {
+    border-color: #3f5e4b;
+    box-shadow: 0 0 0 3px rgba(63, 94, 75, 0.08);
+}
+
+
+.all-search-icon {
+    font-size: 18px;
+}
+
+
+.all-search-box input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    color: #333;
+}
+
+
+.all-search-box input::placeholder {
+    color: #999;
+}
+
+
+/* =====================================================
+   FILTER AREA
+   ===================================================== */
+
+.all-filter-area {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    gap: 18px;
+    align-items: end;
+}
+
+
+.all-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+
+.all-filter-group label {
+    color: #3f5e4b;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.all-filter-group select {
+    width: 100%;
+    height: 45px;
+    padding: 0 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    color: #444;
+    font-size: 13px;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.all-filter-group select:focus {
+    border-color: #3f5e4b;
+}
+
+
+/* =====================================================
+   CLEAR FILTER BUTTON
+   ===================================================== */
+
+.clear-all-filter-button {
+    height: 45px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 8px;
+    background: #3f5e4b;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+
+.clear-all-filter-button:hover {
+    background: #c8a96b;
+    color: #fff;
+}
+
+
+/* =====================================================
+   PRODUCT RESULT INFORMATION
+   ===================================================== */
+
+.all-product-result-info {
+    width: 86%;
+    margin: 25px auto 18px;
+}
+
+
+.all-product-result-info p {
+    color: #777;
+    font-size: 14px;
+}
+
+
+.all-product-result-info strong {
+    color: #3f5e4b;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   PRODUCT GRID
+   ===================================================== */
+
+.all-product-grid {
+    width: 86%;
+    margin: 0 auto 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+
+/* =====================================================
+   PRODUCT CARD
+   ===================================================== */
+
+.all-product-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(63, 94, 75, 0.08);
+    border: 1px solid rgba(63, 94, 75, 0.08);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+.all-product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(63, 94, 75, 0.14);
+}
+
+
+/* =====================================================
+   PRODUCT IMAGE
+   ===================================================== */
+
+.all-product-image {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+
+.all-product-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+
+.all-product-card:hover .all-product-image img {
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   STOCK BADGE
+   ===================================================== */
+
+.all-stock-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #3f5e4b;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+.all-stock-badge.out-of-stock {
+    background: #b34d4d;
+}
+
+
+/* =====================================================
+   PRODUCT INFORMATION
+   ===================================================== */
+
+.all-product-info {
+    padding: 20px;
+}
+
+
+.all-product-category {
+    display: inline-block;
+    color: #c8a96b;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    margin-bottom: 8px;
+}
+
+
+.all-product-info h3 {
+    color: #3f5e4b;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 9px;
+}
+
+
+.all-product-info p {
+    min-height: 62px;
+    color: #777;
+    font-size: 12.5px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+
+/* =====================================================
+   PRODUCT BOTTOM
+   ===================================================== */
+
+.all-product-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+.all-product-bottom strong {
+    color: #3f5e4b;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   VIEW DETAILS BUTTON
+   ===================================================== */
+
+.all-view-button {
+    border: none;
+    padding: 9px 13px;
+    border-radius: 7px;
+    background: #3f5e4b;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+.all-view-button:hover {
+    background: #c8a96b;
+}
+
+
+/* =====================================================
+   NO PRODUCTS MESSAGE
+   ===================================================== */
+
+.no-products-message {
+    width: 86%;
+    margin: 20px auto 60px;
+    padding: 50px 20px;
+    background: #fff;
+    border-radius: 14px;
+    text-align: center;
+    display: none;
+    box-shadow: 0 5px 18px rgba(63, 94, 75, 0.08);
+}
+
+
+.no-products-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+
+.no-products-message h3 {
+    color: #3f5e4b;
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+
+.no-products-message p {
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   HIDDEN PRODUCT
+   ===================================================== */
+
+.all-product-card.hidden {
+    display: none;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.footer {
+    width: 100%;
+    background: #3f5e4b;
+    color: #fff;
+    margin-top: 40px;
+}
+
+
+.footer-container {
+    width: 86%;
+    margin: 0 auto;
+    padding: 55px 0 40px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 45px;
+}
+
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+
+.footer-logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+.footer-logo h2 {
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+
+.footer-logo span {
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+
+.footer-about p {
+    max-width: 320px;
+    color: #e5ebe7;
+    font-size: 12.5px;
+    line-height: 1.8;
+}
+
+
+.footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 18px;
+    color: #fff;
+}
+
+
+.footer-column > a {
+    color: #e1e8e3;
+    font-size: 12.5px;
+    margin-bottom: 11px;
+    transition: 0.3s ease;
+}
+
+
+.footer-column > a:hover {
+    color: #c8a96b;
+    transform: translateX(3px);
+}
+
+
+.contact-column p {
+    color: #e1e8e3;
+    font-size: 12.5px;
+    line-height: 1.8;
+    margin-bottom: 7px;
+}
+
+
+/* =====================================================
+   SOCIAL ICONS
+   ===================================================== */
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+
+.social-icons a {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+
+.social-icons a:hover {
+    background: #c8a96b;
+    border-color: #c8a96b;
+}
+
+
+/* =====================================================
+   FOOTER BOTTOM
+   ===================================================== */
+
+.footer-bottom {
+    width: 86%;
+    margin: 0 auto;
+    padding: 18px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.footer-bottom p {
+    color: #dce4df;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 1100px) {
+
+    .all-product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    .filter-area {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .clear-filter-button {
+        width: 100%;
+    }
+
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE / SMALL TABLET
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    .all-products-header {
+        padding: 40px 6% 28px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .all-products-heading h2 {
+        font-size: 30px;
+    }
+
+
+    .all-products-heading span {
+        font-size: 13px;
+    }
+
+
+    .all-product-tools {
+        width: 88%;
+        padding: 18px;
+    }
+
+
+    .all-filter-area {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+
+    .all-product-result-info {
+        width: 88%;
+    }
+
+
+    .all-product-grid {
+        width: 88%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+
+    .all-product-image {
+        height: 190px;
+    }
+
+
+    .all-product-info {
+        padding: 16px;
+    }
+
+
+    .all-product-info h3 {
+        font-size: 16px;
+    }
+
+
+    .product-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .product-view-button {
+        width: 100%;
+    }
+
+
+    .no-products-message {
+        width: 88%;
+    }
+
+
+    .footer-container {
+        width: 88%;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 25px;
+    }
+
+
+    .footer-bottom {
+        width: 88%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+    .all-products-header {
+        padding: 32px 6% 25px;
+    }
+
+
+    .all-products-heading p {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+
+    .all-products-heading h2 {
+        font-size: 25px;
+    }
+
+
+    .breadcrumb {
+        font-size: 12px;
+    }
+
+
+    .all-product-tools {
+        width: 90%;
+        margin-top: 25px;
+    }
+
+
+    .all-search-box {
+        height: 48px;
+    }
+
+
+    .all-product-grid {
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+
+    .all-product-image {
+        height: 230px;
+    }
+
+
+    .all-product-info h3 {
+        font-size: 18px;
+    }
+
+
+    .all-product-info p {
+        min-height: auto;
+    }
+
+
+    .product-bottom {
+        flex-direction: row;
+        align-items: center;
+    }
+
+
+    .product-view-button {
+        width: auto;
+    }
+
+
+    .no-products-message {
+        width: 90%;
+        padding: 40px 15px;
+    }
+
+
+    .footer-container {
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+
+    .footer-bottom {
+        width: 90%;
+    }
+
+}

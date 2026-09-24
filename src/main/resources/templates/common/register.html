@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Create a customer account in Sulaiha Smart Management System">
+
+    <title>Register | Sulaiha Smart Management System</title>
+
+
+    <!-- Google Font - Poppins -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- Common CSS -->
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         REGISTER PAGE
+         ========================================= -->
+
+    <main class="register-page">
+
+
+        <!-- Background Overlay -->
+
+        <div class="register-overlay"></div>
+
+
+        <!-- =====================================
+             REGISTER CARD
+             ===================================== -->
+
+        <section class="register-card">
+
+
+            <!-- =================================
+                 BRAND HEADING
+                 ================================= -->
+
+            <header class="register-brand">
+
+                <h1>SULAIHA</h1>
+
+                <h2>Smart Management System</h2>
+
+                <p>
+                    Marble &amp; Building Materials Management
+                </p>
+
+            </header>
+
+
+            <!-- =================================
+                 REGISTER HEADING
+                 ================================= -->
+
+            <div class="register-heading">
+
+                <h3>Create Your Account</h3>
+
+                <p>
+                    Register as a new customer
+                </p>
+
+            </div>
+
+
+            <!-- =================================
+                 REGISTER FORM
+                 ================================= -->
+
+            <form id="registerForm" action="/register" method="post">
+
+                <input type="hidden"
+       th:name="${_csrf.parameterName}"
+       th:value="${_csrf.token}">
+                <!-- Full Name -->
+
+                <div class="register-form-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="register-form-group">
+
+                    <label for="email">
+                        Email ID
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Phone Number -->
+
+                <div class="register-form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        autocomplete="tel"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Address -->
+
+                <div class="register-form-group">
+
+                    <label for="address">
+                        Address
+                    </label>
+
+                    <textarea
+                        id="address"
+                        name="address"
+                        placeholder="Enter your address"
+                        rows="3"
+                        autocomplete="street-address"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="register-form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Confirm Password -->
+
+                <div class="register-form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Confirm your password"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Customer Information -->
+
+                <p class="register-note">
+
+                    New accounts are created as Customer accounts.
+
+                </p>
+
+
+                <!-- Create Account Button -->
+
+                <button
+                    type="submit"
+                    class="register-submit-button">
+
+                    CREATE ACCOUNT
+
+                </button>
+
+
+            </form>
+
+
+            <!-- =================================
+                 LOGIN LINK
+                 ================================= -->
+
+            <div class="register-login">
+
+                <span>Already have an account?</span>
+
+                <a href="/login">
+                    Login
+                </a>
+
+            </div>
+
+
+            <!-- =================================
+                 BACK TO WELCOME
+                 ================================= -->
+
+            <div class="register-back">
+
+                <a href="/welcome">
+                    ← Back to Welcome
+                </a>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+</body>
+
+</html>

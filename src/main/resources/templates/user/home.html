@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sulaiha Smart Management System</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Home CSS -->
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVIGATION BAR
+     ===================================================== -->
+
+<header class="navbar">
+
+    <!-- Logo and Website Name -->
+    <div class="brand">
+
+        <a href="/home">
+            <img src="/images/sulaiha-logo.jpeg"
+                 alt="Sulaiha Logo"
+                 class="logo-image">
+        </a>
+
+        <div class="brand-name">
+            <h1>SULAIHA</h1>
+            <span>SMART MANAGEMENT SYSTEM</span>
+        </div>
+
+    </div>
+
+
+    <!-- Navigation Links -->
+    <nav class="nav-links">
+
+        <a href="/home" class="active">Home</a>
+
+        <a href="/products">Products</a>
+
+        <a href="/orders">My Orders</a>
+
+        <a href="/cart">Cart</a>
+
+        <a href="/settings">Settings</a>
+
+    </nav>
+
+
+    <!-- Notification and Profile -->
+    <div class="nav-icons">
+
+        <a href="/notifications"
+   class="icon-button notification-link"
+   title="Notifications">
+
+    <span class="notification-icon">
+        🔔
+    </span>
+
+</a>
+
+        <button type="button"
+                class="icon-button"
+                title="My Profile"
+                onclick="openProfile()">
+
+            <span class="profile-icon">👤</span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO SECTION
+     ===================================================== -->
+
+<section class="hero-section">
+
+    <!-- Hero Image -->
+    <div class="hero-image">
+
+        <img src="/images/marble-hero.jpg"
+             alt="Premium Marble and Building Materials">
+
+    </div>
+
+
+    <!-- Hero Text -->
+    <div class="hero-content">
+
+        <p class="hero-small-title">
+            PREMIUM QUALITY MATERIALS
+        </p>
+
+        <h2>
+            Build Your Dream
+            <span>With Elegance</span>
+        </h2>
+
+        <p class="hero-description">
+            Discover premium marbles, granite, tiles and
+            building materials carefully selected for
+            beautiful and lasting spaces.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="/products" class="primary-button">
+                Explore Products
+            </a>
+
+            <a href="#categories" class="secondary-button">
+                View Categories
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURED CATEGORIES
+     ===================================================== -->
+
+<section class="categories-section" id="categories">
+
+    <div class="section-heading">
+
+        <p>EXPLORE OUR COLLECTION</p>
+
+        <h2>Featured Categories</h2>
+
+        <span>
+            Explore our premium collection of materials
+            for your construction and interior needs.
+        </span>
+
+    </div>
+
+
+    <div class="category-grid">
+
+        <!-- Marble -->
+        <a href="/marble-products"
+           class="category-card">
+
+            <div class="category-image">
+
+                <img src="/images/marble-category.jpg"
+                     alt="Marble">
+
+            </div>
+
+            <h3>Marble</h3>
+
+        </a>
+
+
+        <!-- Granite -->
+        <a href="/granite"
+           class="category-card">
+
+            <div class="category-image">
+
+                <img src="/images/granite-category.jpg"
+                     alt="Granite">
+
+            </div>
+
+            <h3>Granite</h3>
+
+        </a>
+
+
+        <!-- Tiles -->
+        <a href="/tiles"
+           class="category-card">
+
+            <div class="category-image">
+
+                <img src="/images/tiles-category.jpg"
+                     alt="Tiles">
+
+            </div>
+
+            <h3>Tiles</h3>
+
+        </a>
+
+
+        <!-- Building Materials -->
+        <a href="/building-materials"
+           class="category-card">
+
+            <div class="category-image">
+
+                <img src="/images/building-materials-caategory.jpg"
+                     alt="Building Materials">
+
+            </div>
+
+            <h3>Building Materials</h3>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURED PRODUCTS
+     ===================================================== -->
+
+<section class="products-section" id="featured-products">
+
+    <div class="section-heading">
+
+        <p>OUR TOP PICKS</p>
+
+        <h2>Featured Products</h2>
+
+        <span>
+            A selected product from each category.
+        </span>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+        <!-- 1. Marble Product -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img src="/images/green-marble.jpg"
+                     alt="Green Marble">
+
+            </div>
+
+            <div class="product-info">
+
+                <span>MARBLE</span>
+
+                <h3>Green Marble</h3>
+
+                <p>
+                    Premium quality marble for
+                    elegant interiors.
+                </p>
+
+                <a href="/product-details?productId=4"
+                   class="view-button">
+
+                    View Product
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 2. Granite Product -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img src="/images/kashmir-white-granite.jpg"
+                     alt="Kashmir White Granite">
+
+            </div>
+
+            <div class="product-info">
+
+                <span>GRANITE</span>
+
+                <h3>Kashmir White Granite</h3>
+
+                <p>
+                    Durable and elegant granite
+                    for modern spaces.
+                </p>
+
+                <a href="/product-details?productId=9"
+                   class="view-button">
+
+                    View Product
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 3. Tiles Product -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img src="/images/ceramic-wall-tile.jpg"
+                     alt="Ceramic Wall Tile">
+
+            </div>
+
+            <div class="product-info">
+
+                <span>TILES</span>
+
+                <h3>Ceramic Wall Tile</h3>
+
+                <p>
+                    Stylish and durable tiles
+                    for beautiful spaces.
+                </p>
+
+                <a href="/product-details?productId=10"
+                   class="view-button">
+
+                    View Product
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 4. Building Material Product -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img src="/images/cement.jpg"
+                     alt="Cement">
+
+            </div>
+
+            <div class="product-info">
+
+                <span>BUILDING MATERIAL</span>
+
+                <h3>Cement</h3>
+
+                <p>
+                    Reliable material for
+                    strong construction.
+                </p>
+
+                <a href="/product-details?productId=11"
+                   class="view-button">
+
+                    View Product
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- All Products -->
+
+    <div class="view-all">
+
+        <a href="/products"
+           class="all-products-button">
+
+            View All Products
+
+        </a>
+
+    </div>
+
+</section>
+
+
+   <!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+
+        <!-- About -->
+        <div class="footer-column footer-about">
+
+            <div class="footer-logo">
+
+                <img src="/images/sulaiha-logo.jpeg"
+                     alt="Sulaiha Logo">
+
+                <div>
+
+                    <h2>SULAIHA</h2>
+
+                    <span>
+                        SMART MANAGEMENT SYSTEM
+                    </span>
+
+                </div>
+
+            </div>
+
+            <p>
+                Your trusted platform for premium
+                marbles, granite, tiles and building
+                materials.
+            </p>
+
+        </div>
+
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="/home">Home</a>
+
+            <a href="/products">Products</a>
+
+            <a href="/orders">My Orders</a>
+
+            <a href="/cart">Cart</a>
+
+            <a href="/settings">Settings</a>
+
+        </div>
+
+
+        <!-- Information -->
+        <div class="footer-column">
+
+            <h3>Information</h3>
+
+            <a href="/about">About Us</a>
+
+            <a href="/contact">Contact Us</a>
+
+            <a href="/privacy">Privacy Policy</a>
+
+            <a href="/terms">Terms & Conditions</a>
+
+        </div>
+
+
+        <!-- Contact -->
+        <div class="footer-column contact-column">
+
+            <h3>Contact Us</h3>
+
+            <p>📍 Ramanathapuram, Tamil Nadu</p>
+
+            <p>📞 +91 XXXXX XXXXX</p>
+
+            <p>✉️ support@sulaiha.com</p>
+
+
+            <div class="social-icons">
+
+                <a href="#" title="Instagram">◎</a>
+
+                <a href="#" title="Facebook">f</a>
+
+                <a href="#" title="WhatsApp">◉</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Sulaiha Smart Management System.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Designed for smarter building material management.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script src="/js/script.js"></script>
+<script src="/js/product-details.js"></script>
+
+</body>
+
+</html>         

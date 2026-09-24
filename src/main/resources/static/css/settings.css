@@ -1,0 +1,529 @@
+
+/* =====================================================
+   SULAIHA SMART MANAGEMENT SYSTEM
+   SETTINGS PAGE CSS
+   Beginner Friendly + Responsive
+   ===================================================== */
+
+
+/* =====================================================
+   BASIC SETTINGS
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fff8f2;
+    color: #333;
+}
+
+
+/* =====================================================
+   SETTINGS PAGE
+   ===================================================== */
+
+.settings-page {
+    width: 100%;
+    min-height: 70vh;
+    padding: 30px 6%;
+}
+
+
+/* =====================================================
+   BREADCRUMB
+   ===================================================== */
+
+.settings-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.settings-breadcrumb a {
+    color: #3f5e4b;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.settings-breadcrumb span {
+    color: #777;
+}
+
+
+/* =====================================================
+   PAGE HEADER
+   ===================================================== */
+
+.settings-header {
+    margin-bottom: 30px;
+}
+
+.settings-small-title {
+    display: block;
+    color: #c8a96b;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+}
+
+.settings-header h2 {
+    font-size: 32px;
+    color: #3f5e4b;
+    margin-bottom: 8px;
+}
+
+.settings-header p {
+    color: #777;
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   SETTINGS CONTAINER
+   ===================================================== */
+
+.settings-container {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+
+/* =====================================================
+   SETTINGS SIDEBAR
+   ===================================================== */
+
+.settings-sidebar {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 12px;
+    border: 1px solid #eee2d8;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.settings-tab {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: none;
+    background: transparent;
+    padding: 14px 15px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    transition: 0.2s ease;
+}
+
+.settings-tab:hover {
+    background: #f5eee7;
+    color: #3f5e4b;
+}
+
+.settings-tab.active {
+    background: #3f5e4b;
+    color: #ffffff;
+}
+
+.settings-tab span {
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   SETTINGS CONTENT
+   ===================================================== */
+
+.settings-content {
+    width: 100%;
+}
+
+.settings-section {
+    display: none;
+}
+
+.settings-section.active {
+    display: block;
+}
+
+
+/* =====================================================
+   SETTINGS CARD
+   ===================================================== */
+
+.settings-card {
+    background: #ffffff;
+    border: 1px solid #eee2d8;
+    border-radius: 15px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.settings-card-header {
+    margin-bottom: 25px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #eee5df;
+}
+
+.settings-card-header h3 {
+    color: #3f5e4b;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.settings-card-header p {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   SETTINGS FORM
+   ===================================================== */
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.settings-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.settings-form-group label {
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.settings-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #dcd3cc;
+    border-radius: 8px;
+    background: #fffdfb;
+    color: #333;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.settings-input:focus {
+    border-color: #3f5e4b;
+    box-shadow: 0 0 0 3px rgba(63, 94, 75, 0.08);
+}
+
+textarea.settings-input {
+    resize: vertical;
+    min-height: 110px;
+}
+
+
+/* =====================================================
+   SAVE BUTTON
+   ===================================================== */
+
+.save-settings-button {
+    width: fit-content;
+    border: none;
+    background: #3f5e4b;
+    color: #ffffff;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.save-settings-button:hover {
+    background: #304a3a;
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   NOTIFICATION TOGGLE
+   ===================================================== */
+
+.settings-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid #eee5df;
+}
+
+.settings-toggle-row:last-child {
+    border-bottom: none;
+}
+
+.settings-toggle-row h4 {
+    color: #444;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.settings-toggle-row p {
+    color: #888;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   TOGGLE SWITCH
+   ===================================================== */
+
+.toggle-switch {
+    position: relative;
+    width: 48px;
+    height: 26px;
+    flex-shrink: 0;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-switch span {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: #ccc;
+    border-radius: 30px;
+    transition: 0.2s ease;
+}
+
+.toggle-switch span::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 3px;
+    top: 3px;
+    background: #ffffff;
+    border-radius: 50%;
+    transition: 0.2s ease;
+}
+
+.toggle-switch input:checked + span {
+    background: #3f5e4b;
+}
+
+.toggle-switch input:checked + span::before {
+    transform: translateX(22px);
+}
+
+
+/* =====================================================
+   LOGOUT CARD
+   ===================================================== */
+
+.logout-card {
+    text-align: center;
+}
+
+.logout-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.logout-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5eee7;
+    border-radius: 50%;
+    font-size: 28px;
+}
+
+.logout-content p {
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   LOGOUT BUTTON
+   ===================================================== */
+
+.logout-button {
+    border: none;
+    background: #b94a48;
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.logout-button:hover {
+    background: #963c3a;
+}
+
+
+/* =====================================================
+   FOOTER COMPATIBILITY
+   ===================================================== */
+
+.footer {
+    margin-top: 30px;
+}
+
+
+/* =====================================================
+   TABLET RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .settings-page {
+        padding: 25px 4%;
+    }
+
+    .settings-container {
+        grid-template-columns: 190px 1fr;
+        gap: 18px;
+    }
+
+    .settings-card {
+        padding: 22px;
+    }
+
+    .settings-header h2 {
+        font-size: 28px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .settings-page {
+        padding: 20px 4%;
+    }
+
+    .settings-header h2 {
+        font-size: 25px;
+    }
+
+    .settings-header p {
+        font-size: 13px;
+    }
+
+    .settings-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .settings-sidebar {
+        display: flex;
+        overflow-x: auto;
+        gap: 6px;
+        padding: 8px;
+    }
+
+    .settings-tab {
+        width: auto;
+        min-width: max-content;
+        justify-content: center;
+        padding: 11px 14px;
+    }
+
+    .settings-card {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .settings-card-header h3 {
+        font-size: 18px;
+    }
+
+    .settings-toggle-row {
+        align-items: flex-start;
+    }
+
+    .save-settings-button {
+        width: 100%;
+    }
+
+    .logout-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 450px) {
+
+    .settings-page {
+        padding: 18px 3%;
+    }
+
+    .settings-breadcrumb {
+        font-size: 12px;
+    }
+
+    .settings-header h2 {
+        font-size: 22px;
+    }
+
+    .settings-card {
+        padding: 16px;
+    }
+
+    .settings-form {
+        gap: 15px;
+    }
+
+    .settings-input {
+        font-size: 13px;
+        padding: 11px 12px;
+    }
+
+    .settings-toggle-row h4 {
+        font-size: 14px;
+    }
+
+    .settings-toggle-row p {
+        font-size: 12px;
+    }
+
+}
+

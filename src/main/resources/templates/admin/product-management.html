@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="_csrf"
+          th:content="${_csrf.token}">
+
+    <meta name="_csrf_header"
+          th:content="${_csrf.headerName}">
+
+    <title>Product Management | Sulaiha</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- Admin Dashboard CSS -->
+
+    <link rel="stylesheet"
+          th:href="@{/css/admin-dashboard.css}">
+
+
+    <!-- Product Management CSS -->
+
+    <link rel="stylesheet"
+          th:href="@{/css/product-management.css}">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ADMIN SIDEBAR
+     ===================================================== -->
+
+<aside class="admin-sidebar">
+
+    <div class="sidebar-logo">
+
+        <img src="/images/sulaiha-logo.jpeg"
+             alt="Sulaiha Logo">
+
+        <div>
+
+            <h2>SULAIHA</h2>
+
+            <span>
+                SMART MANAGEMENT SYSTEM
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-navigation">
+
+        <a href="/admin/dashboard">
+            <span>📊</span>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="/admin/customers">
+            <span>👥</span>
+            <span>Customers</span>
+        </a>
+
+        <a href="/admin/products"
+           class="active">
+            <span>📦</span>
+            <span>Products</span>
+        </a>
+
+        <a href="/admin/orders">
+            <span>🛒</span>
+            <span>Orders</span>
+        </a>
+
+        <a href="/admin/inventory">
+            <span>📋</span>
+            <span>Inventory</span>
+        </a>
+
+        <a href="/admin/sales">
+            <span>💰</span>
+            <span>Sales</span>
+        </a>
+
+        <a href="/admin/payments">
+            <span>💳</span>
+            <span>Payments</span>
+        </a>
+
+        <a href="/admin/invoice">
+            <span>🧾</span>
+            <span>Invoice</span>
+        </a>
+
+        <a href="/admin/billing">
+            <span>💵</span>
+            <span>Billing</span>
+        </a>
+
+        <a href="/admin/expenses">
+            <span>💸</span>
+            <span>Expenses</span>
+        </a>
+
+        <a href="/admin/reports">
+            <span>📈</span>
+            <span>Reports &amp; Analytics</span>
+        </a>
+
+        <a href="/admin/settings">
+            <span>⚙️</span>
+            <span>Settings</span>
+        </a>
+
+        <a href="/admin/notifications">
+            <span>🔔</span>
+            <span>Notifications</span>
+        </a>
+
+        <a href="/admin/profile">
+            <span>👤</span>
+            <span>Profile</span>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-logout">
+
+        <a href="/logout">
+            <span>🚪</span>
+            <span>Logout</span>
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+     ===================================================== -->
+
+<main class="admin-main">
+
+
+    <!-- =================================================
+         PAGE HEADER
+         ================================================= -->
+
+    <section class="page-header">
+
+        <div>
+
+            <span class="page-small-title">
+                ADMIN MANAGEMENT
+            </span>
+
+            <h1>
+                Product Management
+            </h1>
+
+            <p>
+                Add, manage and monitor your products.
+            </p>
+
+        </div>
+
+
+        <button type="button"
+                class="add-product-button"
+                id="openAddProductModal">
+
+            + Add Product
+
+        </button>
+
+    </section>
+
+
+
+    <!-- =================================================
+         SUMMARY CARDS
+         ================================================= -->
+
+    <section class="product-summary-cards">
+
+
+        <div class="product-summary-card">
+
+            <div class="summary-card-icon">
+                📦
+            </div>
+
+            <div>
+
+                <span>
+                    Total Products
+                </span>
+
+                <strong id="totalProducts">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-summary-card">
+
+            <div class="summary-card-icon">
+                ✅
+            </div>
+
+            <div>
+
+                <span>
+                    Active Products
+                </span>
+
+                <strong id="activeProducts">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-summary-card">
+
+            <div class="summary-card-icon">
+                ⛔
+            </div>
+
+            <div>
+
+                <span>
+                    Inactive Products
+                </span>
+
+                <strong id="inactiveProducts">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-summary-card">
+
+            <div class="summary-card-icon">
+                ⚠️
+            </div>
+
+            <div>
+
+                <span>
+                    Low Stock
+                </span>
+
+                <strong id="lowStockProducts">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PRODUCT TABLE SECTION
+         ================================================= -->
+
+    <section class="product-table-section">
+
+
+        <!-- TABLE HEADER -->
+
+        <div class="product-table-header">
+
+            <div>
+
+                <h2>
+                    Products
+                </h2>
+
+                <p>
+                    Manage your available products.
+                </p>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="product-search">
+
+                <input type="text"
+                       id="productSearch"
+                       placeholder="Search products...">
+
+            </div>
+
+        </div>
+
+
+        <!-- TABLE -->
+
+        <div class="product-table-wrapper">
+
+            <table class="product-table">
+
+                <thead>
+
+                <tr>
+
+                    <th>
+                        S.No.
+                    </th>
+
+                    <th>
+                        Product Name
+                    </th>
+
+                    <th>
+                        Category
+                    </th>
+
+                    <th>
+                        Price
+                    </th>
+
+                    <th>
+                        Quantity
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                    <th>
+                        Actions
+                    </th>
+
+                </tr>
+
+                </thead>
+
+
+                <tbody id="productTableBody">
+
+                <!-- Products loaded dynamically -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =====================================================
+     ADD PRODUCT MODAL
+     ===================================================== -->
+
+<div id="addProductModal"
+     class="product-modal">
+
+    <div class="product-modal-content">
+
+
+        <!-- MODAL HEADER -->
+
+        <div class="product-modal-header">
+
+            <div>
+
+                <span>
+                    PRODUCT MANAGEMENT
+                </span>
+
+                <h2>
+                    Add Product
+                </h2>
+
+            </div>
+
+
+            <button type="button"
+                    class="modal-close"
+                    id="closeAddProductModal">
+
+                &times;
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ADD PRODUCT FORM -->
+
+        <form id="addProductForm">
+
+
+            <!-- PRODUCT NAME -->
+
+            <div class="product-form-group">
+
+                <label for="addProductName">
+                    Product Name
+                </label>
+
+                <input type="text"
+                       id="addProductName"
+                       name="name"
+                       placeholder="Enter product name"
+                       required>
+
+            </div>
+
+
+
+            <!-- CATEGORY -->
+
+            <div class="product-form-group">
+
+                <label for="addProductCategory">
+                    Category
+                </label>
+
+                <select id="addProductCategory"
+                        name="category"
+                        required>
+
+                    <option value="">
+                        Select Category
+                    </option>
+
+                    <option value="Marble">
+                        Marble
+                    </option>
+
+                    <option value="Granite">
+                        Granite
+                    </option>
+
+                    <option value="Tiles">
+                        Tiles
+                    </option>
+
+                    <option value="Glass">
+                        Glass
+                    </option>
+
+                    <option value="UPVC">
+                        UPVC
+                    </option>
+
+                    <option value="Plywood">
+                        Plywood
+                    </option>
+
+                    <option value="Building Materials">
+                        Building Materials
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PRICING TYPE
+                 ================================================= -->
+
+            <div class="product-form-group">
+
+                <label for="addProductPricingType">
+                    Pricing Type
+                </label>
+
+                <select id="addProductPricingType"
+                        name="pricingType"
+                        required>
+
+                    <option value="">
+                        Select Pricing Type
+                    </option>
+
+                    <option value="UNIT">
+                        Unit Based
+                    </option>
+
+                    <option value="DIMENSION">
+                        Dimension Based
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 DIMENSION SECTION
+                 ================================================= -->
+
+            <div id="addDimensionSection"
+                 class="product-form-group"
+                 style="display: none;">
+
+                <label>
+                    Product Dimensions
+                </label>
+
+
+                <div class="product-form"
+                     style="grid-template-columns: 1fr 1fr 1fr;">
+
+                    <!-- LENGTH -->
+
+                    <div class="product-form-group">
+
+                        <label for="addProductLength">
+                            Length
+                        </label>
+
+                        <input type="number"
+                               id="addProductLength"
+                               name="length"
+                               min="0"
+                               step="0.01"
+                               placeholder="Example: 6">
+
+                    </div>
+
+
+                    <!-- WIDTH -->
+
+                    <div class="product-form-group">
+
+                        <label for="addProductWidth">
+                            Width
+                        </label>
+
+                        <input type="number"
+                               id="addProductWidth"
+                               name="width"
+                               min="0"
+                               step="0.01"
+                               placeholder="Example: 4">
+
+                    </div>
+
+
+                    <!-- DIMENSION UNIT -->
+
+                    <div class="product-form-group">
+
+                        <label for="addProductDimensionUnit">
+                            Dimension Unit
+                        </label>
+
+                        <select id="addProductDimensionUnit"
+                                name="dimensionUnit">
+
+                            <option value="">
+                                Select Unit
+                            </option>
+
+                            <option value="ft">
+                                Feet (ft)
+                            </option>
+
+                            <option value="inch">
+                                Inches (in)
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <small>
+                    Example: 6 × 4 ft = 24 sq.ft
+                </small>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PRICE
+                 ================================================= -->
+
+            <div class="product-form-group">
+
+                <label for="addProductPrice">
+                    Price
+                </label>
+
+                <input type="number"
+                       id="addProductPrice"
+                       name="price"
+                       min="0"
+                       step="0.01"
+                       placeholder="Enter price"
+                       required>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 UNIT
+                 ================================================= -->
+
+            <div class="product-form-group">
+
+                <label for="addProductUnit">
+                    Pricing Unit
+                </label>
+
+                <select id="addProductUnit"
+                        name="unit"
+                        required>
+
+                    <option value="">
+                        Select Pricing Unit
+                    </option>
+
+                    <option value="sq.ft">
+                        Sq.ft
+                    </option>
+
+                    <option value="piece">
+                        Piece
+                    </option>
+
+                    <option value="bag">
+                        Bag
+                    </option>
+
+                    <option value="kg">
+                        Kg
+                    </option>
+
+                    <option value="ton">
+                        Ton
+                    </option>
+
+                    <option value="litre">
+                        Litre
+                    </option>
+
+                    <option value="meter">
+                        Meter
+                    </option>
+
+                    <option value="sheet">
+                        Sheet
+                    </option>
+
+                    <option value="unit">
+                        Unit
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 QUANTITY
+                 ================================================= -->
+
+            <div class="product-form-group">
+
+                <label for="addProductQuantity">
+                    Quantity
+                </label>
+
+                <input type="number"
+                       id="addProductQuantity"
+                       name="quantity"
+                       min="0"
+                       step="1"
+                       placeholder="Enter quantity"
+                       required>
+
+            </div>
+
+
+
+            <!-- STATUS -->
+
+            <div class="product-form-group">
+
+                <label for="addProductStatus">
+                    Status
+                </label>
+
+                <select id="addProductStatus"
+                        name="status"
+                        required>
+
+                    <option value="available">
+                        Available
+                    </option>
+
+                    <option value="unavailable">
+                        Unavailable
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- IMAGE -->
+
+            <div class="product-form-group">
+
+                <label for="addProductImage">
+                    Product Image
+                </label>
+
+                <input type="text"
+                       id="addProductImage"
+                       name="image"
+                       placeholder="Example: /images/marble.jpg">
+
+            </div>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="product-form-group">
+
+                <label for="addProductDescription">
+                    Description
+                </label>
+
+                <textarea id="addProductDescription"
+                          name="description"
+                          rows="4"
+                          placeholder="Enter product description"></textarea>
+
+            </div>
+
+
+
+            <!-- FORM ACTIONS -->
+
+            <div class="product-form-actions">
+
+                <button type="button"
+                        class="cancel-button"
+                        id="cancelAddProduct">
+
+                    Cancel
+
+                </button>
+
+                <button type="submit"
+                        class="save-product-button">
+
+                    Add Product
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     EDIT PRODUCT MODAL
+     ===================================================== -->
+
+<div id="editProductModal"
+     class="product-modal">
+
+    <div class="product-modal-content">
+
+
+        <!-- MODAL HEADER -->
+
+        <div class="product-modal-header">
+
+            <div>
+
+                <span>
+                    PRODUCT MANAGEMENT
+                </span>
+
+                <h2>
+                    Edit Product
+                </h2>
+
+            </div>
+
+
+            <button type="button"
+                    class="modal-close"
+                    id="closeEditProductModal">
+
+                &times;
+
+            </button>
+
+        </div>
+
+
+
+        <!-- EDIT FORM -->
+
+        <form id="editProductForm">
+
+
+            <!-- HIDDEN ID -->
+
+            <input type="hidden"
+                   id="editProductId">
+
+
+
+            <!-- PRODUCT NAME -->
+
+            <div class="product-form-group">
+
+                <label for="editProductName">
+                    Product Name
+                </label>
+
+                <input type="text"
+                       id="editProductName"
+                       required>
+
+            </div>
+
+
+
+            <!-- CATEGORY -->
+
+            <div class="product-form-group">
+
+                <label for="editProductCategory">
+                    Category
+                </label>
+
+                <select id="editProductCategory"
+                        required>
+
+                    <option value="">
+                        Select Category
+                    </option>
+
+                    <option value="Marble">
+                        Marble
+                    </option>
+
+                    <option value="Granite">
+                        Granite
+                    </option>
+
+                    <option value="Tiles">
+                        Tiles
+                    </option>
+
+                    <option value="Glass">
+                        Glass
+                    </option>
+
+                    <option value="UPVC">
+                        UPVC
+                    </option>
+
+                    <option value="Plywood">
+                        Plywood
+                    </option>
+
+                    <option value="Building Materials">
+                        Building Materials
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 EDIT PRICING TYPE
+                 ================================================= -->
+
+            <div class="product-form-group">
+
+                <label for="editProductPricingType">
+                    Pricing Type
+                </label>
+
+                <select id="editProductPricingType"
+                        required>
+
+                    <option value="">
+                        Select Pricing Type
+                    </option>
+
+                    <option value="UNIT">
+                        Unit Based
+                    </option>
+
+                    <option value="DIMENSION">
+                        Dimension Based
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 EDIT DIMENSION SECTION
+                 ================================================= -->
+
+            <div id="editDimensionSection"
+                 class="product-form-group"
+                 style="display: none;">
+
+                <label>
+                    Product Dimensions
+                </label>
+
+
+                <div class="product-form"
+                     style="grid-template-columns: 1fr 1fr 1fr;">
+
+                    <!-- LENGTH -->
+
+                    <div class="product-form-group">
+
+                        <label for="editProductLength">
+                            Length
+                        </label>
+
+                        <input type="number"
+                               id="editProductLength"
+                               min="0"
+                               step="0.01"
+                               placeholder="Example: 6">
+
+                    </div>
+
+
+                    <!-- WIDTH -->
+
+                    <div class="product-form-group">
+
+                        <label for="editProductWidth">
+                            Width
+                        </label>
+
+                        <input type="number"
+                               id="editProductWidth"
+                               min="0"
+                               step="0.01"
+                               placeholder="Example: 4">
+
+                    </div>
+
+
+                    <!-- DIMENSION UNIT -->
+
+                    <div class="product-form-group">
+
+                        <label for="editProductDimensionUnit">
+                            Dimension Unit
+                        </label>
+
+                        <select id="editProductDimensionUnit">
+
+                            <option value="">
+                                Select Unit
+                            </option>
+
+                            <option value="ft">
+                                Feet (ft)
+                            </option>
+
+                            <option value="inch">
+                                Inches (in)
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <small>
+                    Example: 6 × 4 ft = 24 sq.ft
+                </small>
+
+            </div>
+
+
+
+            <!-- PRICE -->
+
+            <div class="product-form-group">
+
+                <label for="editProductPrice">
+                    Price
+                </label>
+
+                <input type="number"
+                       id="editProductPrice"
+                       min="0"
+                       step="0.01"
+                       required>
+
+            </div>
+
+
+
+            <!-- UNIT -->
+
+            <div class="product-form-group">
+
+                <label for="editProductUnit">
+                    Pricing Unit
+                </label>
+
+                <select id="editProductUnit"
+                        required>
+
+                    <option value="">
+                        Select Pricing Unit
+                    </option>
+
+                    <option value="sq.ft">
+                        Sq.ft
+                    </option>
+
+                    <option value="piece">
+                        Piece
+                    </option>
+
+                    <option value="bag">
+                        Bag
+                    </option>
+
+                    <option value="kg">
+                        Kg
+                    </option>
+
+                    <option value="ton">
+                        Ton
+                    </option>
+
+                    <option value="litre">
+                        Litre
+                    </option>
+
+                    <option value="meter">
+                        Meter
+                    </option>
+
+                    <option value="sheet">
+                        Sheet
+                    </option>
+
+                    <option value="unit">
+                        Unit
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- QUANTITY -->
+
+            <div class="product-form-group">
+
+                <label for="editProductQuantity">
+                    Quantity
+                </label>
+
+                <input type="number"
+                       id="editProductQuantity"
+                       name="quantity"
+                       min="0"
+                       step="1"
+                       placeholder="EnterQuantity"
+                       required>
+
+            </div>
+
+
+
+            <!-- STATUS -->
+
+            <div class="product-form-group">
+
+                <label for="editProductStatus">
+                    Status
+                </label>
+
+                <select id="editProductStatus"
+                        required>
+
+                    <option value="available">
+                        Available
+                    </option>
+
+                    <option value="unavailable">
+                        Unavailable
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- IMAGE -->
+
+            <div class="product-form-group">
+
+                <label for="editProductImage">
+                    Product Image
+                </label>
+
+                <input type="text"
+                       id="editProductImage"
+                       placeholder="Example: /images/marble.jpg">
+
+            </div>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="product-form-group">
+
+                <label for="editProductDescription">
+                    Description
+                </label>
+
+                <textarea id="editProductDescription"
+                          rows="4"
+                          placeholder="Enter product description"></textarea>
+
+            </div>
+
+
+
+            <!-- FORM ACTIONS -->
+
+            <div class="product-form-actions">
+
+                <button type="button"
+                        class="cancel-button"
+                        id="cancelEditProduct">
+
+                    Cancel
+
+                </button>
+
+                <button type="submit"
+                        class="save-product-button">
+
+                    Save Changes
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     VIEW PRODUCT MODAL
+     ===================================================== -->
+
+<div id="viewProductModal"
+     class="product-modal">
+
+    <div class="product-modal-content">
+
+
+        <div class="product-modal-header">
+
+            <div>
+
+                <span>
+                    PRODUCT DETAILS
+                </span>
+
+                <h2>
+                    View Product
+                </h2>
+
+            </div>
+
+
+            <button type="button"
+                    class="modal-close"
+                    id="closeViewProductModal">
+
+                &times;
+
+            </button>
+
+        </div>
+
+
+        <div id="productDetails"
+             class="product-details">
+
+            <!-- Product details loaded dynamically -->
+
+        </div>
+
+
+        <div class="product-form-actions">
+
+            <button type="button"
+                    class="cancel-button"
+                    id="closeViewProductButton">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script th:src="@{/js/product-management.js}"></script>
+
+</body>
+
+</html>
